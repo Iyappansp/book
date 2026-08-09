@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login &amp; Account — Aldergate Books</title>
+<meta name="description" content="Sign in or create an account at Aldergate Books to track special orders, save reading lists, and manage event passes.">
+<meta property="og:title" content="Login & Account — Aldergate Books">
+<meta property="og:description" content="Sign in or create an account at Aldergate Books to track special orders, save reading lists, and manage event passes.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="login.html">
+
+<script>
+  (function() {
+    var theme = localStorage.getItem('bookstore-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    var dir = localStorage.getItem('bookstore-dir') || 'ltr';
+    document.documentElement.setAttribute('dir', dir);
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/dark-mode.css">
+<link rel="stylesheet" href="assets/css/rtl.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/inner-pages.css">
+
+<style>
+  .auth-section {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+  .auth-card-wrap {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+  }
+  .auth-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-subtle);
+    background: var(--bg-surface-alt);
+  }
+  .auth-tab-btn {
+    flex: 1;
+    padding: 1.1rem var(--space-sm);
+    background: transparent;
+    border: none;
+    font-family: var(--font-display);
+    font-size: var(--fs-md);
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-align: center;
+    border-bottom: 2px solid transparent;
+  }
+  .auth-tab-btn.active {
+    color: var(--text-primary);
+    background: var(--bg-surface);
+    border-bottom-color: var(--color-secondary);
+  }
+  .auth-body {
+    padding: var(--space-lg) var(--space-md);
+  }
+  .auth-tab-panel {
+    display: none;
+  }
+  .auth-tab-panel.active {
+    display: block;
+  }
+  .password-wrap {
+    position: relative;
+  }
+  .toggle-pw-btn {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.25rem;
+  }
+  [dir="rtl"] .toggle-pw-btn {
+    right: auto;
+    left: 0.75rem;
+  }
+  .social-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: var(--space-md) 0 var(--space-sm);
+    color: var(--text-muted);
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .social-divider::before,
+  .social-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .social-divider span {
+    padding: 0 0.85rem;
+  }
+  .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-surface-alt);
+    color: var(--text-primary);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    transition: all var(--transition-base);
+    cursor: pointer;
+  }
+  .social-btn:hover {
+    border-color: var(--color-secondary);
+    background: var(--bg-surface);
+  }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header id="main-header"></header>
+
+<main id="main-content">
+
+  <section class="page-header">
+    <div class="container-custom">
+      <div class="breadcrumb-custom"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Login</span></div>
+      <span class="eyebrow">Welcome to Aldergate</span>
+      <h1>Account Access</h1>
+      <p>Sign in to check your special order status, manage reading corner reservations, or access member benefits.</p>
+    </div>
+  </section>
+
+  <section class="auth-section">
+    <div class="container-custom">
+      <div class="auth-card-wrap reveal-up">
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab-btn active" id="tab-btn-signin" data-tab="signin">Sign In</button>
+          <button type="button" class="auth-tab-btn" id="tab-btn-register" data-tab="register">Create Account</button>
+        </div>
+
+        <div class="auth-body">
+          <!-- Sign In Panel -->
+          <div class="auth-tab-panel active" id="panel-signin">
+            <form id="signin-form" novalidate>
+              <div class="mb-3">
+                <label for="signin-email" class="form-label">Email Address *</label>
+                <input type="email" class="form-control" id="signin-email" placeholder="reader@example.com" required>
+              </div>
+
+              <div class="mb-3">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <label for="signin-password" class="form-label mb-0">Password *</label>
+                  <a href="#" class="text-decoration-none text-muted small" onclick="alert('Password reset link has been sent to your email.'); return false;">Forgot password?</a>
+                </div>
+                <div class="password-wrap">
+                  <input type="password" class="form-control" id="signin-password" placeholder="••••••••" required>
+                  <button type="button" class="toggle-pw-btn" data-target="signin-password" aria-label="Toggle password visibility">
+                    <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="remember-me" checked>
+                <label class="form-check-label text-secondary small" for="remember-me">
+                  Remember me on this browser
+                </label>
+              </div>
+
+              <button type="submit" class="btn-custom btn-primary-custom w-100 mb-3">Sign In to Aldergate</button>
+            </form>
+
+            <div class="social-divider">
+              <span>Or sign in with</span>
+            </div>
+
+            <div class="d-flex flex-column gap-2 mt-3">
+              <button type="button" class="social-btn" onclick="alert('Google Auth demo integration triggered.');">
+                <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></svg>
+                Continue with Google
+              </button>
+            </div>
+          </div>
+
+          <!-- Create Account Panel -->
+          <div class="auth-tab-panel" id="panel-register">
+            <form id="register-form" novalidate>
+              <div class="mb-3">
+                <label for="reg-name" class="form-label">Full Name *</label>
+                <input type="text" class="form-control" id="reg-name" placeholder="Eleanor Vance" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="reg-email" class="form-label">Email Address *</label>
+                <input type="email" class="form-control" id="reg-email" placeholder="eleanor@example.com" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="reg-password" class="form-label">Password *</label>
+                <div class="password-wrap">
+                  <input type="password" class="form-control" id="reg-password" placeholder="At least 8 characters" required>
+                  <button type="button" class="toggle-pw-btn" data-target="reg-password" aria-label="Toggle password visibility">
+                    <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="terms-agree" required>
+                <label class="form-check-label text-secondary small" for="terms-agree">
+                  I agree to the <a href="faq.html" class="text-decoration-underline text-secondary">Terms of Reading Service</a> &amp; Privacy Curation.
+                </label>
+              </div>
+
+              <button type="submit" class="btn-custom btn-primary-custom w-100 mb-3">Create Reader Account</button>
+            </form>
+          </div>
+
+          <!-- Success Alert Container -->
+          <div class="form-success text-center p-4" id="auth-success" style="display:none;">
+            <svg class="text-success mb-3" xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <h4 class="mb-2">Welcome to Aldergate Books</h4>
+            <p class="text-secondary small mb-3" id="auth-success-msg">You have successfully signed in.</p>
+            <a href="index.html" class="btn-custom btn-secondary-custom btn-sm-custom">Return to Homepage</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="main-footer"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Tabs
+  var tabBtns = document.querySelectorAll(".auth-tab-btn");
+  var panels = document.querySelectorAll(".auth-tab-panel");
+
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = this.getAttribute("data-tab");
+      tabBtns.forEach(function (b) { b.classList.remove("active"); });
+      panels.forEach(function (p) { p.classList.remove("active"); });
+      this.classList.add("active");
+      document.getElementById("panel-" + target).classList.add("active");
+    });
+  });
+
+  // Password toggle
+  document.querySelectorAll(".toggle-pw-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var targetId = this.getAttribute("data-target");
+      var input = document.getElementById(targetId);
+      if (!input) return;
+      if (input.type === "password") {
+        input.type = "text";
+      } else {
+        input.type = "password";
+      }
+    });
+  });
+
+  // Form submits
+  var signinForm = document.getElementById("signin-form");
+  if (signinForm) {
+    signinForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("signin-form").style.display = "none";
+      document.querySelector(".social-divider").style.display = "none";
+      document.querySelector(".social-btn").parentElement.style.display = "none";
+      var successEl = document.getElementById("auth-success");
+      document.getElementById("auth-success-msg").textContent = "You are now logged in. Enjoy your reading session!";
+      successEl.style.display = "block";
+    });
+  }
+
+  var registerForm = document.getElementById("register-form");
+  if (registerForm) {
+    registerForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("register-form").style.display = "none";
+      var successEl = document.getElementById("auth-success");
+      document.getElementById("auth-success-msg").textContent = "Your account has been created. Welcome to the reader family!";
+      successEl.style.display = "block";
+    });
+  }
+});
+</script>
+</body>
+</html>

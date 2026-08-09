@@ -107,7 +107,164 @@
   aspect-ratio: 5/4;
   object-fit: cover;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* ---------- About Page: Mission & Vision Section ---------- */
+
+.mv-section {
+  padding: var(--space-xl) 0;
+  background: var(--bg-surface-alt);
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.mv-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-secondary);
+}
+
+.mv-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--space-md);
+}
+
+.mv-icon-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-md);
+  background: rgba(184, 147, 90, 0.12);
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mv-card-header h3 {
+  font-size: var(--fs-xl);
+  margin-top: 0.15rem;
+}
+
+.mv-card p {
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: var(--space-md);
+}
+
+.mv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-sm);
+}
+
+.mv-list li {
+  font-size: var(--fs-sm);
+  color: var(--text-primary);
+  padding: 0.4rem 0 0.4rem 1.6rem;
+  position: relative;
+  font-weight: 500;
+}
+
+.mv-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.85rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+}
+
+[dir="rtl"] .mv-list li {
+  padding: 0.4rem 1.6rem 0.4rem 0;
+}
+
+[dir="rtl"] .mv-list li::before {
+  left: auto;
+  right: 0;
+}
+
+/* ---------- About Page: Why Choose Us Section ---------- */
+
+.why-choose-section {
+  padding: var(--space-xl) 0;
+}
+
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.why-choose-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  height: 100%;
+}
+
+.why-choose-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-secondary);
+}
+
+.why-choose-card .why-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+.why-choose-card:hover .why-icon {
+  background: var(--color-secondary);
+  color: var(--color-ink);
+}
+
+.why-choose-card h5 {
+  font-size: var(--fs-lg);
+  margin-bottom: 0.4rem;
+}
+
+.why-choose-card p {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
 }
 
 .about-story-grid .rb-copy p,
@@ -295,6 +452,30 @@
 .info-row { display: flex; gap: 0.6rem; margin-bottom: var(--space-xs); font-size: var(--fs-sm); color: var(--text-secondary); }
 .info-row svg { flex-shrink: 0; color: var(--color-primary); margin-top: 0.15rem; }
 
+.map-container {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  background: var(--bg-surface-alt);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+.map-container:hover {
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-md);
+}
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 280px;
+  border: 0;
+  border-radius: var(--radius-md);
+}
+[data-theme="dark"] .map-container iframe {
+  filter: contrast(92%) hue-rotate(180deg) invert(88%);
+}
+
 /* ---------- Gift cards ---------- */
 
 .gift-card-visual {
@@ -433,6 +614,8 @@
 @media (min-width: 768px) {
   .book-grid { grid-template-columns: repeat(3, 1fr); }
   .mission-strip { grid-template-columns: repeat(2, 1fr); }
+  .mv-grid { grid-template-columns: 1fr 1fr; }
+  .why-choose-grid { grid-template-columns: repeat(2, 1fr); }
   .team-grid { grid-template-columns: repeat(3, 1fr); }
   .age-tabs { grid-template-columns: repeat(2, 1fr); }
   .occasion-grid { grid-template-columns: repeat(4, 1fr); }
@@ -441,6 +624,7 @@
 @media (min-width: 1024px) {
   .about-story-grid { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
   .book-grid { grid-template-columns: repeat(4, 1fr); }
+  .why-choose-grid { grid-template-columns: repeat(4, 1fr); }
   .mission-strip { grid-template-columns: repeat(4, 1fr); }
   .team-grid { grid-template-columns: repeat(4, 1fr); }
   .age-tabs { grid-template-columns: repeat(4, 1fr); }

@@ -11,8 +11,17 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="index.html">
 
+<script>
+  (  function() {
+    var theme = localStorage.getItem('bookstore-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    var dir = localStorage.getItem('bookstore-dir') || 'ltr';
+    document.documentElement.setAttribute('dir', dir);
+  })();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatiic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -148,6 +157,14 @@
               <h5>The Quiet Ledger</h5>
               <p class="book-author">Mara Solenne</p>
               <p class="book-note">"Recommended by Theo — a slow, aching family novel I couldn't put down."</p>
+              <div class="btn-action-row">
+                <button type="button" class="btn-buy-now" data-title="The Quiet Ledger" data-author="Mara Solenne" data-price="$26.00" data-cover="https://picsum.photos/seed/staffpick-book-01/300/440">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg> Buy Now
+                </button>
+                <button type="button" class="btn-prebook" data-title="The Quiet Ledger (Signed)" data-author="Mara Solenne" data-release="In Stock" data-cover="https://picsum.photos/seed/staffpick-book-01/300/440">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg> Pre-Book
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -161,6 +178,14 @@
               <h5>Harbor of Small Lies</h5>
               <p class="book-author">D. R. Okafor</p>
               <p class="book-note">"Recommended by Priya — the twist genuinely surprised me."</p>
+              <div class="btn-action-row">
+                <button type="button" class="btn-buy-now" data-title="Harbor of Small Lies" data-author="D. R. Okafor" data-price="$24.00" data-cover="https://picsum.photos/seed/staffpick-book-02/300/440">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg> Buy Now
+                </button>
+                <button type="button" class="btn-prebook" data-title="Harbor of Small Lies" data-author="D. R. Okafor" data-release="In Stock" data-cover="https://picsum.photos/seed/staffpick-book-02/300/440">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg> Pre-Book
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -174,6 +199,14 @@
               <h5>The Cartographer's Debt</h5>
               <p class="book-author">Fenwick Ashby</p>
               <p class="book-note">"Recommended by Sam — dense worldbuilding, huge payoff."</p>
+              <div class="btn-action-row">
+                <button type="button" class="btn-buy-now" data-title="The Cartographer's Debt" data-author="Fenwick Ashby" data-price="$27.50" data-cover="https://picsum.photos/seed/staffpick-book-03/300/440">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg> Buy Now
+                </button>
+                <button type="button" class="btn-prebook" data-title="The Cartographer's Debt" data-author="Fenwick Ashby" data-release="In Stock" data-cover="https://picsum.photos/seed/staffpick-book-03/300/440">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg> Pre-Book
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -187,6 +220,14 @@
               <h5>Salt and Stationery</h5>
               <p class="book-author">Joon-ho Lee</p>
               <p class="book-note">"Recommended by Theo — funny, then suddenly devastating."</p>
+              <div class="btn-action-row">
+                <button type="button" class="btn-buy-now" data-title="Salt and Stationery" data-author="Joon-ho Lee" data-price="$22.00" data-cover="https://picsum.photos/seed/staffpick-book-04/300/440">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg> Buy Now
+                </button>
+                <button type="button" class="btn-prebook" data-title="Salt and Stationery" data-author="Joon-ho Lee" data-release="In Stock" data-cover="https://picsum.photos/seed/staffpick-book-04/300/440">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg> Pre-Book
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -213,26 +254,171 @@
           <img src="https://picsum.photos/seed/arrival-title-01/220/320" alt="Cover of new hardcover novel November Ledger">
           <p class="arrival-title">November Ledger</p>
           <p class="arrival-price">$26.00</p>
+          <div class="btn-action-row">
+            <button type="button" class="btn-buy-now" data-title="November Ledger" data-price="$26.00" data-cover="https://picsum.photos/seed/arrival-title-01/220/320">Buy Now</button>
+            <button type="button" class="btn-prebook" data-title="November Ledger" data-cover="https://picsum.photos/seed/arrival-title-01/220/320">Pre-Book</button>
+          </div>
         </div>
         <div class="arrival-item reveal-up delay-1">
           <img src="https://picsum.photos/seed/arrival-title-02/220/320" alt="Cover of new paperback The Slow Orchard">
           <p class="arrival-title">The Slow Orchard</p>
           <p class="arrival-price">$18.50</p>
+          <div class="btn-action-row">
+            <button type="button" class="btn-buy-now" data-title="The Slow Orchard" data-price="$18.50" data-cover="https://picsum.photos/seed/arrival-title-02/220/320">Buy Now</button>
+            <button type="button" class="btn-prebook" data-title="The Slow Orchard" data-cover="https://picsum.photos/seed/arrival-title-02/220/320">Pre-Book</button>
+          </div>
         </div>
         <div class="arrival-item reveal-up delay-2">
           <img src="https://picsum.photos/seed/arrival-title-03/220/320" alt="Cover of new essay collection Small Weather">
           <p class="arrival-title">Small Weather</p>
           <p class="arrival-price">$21.00</p>
+          <div class="btn-action-row">
+            <button type="button" class="btn-buy-now" data-title="Small Weather" data-price="$21.00" data-cover="https://picsum.photos/seed/arrival-title-03/220/320">Buy Now</button>
+            <button type="button" class="btn-prebook" data-title="Small Weather" data-cover="https://picsum.photos/seed/arrival-title-03/220/320">Pre-Book</button>
+          </div>
         </div>
         <div class="arrival-item reveal-up delay-3">
           <img src="https://picsum.photos/seed/arrival-title-04/220/320" alt="Cover of new poetry collection Field Notes for Leaving">
           <p class="arrival-title">Field Notes for Leaving</p>
           <p class="arrival-price">$16.00</p>
+          <div class="btn-action-row">
+            <button type="button" class="btn-buy-now" data-title="Field Notes for Leaving" data-price="$16.00" data-cover="https://picsum.photos/seed/arrival-title-04/220/320">Buy Now</button>
+            <button type="button" class="btn-prebook" data-title="Field Notes for Leaving" data-cover="https://picsum.photos/seed/arrival-title-04/220/320">Pre-Book</button>
+          </div>
         </div>
         <div class="arrival-item reveal-up delay-4">
           <img src="https://picsum.photos/seed/arrival-title-05/220/320" alt="Cover of new thriller The Locksmith's Daughter">
           <p class="arrival-title">The Locksmith's Daughter</p>
           <p class="arrival-price">$24.00</p>
+          <div class="btn-action-row">
+            <button type="button" class="btn-buy-now" data-title="The Locksmith's Daughter" data-price="$24.00" data-cover="https://picsum.photos/seed/arrival-title-05/220/320">Buy Now</button>
+            <button type="button" class="btn-prebook" data-title="The Locksmith's Daughter" data-cover="https://picsum.photos/seed/arrival-title-05/220/320">Pre-Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESERVE VAULT & COLLECTOR'S SPOTLIGHT ============ -->
+  <section class="vault-spotlight-section">
+    <div class="container-custom">
+      <div class="section-heading center reveal-up">
+        <span class="eyebrow">Exclusive &amp; Upcoming</span>
+        <h2>The Reserve Vault &amp; Collector's Spotlight</h2>
+        <p>Pre-order upcoming unreleased editions or collect hand-numbered, signed hardcover masterpieces before general release.</p>
+      </div>
+
+      <!-- UPCOMING PRE-BOOK VAULT GRID -->
+      <div class="vault-banner reveal-up">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
+          <div>
+            <h3 style="font-family:var(--font-display); margin:0;">Upcoming Bestsellers — Pre-Book Vault</h3>
+            <p style="margin:0.25rem 0 0; font-size:var(--fs-sm); color:var(--text-muted);">Reserve your copy with guaranteed day-one delivery and complimentary signed bookplates.</p>
+          </div>
+          <span class="badge-custom badge-new">3 Titles Open for Pre-Order</span>
+        </div>
+
+        <div class="vault-grid">
+          <div class="vault-card">
+            <span class="vault-release-badge">Releasing Sep 18</span>
+            <img src="https://picsum.photos/seed/vault-book-01/320/440" alt="The Glass Alchemist by Vivienne Thorne" class="vault-cover-img">
+            <h4>The Glass Alchemist</h4>
+            <div class="vault-author">Vivienne Thorne</div>
+            <p class="vault-desc">An atmospheric gothic mystery set in 19th-century Venice, following a secret guild of glassblowers and dangerous alchemical secrets.</p>
+            <div class="vault-price-row">
+              <span class="vault-price">$28.00</span>
+              <button type="button" class="btn-prebook" data-title="The Glass Alchemist" data-author="Vivienne Thorne" data-release="Sep 18, 2026" data-cover="https://picsum.photos/seed/vault-book-01/320/440">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+                Pre-Book Now
+              </button>
+            </div>
+          </div>
+
+          <div class="vault-card">
+            <span class="vault-release-badge">Releasing Oct 04</span>
+            <img src="https://picsum.photos/seed/vault-book-02/320/440" alt="Letters to a Silent Sea by Julian Vance" class="vault-cover-img">
+            <h4>Letters to a Silent Sea</h4>
+            <div class="vault-author">Julian Vance</div>
+            <p class="vault-desc">A poetic, deeply moving memoir detailing thirty years of solitary lighthouse keeping along the rugged Irish coast.</p>
+            <div class="vault-price-row">
+              <span class="vault-price">$24.50</span>
+              <button type="button" class="btn-prebook" data-title="Letters to a Silent Sea" data-author="Julian Vance" data-release="Oct 04, 2026" data-cover="https://picsum.photos/seed/vault-book-02/320/440">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+                Pre-Book Now
+              </button>
+            </div>
+          </div>
+
+          <div class="vault-card">
+            <span class="vault-release-badge">Releasing Oct 22</span>
+            <img src="https://picsum.photos/seed/vault-book-03/320/440" alt="Chronicles of the Old Library by E. R. Montgomery" class="vault-cover-img">
+            <h4>Chronicles of the Old Library</h4>
+            <div class="vault-author">E. R. Montgomery</div>
+            <p class="vault-desc">An epic fantasy masterpiece exploring a forgotten archive holding forbidden spells and lost histories of forgotten kingdoms.</p>
+            <div class="vault-price-row">
+              <span class="vault-price">$32.00</span>
+              <button type="button" class="btn-prebook" data-title="Chronicles of the Old Library" data-author="E. R. Montgomery" data-release="Oct 22, 2026" data-cover="https://picsum.photos/seed/vault-book-03/320/440">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+                Pre-Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEATURED COLLECTOR'S SPOTLIGHT -->
+      <div class="spotlight-wrapper reveal-up">
+        <div class="spotlight-badge">Collector's Edition Spotlight</div>
+        <div class="spotlight-grid">
+          <div class="spotlight-figure">
+            <img src="https://picsum.photos/seed/collector-edition-spotlight/340/500" alt="Collector Edition of The Aldergate Anthology">
+          </div>
+          <div class="spotlight-content">
+            <span class="eyebrow" style="color:var(--color-gold);">Limited Hardcover Edition · Hand-Numbered</span>
+            <h3 style="font-family:var(--font-display); font-size:1.8rem; margin:0.3rem 0 0.2rem;">The Aldergate Anthology — 25th Anniversary Edition</h3>
+            <p class="book-author" style="margin-bottom:0.75rem;">Compiled by Aldergate Booksellers · Foreword by Mara Solenne</p>
+
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div style="color:var(--color-gold); font-size:0.9rem;">★★★★★</div>
+              <span style="font-size:0.8rem; color:var(--text-muted);">(48 Verified Reader Reviews)</span>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="spotlight-tabs-nav">
+              <button type="button" class="spotlight-tab-btn active" data-tab="tabSynopsis">Synopsis</button>
+              <button type="button" class="spotlight-tab-btn" data-tab="tabDetails">Edition Details</button>
+              <button type="button" class="spotlight-tab-btn" data-tab="tabExcerpt">Book Excerpt</button>
+            </div>
+
+            <div class="spotlight-tab-pane active" id="tabSynopsis">
+              <p>A quarter-century of staff picks, rare short stories, essay contributions from visiting authors, and archival photography of Aldergate Lane. Bound in rich cloth with foil stamping and ribbon bookmark.</p>
+            </div>
+            <div class="spotlight-tab-pane" id="tabDetails">
+              <p>Printed on 120gsm acid-free cream paper with guilded edges. Each copy includes a wax-sealed certificate of authenticity signed by the bookstore founders.</p>
+            </div>
+            <div class="spotlight-tab-pane" id="tabExcerpt">
+              <p class="quote-text" style="font-size:0.95rem; margin:0;">"To open a book in a quiet room is to step across a threshold built of paper and ink, leaving the noisy street behind..."</p>
+            </div>
+
+            <div class="spotlight-meta-list">
+              <div class="spotlight-meta-item"><span class="label">Format</span><span class="val">Cloth Hardcover</span></div>
+              <div class="spotlight-meta-item"><span class="label">Pages</span><span class="val">480 pages</span></div>
+              <div class="spotlight-meta-item"><span class="label">ISBN</span><span class="val">978-1-849-0021</span></div>
+              <div class="spotlight-meta-item"><span class="label">Stock</span><span class="val" style="color:var(--color-burgundy);">Only 14 left</span></div>
+            </div>
+
+            <div class="d-flex flex-wrap align-items-center gap-3 mt-4">
+              <span style="font-family:var(--font-display); font-size:1.6rem; font-weight:700; color:var(--color-gold);">$45.00</span>
+              <button type="button" class="btn-buy-now" style="padding:0.6rem 1.4rem; font-size:0.9rem;" data-title="The Aldergate Anthology (Collector's Edition)" data-author="Aldergate Booksellers" data-price="$45.00" data-cover="https://picsum.photos/seed/collector-edition-spotlight/340/500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                Buy Now
+              </button>
+              <button type="button" class="btn-prebook" style="padding:0.6rem 1.4rem; font-size:0.9rem;" data-title="The Aldergate Anthology (Collector's Edition)" data-author="Aldergate Booksellers" data-release="Limited Run" data-cover="https://picsum.photos/seed/collector-edition-spotlight/340/500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+                Pre-Book Deluxe
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

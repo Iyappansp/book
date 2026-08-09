@@ -11,6 +11,15 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="about.html">
 
+<script>
+  (function() {
+    var theme = localStorage.getItem('bookstore-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    var dir = localStorage.getItem('bookstore-dir') || 'ltr';
+    document.documentElement.setAttribute('dir', dir);
+  })();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
@@ -54,32 +63,97 @@
     </div>
   </section>
 
-  <section class="bg-surface-alt-section">
+  <!-- ============ MISSION & VISION ============ -->
+  <section class="mv-section bg-surface-alt-section">
     <div class="container-custom">
       <div class="section-heading center reveal-up">
-        <span class="eyebrow">What We Believe</span>
-        <h2>Our reading philosophy</h2>
+        <span class="eyebrow">Our Core Purpose</span>
+        <h2>Mission &amp; Vision</h2>
+        <p style="max-width: 600px; margin: 0.5rem auto 0; font-size: var(--fs-md); color: var(--text-muted);">Guiding every shelf we curate, every title we source, and every conversation we share.</p>
       </div>
-      <div class="mission-strip">
-        <div class="mission-card reveal-up">
-          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-          <h5>Curation over inventory</h5>
-          <p>We'd rather stock 500 books we believe in than 5,000 we don't.</p>
+      <div class="mv-grid">
+        <div class="mv-card reveal-up">
+          <div>
+            <div class="mv-card-header">
+              <div class="mv-icon-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <span class="eyebrow" style="margin:0;">OUR MISSION</span>
+                <h3>Connecting Readers with Books That Endure</h3>
+              </div>
+            </div>
+            <p>To foster a sanctuary for slow reading, deep curiosity, and genuine human connection. We curate every volume with intention, creating space for readers to discover stories that spark thought, solace, and imagination long after the final page.</p>
+          </div>
+          <ul class="mv-list">
+            <li>Handpicked &amp; thoughtfully curated shelves</li>
+            <li>Dedicated quiet reading nooks and armchairs</li>
+            <li>Accessible literary community for all readers</li>
+          </ul>
         </div>
-        <div class="mission-card reveal-up delay-1">
-          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-          <h5>Reading is communal</h5>
-          <p>A book finished alone is good. Discussed with others, it's better.</p>
+
+        <div class="mv-card reveal-up delay-1">
+          <div>
+            <div class="mv-card-header">
+              <div class="mv-icon-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+              <div>
+                <span class="eyebrow" style="margin:0;">OUR VISION</span>
+                <h3>A Thriving Haven for Independent Culture</h3>
+              </div>
+            </div>
+            <p>To stand as a beacon of independent bookselling, expanding literary access while preserving the timeless magic of physical bookshops. We aim to nurture future generations of readers, authors, and thinkers through vibrant community events and enduring curation.</p>
+          </div>
+          <ul class="mv-list">
+            <li>Championing independent &amp; diverse authors</li>
+            <li>Sustainable &amp; ethical bookselling practices</li>
+            <li>Preserving rare, out-of-print &amp; collectible heritage</li>
+          </ul>
         </div>
-        <div class="mission-card reveal-up delay-2">
-          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <h5>No rush to the register</h5>
-          <p>Sit, read a chapter, decide later. The chairs aren't timed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY CHOOSE US ============ -->
+  <section class="why-choose-section">
+    <div class="container-custom">
+      <div class="section-heading center reveal-up">
+        <span class="eyebrow">The Aldergate Difference</span>
+        <h2>Why Choose Us</h2>
+        <p style="max-width: 620px; margin: 0.5rem auto 0; font-size: var(--fs-md); color: var(--text-muted);">More than just books on shelves — four reasons readers call Aldergate home.</p>
+      </div>
+      <div class="why-choose-grid">
+        <div class="why-choose-card reveal-up">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/></svg>
+          </div>
+          <h5>Tailored Guidance</h5>
+          <p>Every bookseller here is an avid reader. Tell us your current mood, and we'll handpick titles custom-tailored for you.</p>
         </div>
-        <div class="mission-card reveal-up delay-3">
-          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-          <h5>Hard-to-find matters</h5>
-          <p>Some books deserve a hunt. We're happy to be the ones hunting.</p>
+
+        <div class="why-choose-card reveal-up delay-1">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h5>Unhurried Atmosphere</h5>
+          <p>Settle into our plush armchairs. Read a full chapter before deciding — the seats aren't timed and there's never pressure.</p>
+        </div>
+
+        <div class="why-choose-card reveal-up delay-2">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h5>Rare &amp; Special Sourcing</h5>
+          <p>From signed first editions to out-of-print classics, our global bookseller network tracks down hard-to-find volumes.</p>
+        </div>
+
+        <div class="why-choose-card reveal-up delay-3">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h5>Vibrant Community</h5>
+          <p>Join our monthly book clubs, poetry open mics, writing workshops, and intimate author Q&amp;A sessions around the table.</p>
         </div>
       </div>
     </div>

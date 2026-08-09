@@ -48,15 +48,14 @@ section { padding: var(--space-lg) 0; }
   }
 }
 
-/* ---------- Desktop (1024px+) ---------- */
+/* ---------- Desktop (992px+) ---------- */
 
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
   h1 { font-size: var(--fs-4xl); }
   h2 { font-size: var(--fs-3xl); }
   h3 { font-size: var(--fs-2xl); }
 
   .main-nav { display: flex; }
-  .header-actions .icon-toggle.desktop-only { display: inline-flex; }
   .mobile-menu-btn { display: none; }
 
   .header-actions .icon-toggle { width: 40px; height: 40px; }

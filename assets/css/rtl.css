@@ -7,7 +7,13 @@
 
 [dir="rtl"] .eyebrow::before { order: 2; }
 
-[dir="rtl"] .main-nav a::after {
+[dir="rtl"] .main-nav a::after,
+[dir="rtl"] .dropdown-toggle-btn::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .dropdown-menu-custom {
   left: auto;
   right: 0;
 }
@@ -57,12 +63,9 @@
   padding-right: 2.75rem;
 }
 
-/* Quote blocks with left border accent */
+/* Quote blocks / card containers */
 [dir="rtl"] .quote-block {
-  border-left: none;
-  border-right: 3px solid var(--color-secondary);
-  padding-left: 0;
-  padding-right: var(--space-sm);
+  text-align: right;
 }
 
 /* Timeline / process step connectors */

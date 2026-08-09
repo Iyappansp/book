@@ -398,3 +398,240 @@
   .reading-corner-grid { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
   .new-arrivals-strip { grid-auto-flow: initial; grid-template-columns: repeat(5, 1fr); overflow-x: visible; }
 }
+
+/* ---------- Reserve Vault & Collector's Spotlight Section ---------- */
+
+.vault-spotlight-section {
+  padding: var(--space-xl) 0;
+  background: linear-gradient(180deg, var(--bg-surface-alt) 0%, var(--bg-page) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.vault-banner {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.vault-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 992px) {
+  .vault-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.vault-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.vault-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold);
+}
+
+.vault-release-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--color-burgundy);
+  color: #FFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+}
+
+[dir="rtl"] .vault-release-badge {
+  right: auto;
+  left: 1rem;
+}
+
+.vault-cover-img {
+  width: 100%;
+  aspect-ratio: 3/4.2;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1rem;
+}
+
+.vault-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem;
+}
+
+.vault-card .vault-author {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+}
+
+.vault-card p.vault-desc {
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.vault-card .vault-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px dashed var(--border-subtle);
+  padding-top: 0.75rem;
+  margin-top: auto;
+}
+
+.vault-card .vault-price {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+/* Collector Spotlight Card */
+.spotlight-wrapper {
+  background: var(--bg-surface);
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-top: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .spotlight-grid {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: var(--space-lg);
+  }
+}
+
+.spotlight-figure {
+  position: relative;
+  text-align: center;
+}
+
+.spotlight-figure img {
+  max-width: 280px;
+  width: 100%;
+  aspect-ratio: 3/4.4;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.22);
+  border: 1px solid var(--border-subtle);
+}
+
+.spotlight-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-walnut) 100%);
+  color: #FFF;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  padding: 0.4rem 1.2rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.spotlight-meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.spotlight-meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.spotlight-meta-item span.label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.spotlight-meta-item span.val {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Tabs inside spotlight */
+.spotlight-tabs-nav {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 1rem;
+}
+
+.spotlight-tab-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0.5rem 0.85rem;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.spotlight-tab-btn.active,
+.spotlight-tab-btn:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-gold);
+}
+
+.spotlight-tab-pane {
+  display: none;
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.spotlight-tab-pane.active {
+  display: block;
+}
