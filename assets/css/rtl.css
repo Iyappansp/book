@@ -1,0 +1,77 @@
+/* ==========================================================================
+   RTL Support
+   Activated by [dir="rtl"] on <html>. Mirrors layout, spacing, and icons.
+   ========================================================================== */
+
+[dir="rtl"] body { text-align: right; }
+
+[dir="rtl"] .eyebrow::before { order: 2; }
+
+[dir="rtl"] .main-nav a::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .footer-col a:hover { transform: translateX(-4px); }
+
+[dir="rtl"] .skip-link {
+  left: auto;
+  right: -999px;
+  border-radius: 0 0 0 var(--radius-sm);
+}
+[dir="rtl"] .skip-link:focus { right: 0; left: auto; }
+
+[dir="rtl"] .mobile-nav-drawer {
+  right: auto;
+  left: -100%;
+}
+[dir="rtl"] .mobile-nav-drawer.open { left: 0; right: auto; }
+
+[dir="rtl"] .icon-toggle svg,
+[dir="rtl"] .mobile-menu-btn svg { transform: scaleX(-1); }
+[dir="rtl"] .icon-toggle .icon-sun svg,
+[dir="rtl"] .icon-toggle .icon-moon svg { transform: none; }
+
+/* Directional icons that should NOT mirror (e.g., play button, star ratings) stay untouched via .no-flip */
+[dir="rtl"] .no-flip { transform: none !important; }
+
+/* Arrows that indicate navigation direction */
+[dir="rtl"] .arrow-icon { transform: scaleX(-1); }
+
+/* Carousel controls */
+[dir="rtl"] .carousel-track { direction: rtl; }
+
+/* Grid order mirroring for asymmetric hero/split layouts */
+[dir="rtl"] .flip-order { flex-direction: row-reverse; }
+
+[dir="rtl"] .text-lg-start { text-align: right !important; }
+[dir="rtl"] .text-lg-end { text-align: left !important; }
+
+/* Form field icon positions (e.g., search icon) */
+[dir="rtl"] .input-icon-start {
+  left: auto;
+  right: 1rem;
+}
+[dir="rtl"] .form-control.has-icon-start {
+  padding-left: 1rem;
+  padding-right: 2.75rem;
+}
+
+/* Quote blocks with left border accent */
+[dir="rtl"] .quote-block {
+  border-left: none;
+  border-right: 3px solid var(--color-secondary);
+  padding-left: 0;
+  padding-right: var(--space-sm);
+}
+
+/* Timeline / process step connectors */
+[dir="rtl"] .timeline-line { right: 0; left: auto; }
+
+/* Badge positioning on cards */
+[dir="rtl"] .badge-corner {
+  left: 0.9rem;
+  right: auto;
+}
+
+/* Back to top handled in components.css via [dir="rtl"] selector already */

@@ -1,0 +1,329 @@
+/* ==========================================================================
+   Home 2 — Editorial layout (structurally distinct from Home 1)
+   ========================================================================== */
+
+.bg-surface-alt-section { background: var(--bg-surface-alt); }
+
+/* ---------- Editorial hero: text block, then full-width image beneath ---------- */
+
+.ed-hero {
+  padding-top: calc(var(--space-2xl) + 40px);
+}
+
+.ed-hero-inner { text-align: center; max-width: 840px; margin: 0 auto var(--space-lg); }
+
+.ed-hero-kicker {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.ed-hero-title {
+  font-size: 2.1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.ed-hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.ed-hero-divider { color: var(--border-strong); }
+
+.ed-hero-image img {
+  width: 100%;
+  aspect-ratio: 16/8;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ---------- Reading journey: lead text + numbered mood cards ---------- */
+
+.rj-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.rj-lead p { margin-top: var(--space-sm); font-size: var(--fs-md); max-width: 46ch; }
+
+.rj-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+.rj-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.rj-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.rj-num {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.rj-card p { font-size: var(--fs-sm); margin: 0; }
+
+/* ---------- Curated collections: asymmetric magazine grid ---------- */
+
+.cc-magazine-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+.cc-feature {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.cc-feature img {
+  width: 100%;
+  aspect-ratio: 16/11;
+  object-fit: cover;
+  transition: transform 600ms ease;
+}
+
+.cc-feature:hover img { transform: scale(1.05); }
+
+.cc-feature-overlay {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: var(--space-md);
+  background: linear-gradient(0deg, rgba(0,0,0,0.65) 0%, transparent 100%);
+}
+
+.cc-feature-overlay h3 { color: #fff; font-size: var(--fs-xl); margin-top: 0.3rem; }
+
+.cc-side-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+.cc-side-card {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.cc-side-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.cc-side-card img { width: 42%; aspect-ratio: 1/1; object-fit: cover; flex-shrink: 0; }
+.cc-side-card > div { padding: var(--space-xs) var(--space-sm) var(--space-xs) 0; }
+.cc-side-card h5 { font-size: var(--fs-md); margin-bottom: 0.15rem; }
+.cc-side-card p { font-size: var(--fs-xs); color: var(--text-muted); margin: 0; }
+
+/* ---------- Featured authors: horizontal card row ---------- */
+
+.fa-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.fa-card { text-align: center; }
+
+.fa-portrait {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-xs);
+}
+
+.fa-portrait img { width: 100%; aspect-ratio: 4/5; object-fit: cover; transition: transform var(--transition-base); }
+.fa-card:hover .fa-portrait img { transform: scale(1.05); }
+
+.fa-card h5 { font-size: var(--fs-md); margin-bottom: 0.2rem; }
+.fa-card p { font-size: var(--fs-xs); margin: 0; }
+
+/* ---------- Rare books ---------- */
+
+.rb-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.rb-figure img {
+  width: 100%;
+  aspect-ratio: 5/4.4;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.rb-copy p { margin: var(--space-sm) 0 var(--space-sm); font-size: var(--fs-md); max-width: 46ch; }
+
+.rb-list { list-style: none; padding: 0; margin: 0 0 var(--space-md); }
+.rb-list li {
+  padding: 0.5rem 0 0.5rem 1.6rem;
+  position: relative;
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.rb-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+}
+[dir="rtl"] .rb-list li { padding: 0.5rem 1.6rem 0.5rem 0; }
+[dir="rtl"] .rb-list li::before { left: auto; right: 0; }
+
+/* ---------- Literary quote interlude ---------- */
+
+.lq-section { padding: var(--space-lg) 0; }
+
+.lq-quote {
+  font-family: var(--font-quote);
+  font-size: 1.85rem;
+  font-style: italic;
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+  color: var(--text-primary);
+  line-height: 1.5;
+  border: none;
+  padding: 0;
+}
+
+.lq-quote cite {
+  display: block;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  margin-top: var(--space-sm);
+}
+
+/* ---------- Reading spaces ---------- */
+
+.rs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+.rs-card { text-align: center; }
+
+.rs-card img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-xs);
+  transition: transform var(--transition-base);
+}
+
+.rs-card:hover img { transform: translateY(-4px); }
+.rs-card h5 { font-size: var(--fs-md); margin-bottom: 0.2rem; }
+.rs-card p { font-size: var(--fs-sm); margin: 0; }
+
+/* ---------- Book club ---------- */
+
+.bc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.bc-copy p { margin: var(--space-sm) 0 var(--space-md); font-size: var(--fs-md); max-width: 46ch; }
+
+.bc-stats { display: flex; gap: var(--space-lg); margin-bottom: var(--space-md); }
+.bc-stats strong { display: block; font-family: var(--font-display); font-size: var(--fs-2xl); color: var(--color-primary); line-height: 1; }
+.bc-stats span { display: block; font-size: var(--fs-xs); color: var(--text-muted); margin-top: 0.3rem; }
+
+.bc-figure img {
+  width: 100%;
+  aspect-ratio: 4/4.6;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ---------- Event calendar strip (list, not cards — differentiates from Home 1) ---------- */
+
+.ec-list { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.ec-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.ec-row:hover { transform: translateX(4px); box-shadow: var(--shadow-sm); }
+[dir="rtl"] .ec-row:hover { transform: translateX(-4px); }
+
+.ec-date {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+}
+
+.ec-title { font-size: var(--fs-sm); color: var(--text-primary); }
+
+.ec-tag {
+  font-size: var(--fs-xs);
+  background: var(--bg-surface-alt);
+  color: var(--text-muted);
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (min-width: 768px) {
+  .cc-magazine-grid { grid-template-columns: 1.5fr 1fr; }
+  .fa-row { grid-template-columns: repeat(4, 1fr); }
+  .rs-grid { grid-template-columns: repeat(3, 1fr); }
+  .ed-hero-title { font-size: 2.75rem; }
+}
+
+@media (min-width: 1024px) {
+  .rj-grid { grid-template-columns: 0.9fr 1.1fr; gap: var(--space-xl); }
+  .rj-cards { grid-template-columns: repeat(3, 1fr); }
+  .rb-grid { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+  .bc-grid { grid-template-columns: 1fr 0.85fr; gap: var(--space-xl); }
+  .ed-hero-title { font-size: var(--fs-4xl); }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift Cards — Aldergate Books</title>
+<meta name="description" content="Send an Aldergate Books gift card for any occasion. Choose an amount, add a personal message, and deliver by email.">
+<meta property="og:title" content="Gift Cards">
+<meta property="og:description" content="Send an Aldergate Books gift card for any occasion. Choose an amount, add a personal message, and deliver by email.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="gift-cards.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/dark-mode.css">
+<link rel="stylesheet" href="assets/css/rtl.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/inner-pages.css">
+
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header id="main-header"></header>
+
+<main id="main-content">
+
+  <section class="page-header">
+    <div class="container-custom">
+      <div class="breadcrumb-custom"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Gift Cards</span></div>
+      <span class="eyebrow">The Right Gift, Every Time</span>
+      <h1>Gift Cards</h1>
+      <p>For the reader who's impossible to shop for. Delivered by email, redeemable in-store or online.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-custom">
+      <div class="row g-4 align-items-start">
+        <div class="col-12 col-lg-5 reveal-up">
+          <div class="gift-card-visual" id="gift-card-preview">
+            <div class="gc-brand">Aldergate Books</div>
+            <div>
+              <div class="gc-amount" id="gc-amount-display">$25</div>
+              <div style="font-size:var(--fs-xs);opacity:0.75;">Gift Card</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-7 reveal-up delay-2">
+          <div class="form-panel">
+            <h3 style="margin-bottom:var(--space-sm);">Choose an Amount</h3>
+            <div class="gift-amount-grid" id="gift-amount-grid">
+              <button type="button" class="gift-amount-chip" data-amount="25">$25</button>
+              <button type="button" class="gift-amount-chip active" data-amount="50">$50</button>
+              <button type="button" class="gift-amount-chip" data-amount="75">$75</button>
+              <button type="button" class="gift-amount-chip" data-amount="100">$100</button>
+              <button type="button" class="gift-amount-chip" data-amount="150">$150</button>
+              <button type="button" class="gift-amount-chip" data-amount="200">$200</button>
+            </div>
+
+            <div class="row g-3 mt-2">
+              <div class="col-12">
+                <label class="form-label" for="gc-recipient">Recipient's Name</label>
+                <input type="text" class="form-control" id="gc-recipient" placeholder="Who's this for?">
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="gc-message">Personalized Message</label>
+                <textarea class="form-control" id="gc-message" rows="3" placeholder="Add a short note to include with the card."></textarea>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="gc-email">Send To (Email)</label>
+                <input type="email" class="form-control" id="gc-email" placeholder="recipient@example.com">
+              </div>
+              <div class="col-12">
+                <button type="button" class="btn-custom btn-primary-custom w-100" id="gc-purchase-btn">Purchase Gift Card</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface-alt-section">
+    <div class="container-custom">
+      <div class="section-heading center reveal-up">
+        <span class="eyebrow">Perfect For</span>
+        <h2>Occasions</h2>
+      </div>
+      <div class="occasion-grid">
+        <div class="occasion-card reveal-up">
+          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7a2.5 2.5 0 1 1 0-5c1.5 0 2.5 2.5 2.5 5M12 7a2.5 2.5 0 1 0 0-5c-1.5 0-2.5 2.5-2.5 5"/></svg></div>
+          <h6>Birthdays</h6>
+        </div>
+        <div class="occasion-card reveal-up delay-1">
+          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></div>
+          <h6>Graduations</h6>
+        </div>
+        <div class="occasion-card reveal-up delay-2">
+          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <h6>Anniversaries</h6>
+        </div>
+        <div class="occasion-card reveal-up delay-3">
+          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h6>Just Because</h6>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta-section">
+    <div class="container-custom final-cta-inner reveal-up">
+      <h2>Not sure how much to send?</h2>
+      <p>$50 covers most hardcovers with a little left over for a bookmark.</p>
+      <div class="hero-cta-row justify-content-center">
+        <a href="contact.html" class="btn-custom btn-primary-custom">Ask a Bookseller</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="main-footer"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var grid = document.getElementById("gift-amount-grid");
+  var display = document.getElementById("gc-amount-display");
+  if (grid && display) {
+    grid.addEventListener("click", function (e) {
+      var chip = e.target.closest(".gift-amount-chip");
+      if (!chip) return;
+      grid.querySelectorAll(".gift-amount-chip").forEach(function (c) { c.classList.remove("active"); });
+      chip.classList.add("active");
+      display.textContent = "$" + chip.getAttribute("data-amount");
+    });
+  }
+  var buyBtn = document.getElementById("gc-purchase-btn");
+  if (buyBtn) {
+    buyBtn.addEventListener("click", function () {
+      var original = buyBtn.textContent;
+      buyBtn.textContent = "Added to Cart";
+      buyBtn.disabled = true;
+      setTimeout(function () {
+        buyBtn.textContent = original;
+        buyBtn.disabled = false;
+      }, 1800);
+    });
+  }
+});
+</script>
+</body>
+</html>

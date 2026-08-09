@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Dark mode — Bootstrap component overrides
+   Semantic tokens already remap via [data-theme="dark"] in style.css;
+   this file handles Bootstrap-specific elements and image treatments.
+   ========================================================================== */
+
+[data-theme="dark"] body {
+  background: var(--bg-page);
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+  background-color: var(--bg-surface-alt);
+  border-color: var(--border-subtle);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus {
+  background-color: var(--bg-surface-alt);
+  color: var(--text-primary);
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(184, 147, 90, 0.2);
+}
+
+[data-theme="dark"] .form-control::placeholder { color: var(--text-muted); }
+
+[data-theme="dark"] .book-cover-wrap img,
+[data-theme="dark"] .genre-card img,
+[data-theme="dark"] .event-card img,
+[data-theme="dark"] .author-portrait img {
+  filter: brightness(0.88) saturate(1.05);
+}
+
+[data-theme="dark"] .hero-figure img {
+  filter: brightness(0.82) saturate(1.05);
+}
+
+[data-theme="dark"] .shadow-adaptive {
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="dark"] .accordion-item,
+[data-theme="dark"] .faq-item {
+  background: var(--bg-surface);
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .navbar-toggler-icon { filter: invert(1); }
+
+[data-theme="dark"] ::selection {
+  background: var(--color-secondary);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+/* Theme transition guard: prevent flash on load */
+.theme-transitioning,
+.theme-transitioning * {
+  transition: background var(--transition-base), color var(--transition-base), border-color var(--transition-base) !important;
+}

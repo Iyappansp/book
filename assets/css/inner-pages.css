@@ -1,0 +1,453 @@
+/* ==========================================================================
+   Inner pages — shared styles across About, Collections, Fiction,
+   Non-Fiction, Children's, Staff Picks, New Arrivals, and beyond.
+   ========================================================================== */
+
+.bg-surface-alt-section { background: var(--bg-surface-alt); }
+
+/* ---------- Page header (used on every inner page) ---------- */
+
+.page-header {
+  padding-top: calc(var(--space-2xl) + 24px);
+  padding-bottom: var(--space-lg);
+  text-align: center;
+  background: linear-gradient(180deg, var(--bg-surface-alt) 0%, var(--bg-page) 100%);
+}
+
+.page-header .eyebrow { justify-content: center; }
+.page-header h1 { font-size: 2.1rem; margin-bottom: var(--space-xs); }
+.page-header p { max-width: 56ch; margin: 0 auto; font-size: var(--fs-md); }
+
+.breadcrumb-custom {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.breadcrumb-custom a { color: var(--text-muted); }
+.breadcrumb-custom a:hover { color: var(--color-primary); }
+.breadcrumb-custom .sep { color: var(--border-strong); }
+.breadcrumb-custom .current { color: var(--text-secondary); }
+
+/* ---------- Filter/tab bar (Book Collections, Fiction, Non-Fiction) ---------- */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.filter-chip {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.filter-chip:hover { border-color: var(--color-secondary); color: var(--color-primary); }
+
+.filter-chip.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--text-inverse);
+}
+
+/* ---------- Book grid (used by Collections, Fiction, Non-Fiction, New Arrivals) ---------- */
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.book-grid .book-card { height: 100%; }
+
+.book-grid[data-filterable] .book-card { transition: opacity 260ms ease, transform 260ms ease; }
+.book-grid[data-filterable] .book-card.is-hidden { display: none; }
+
+/* ---------- Category anchor sections (Book Collections page) ---------- */
+
+.category-block { padding: var(--space-lg) 0; scroll-margin-top: 90px; }
+.category-block:not(:last-child) { border-bottom: 1px solid var(--border-subtle); }
+
+.category-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.category-block-header h3 { font-size: var(--fs-xl); }
+.category-block-header p { font-size: var(--fs-sm); margin-top: 0.2rem; }
+
+/* ---------- About page ---------- */
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.about-story-grid img {
+  width: 100%;
+  aspect-ratio: 5/4;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-story-grid .rb-copy p,
+.about-story-grid p { margin: var(--space-sm) 0; font-size: var(--fs-md); max-width: 50ch; }
+
+.mission-strip {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+.mission-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.mission-card .why-icon { margin: 0 auto var(--space-sm); }
+.mission-card h5 { font-size: var(--fs-md); margin-bottom: 0.4rem; }
+.mission-card p { font-size: var(--fs-sm); margin: 0; }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.team-card { text-align: center; }
+.team-card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: var(--space-xs);
+  max-width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.team-card h5 { font-size: var(--fs-md); margin-bottom: 0.1rem; }
+.team-card span { display: block; font-size: var(--fs-xs); color: var(--color-secondary); font-weight: 600; margin-bottom: 0.3rem; }
+.team-card p { font-size: var(--fs-xs); margin: 0; }
+
+.timeline-list { max-width: 640px; margin: 0 auto; position: relative; padding-left: var(--space-md); }
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  left: 6px; top: 6px; bottom: 6px;
+  width: 2px;
+  background: var(--border-subtle);
+}
+[dir="rtl"] .timeline-list { padding-left: 0; padding-right: var(--space-md); }
+[dir="rtl"] .timeline-list::before { left: auto; right: 6px; }
+
+.timeline-item { position: relative; padding-bottom: var(--space-md); }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -34px; top: 4px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  border: 3px solid var(--bg-page);
+}
+[dir="rtl"] .timeline-item::before { left: auto; right: -34px; }
+.timeline-item strong { font-family: var(--font-display); color: var(--color-primary); display: block; font-size: var(--fs-md); }
+.timeline-item p { font-size: var(--fs-sm); margin-top: 0.2rem; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+.gallery-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: var(--radius-sm); transition: transform var(--transition-base); }
+.gallery-grid img:hover { transform: scale(1.03); }
+.gallery-grid .tall { grid-row: span 2; aspect-ratio: 1/2.05; }
+
+/* ---------- Children's books page: age tabs ---------- */
+
+.age-tabs { display: grid; grid-template-columns: 1fr; gap: var(--space-sm); }
+
+.age-tab-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.age-tab-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.age-tab-card-body { padding: var(--space-sm); }
+.age-tab-card-body h5 { font-size: var(--fs-md); margin-bottom: 0.2rem; }
+.age-tab-card-body span { font-size: var(--fs-xs); color: var(--color-secondary); font-weight: 600; }
+.age-tab-card-body p { font-size: var(--fs-sm); margin-top: 0.3rem; }
+
+/* ---------- Staff picks: reviewer note card ---------- */
+
+.staff-pick-full-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.staff-pick-full-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+
+.staff-pick-full-body { padding: var(--space-md); }
+.staff-pick-full-meta { display: flex; gap: var(--space-xs); flex-wrap: wrap; margin-bottom: var(--space-xs); font-size: var(--fs-xs); color: var(--text-muted); }
+.staff-pick-full-meta span { background: var(--bg-surface-alt); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); }
+.staff-pick-full-body h4 { font-size: var(--fs-lg); margin-bottom: 0.15rem; }
+.staff-pick-full-body .book-author { margin-bottom: var(--space-sm); }
+.staff-pick-reviewer { display: flex; align-items: center; gap: 0.6rem; margin-top: var(--space-sm); padding-top: var(--space-sm); border-top: 1px solid var(--border-subtle); }
+.staff-pick-reviewer img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.staff-pick-reviewer span { font-size: var(--fs-xs); color: var(--text-muted); }
+.staff-pick-reviewer strong { display: block; font-size: var(--fs-sm); }
+
+/* ---------- New arrivals: release timeline ---------- */
+
+.release-group { margin-bottom: var(--space-lg); }
+.release-group-label {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 2px solid var(--border-subtle);
+}
+
+/* ---------- Special order / contact-style forms ---------- */
+
+.form-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.form-panel .form-label {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.form-panel .form-control,
+.form-panel .form-select,
+.form-panel textarea.form-control {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  padding: 0.75rem 1rem;
+  font-size: var(--fs-sm);
+  background: var(--bg-page);
+  color: var(--text-primary);
+}
+
+.form-panel .form-control:focus,
+.form-panel .form-select:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(184, 147, 90, 0.18);
+}
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: var(--space-lg) var(--space-sm);
+}
+
+.form-success.visible { display: block; }
+.form-success svg { color: var(--color-secondary); margin-bottom: var(--space-sm); }
+.form-success h4 { margin-bottom: 0.4rem; }
+.form-success p { font-size: var(--fs-sm); }
+
+.info-side-card {
+  background: var(--bg-surface-alt);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.info-side-card h5 { font-size: var(--fs-md); margin-bottom: var(--space-xs); }
+.info-row { display: flex; gap: 0.6rem; margin-bottom: var(--space-xs); font-size: var(--fs-sm); color: var(--text-secondary); }
+.info-row svg { flex-shrink: 0; color: var(--color-primary); margin-top: 0.15rem; }
+
+/* ---------- Gift cards ---------- */
+
+.gift-card-visual {
+  aspect-ratio: 16/10;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-walnut) 0%, var(--color-burgundy) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-md);
+  color: #F3ECDD;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-card-visual::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+
+.gift-card-visual .gc-brand { font-family: var(--font-display); font-size: var(--fs-lg); font-weight: 700; }
+.gift-card-visual .gc-amount { font-family: var(--font-display); font-size: var(--fs-3xl); }
+
+.gift-amount-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin: var(--space-md) 0; }
+
+.gift-amount-chip {
+  padding: 0.8rem;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-subtle);
+  background: var(--bg-surface);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.gift-amount-chip:hover { border-color: var(--color-secondary); }
+.gift-amount-chip.active { border-color: var(--color-primary); background: var(--color-primary); color: var(--text-inverse); }
+
+.occasion-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-sm); }
+
+.occasion-card {
+  text-align: center;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.occasion-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.occasion-card .why-icon { margin: 0 auto var(--space-xs); }
+.occasion-card h6 { font-family: var(--font-display); font-size: var(--fs-md); margin: 0; }
+
+/* ---------- Contact page ---------- */
+
+.hours-table { width: 100%; font-size: var(--fs-sm); }
+.hours-table tr { border-bottom: 1px solid var(--border-subtle); }
+.hours-table td { padding: 0.6rem 0; }
+.hours-table td:last-child { text-align: right; color: var(--text-muted); }
+
+.map-placeholder {
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  border: 1px dashed var(--border-strong);
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: var(--fs-sm);
+  text-align: center;
+  padding: var(--space-sm);
+}
+
+/* ---------- FAQ page (fuller list than homepage teaser) ---------- */
+
+.faq-category-label {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--color-primary);
+  margin: var(--space-lg) 0 var(--space-sm);
+}
+.faq-category-label:first-child { margin-top: 0; }
+
+/* ---------- 404 / coming soon ---------- */
+
+.status-page-wrap {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.status-page-wrap .status-code {
+  font-family: var(--font-display);
+  font-size: 5.5rem;
+  color: var(--color-secondary);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.status-page-wrap h1 { font-size: var(--fs-2xl); margin-bottom: var(--space-xs); }
+.status-page-wrap p { max-width: 46ch; margin: 0 auto var(--space-md); font-size: var(--fs-md); }
+
+.countdown-row {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin: var(--space-lg) 0;
+  flex-wrap: wrap;
+}
+
+.countdown-block {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  min-width: 88px;
+}
+
+.countdown-block strong { display: block; font-family: var(--font-display); font-size: var(--fs-2xl); color: var(--color-primary); }
+.countdown-block span { display: block; font-size: var(--fs-xs); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ---------- Responsive ---------- */
+
+@media (min-width: 768px) {
+  .book-grid { grid-template-columns: repeat(3, 1fr); }
+  .mission-strip { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+  .age-tabs { grid-template-columns: repeat(2, 1fr); }
+  .occasion-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .about-story-grid { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+  .book-grid { grid-template-columns: repeat(4, 1fr); }
+  .mission-strip { grid-template-columns: repeat(4, 1fr); }
+  .team-grid { grid-template-columns: repeat(4, 1fr); }
+  .age-tabs { grid-template-columns: repeat(4, 1fr); }
+  .staff-pick-full-card { grid-template-columns: 280px 1fr; }
+  .page-header h1 { font-size: var(--fs-3xl); }
+}
+
+@media (min-width: 768px) {
+  .contact-grid { grid-template-columns: 1.3fr 1fr; }
+}
