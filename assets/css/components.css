@@ -836,3 +836,128 @@
   justify-content: center;
   flex-shrink: 0;
 }
+
+/* ==========================================================================
+   Elevated CTA Section & Social Auth Styles
+   ========================================================================== */
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.social-btn:hover {
+  border-color: var(--color-secondary);
+  background: var(--bg-surface-alt);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.social-btn-facebook:hover {
+  border-color: #1877F2;
+  color: #1877F2;
+}
+
+.social-btn-apple:hover {
+  border-color: var(--color-secondary);
+}
+
+/* Elevated UI CTA Component */
+.final-cta-section {
+  padding: var(--space-xl) 0;
+  background: transparent;
+}
+
+.final-cta-card {
+  position: relative;
+  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-surface-alt) 100%);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.final-cta-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-gold) 50%, transparent 100%);
+}
+
+.final-cta-icon-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(184, 147, 90, 0.14);
+  color: var(--color-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-sm);
+  border: 1px solid rgba(184, 147, 90, 0.3);
+}
+
+.final-cta-card h2 {
+  font-size: var(--fs-2xl);
+  max-width: 680px;
+  margin: 0 auto var(--space-xs);
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.final-cta-card p {
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin: 0 auto var(--space-md);
+}
+
+.final-cta-features {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: var(--space-md);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.final-cta-features span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.final-cta-features span svg {
+  color: var(--color-secondary);
+}
+
+.final-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

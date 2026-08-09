@@ -78,7 +78,22 @@
     });
   }
 
+  function initSectionHeadingUnderlines() {
+    const headings = document.querySelectorAll('.section-heading h2, .section-heading h3, .page-header h1, .category-block-header h3');
+    headings.forEach(heading => {
+      if (heading.querySelector('.ink-mark')) return;
+      const text = heading.innerHTML.trim();
+      if (!text) return;
+      const words = text.split(' ');
+      const lastWord = words.pop();
+      const rest = words.join(' ');
+      const svgMark = `<span class="ink-mark">${lastWord}<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M4 14 Q 50 4, 100 12 T 196 10"/></svg></span>`;
+      heading.innerHTML = rest ? `${rest} ${svgMark}` : svgMark;
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
+    initSectionHeadingUnderlines();
     initScrollReveal();
     initCounters();
     initAccordion();

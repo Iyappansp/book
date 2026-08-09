@@ -25,8 +25,7 @@
         { label: 'Special Orders', href: 'special-orders.html' }
       ]
     },
-    { label: 'Contact', href: 'contact.html' },
-    { label: 'Login', href: 'login.html' }
+    { label: 'Contact', href: 'contact.html' }
   ];
 
   const LOGO_SVG = `
@@ -105,8 +104,7 @@
           <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
           <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="book-collections.html" class="btn-custom btn-secondary-custom btn-sm-custom d-none d-xl-inline-flex">Browse Books</a>
-        <a href="special-orders.html" class="btn-custom btn-primary-custom btn-sm-custom d-none d-xl-inline-flex">Request a Title</a>
+        <a href="login.html" class="btn-custom btn-primary-custom btn-sm-custom">Login</a>
         <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         </button>
@@ -121,8 +119,7 @@
       </div>
       <nav aria-label="Mobile navigation">${drawerHtml}</nav>
       <div class="d-flex flex-column gap-2 mt-4">
-        <a href="book-collections.html" class="btn-custom btn-secondary-custom w-100">Browse Books</a>
-        <a href="special-orders.html" class="btn-custom btn-primary-custom w-100">Request a Title</a>
+        <a href="login.html" class="btn-custom btn-primary-custom w-100">Login</a>
       </div>
     </div>
     <div class="drawer-overlay" id="drawer-overlay"></div>
@@ -187,6 +184,16 @@
   }
 
   function injectHeaderFooter() {
+    const rawPath = window.location.pathname.split('/').pop() || '';
+    if (rawPath === 'login.html') {
+      // Hide header and footer on login page as requested
+      const headerEl = document.getElementById('main-header');
+      const footerEl = document.getElementById('main-footer');
+      if (headerEl) headerEl.style.display = 'none';
+      if (footerEl) footerEl.style.display = 'none';
+      return;
+    }
+
     const headerEl = document.getElementById('main-header');
     const footerEl = document.getElementById('main-footer');
     if (headerEl) headerEl.innerHTML = buildHeader();

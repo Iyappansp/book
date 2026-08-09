@@ -169,10 +169,10 @@ section { padding: var(--space-xl) 0; }
   font-size: var(--fs-md);
 }
 
-/* --- Ink-stroke underline signature (scroll-reveal reading mark) --- */
+/* --- Ink-stroke underline signature (scroll-reveal reading mark with continuous loop) --- */
 .ink-mark {
   position: relative;
-  display: inline;
+  display: inline-block;
 }
 
 .ink-mark svg {
@@ -192,10 +192,71 @@ section { padding: var(--space-xl) 0; }
   stroke-linecap: round;
   stroke-dasharray: 340;
   stroke-dashoffset: 340;
-  transition: stroke-dashoffset 900ms cubic-bezier(0.65, 0, 0.35, 1);
+  animation: inkMarkLoop 3.6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
-.ink-mark.in-view svg path { stroke-dashoffset: 0; }
+@keyframes inkMarkLoop {
+  0% {
+    stroke-dashoffset: 340;
+    opacity: 0.2;
+  }
+  30% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  70% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -340;
+    opacity: 0.2;
+  }
+}
+
+/* ==========================================================================
+   Container & Section Framing Borders
+   ========================================================================== */
+
+.container-bordered,
+section.section-bordered .container-custom {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-md);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.genre-card,
+.why-choose-card,
+.mv-card,
+.team-card,
+.auth-card-wrap,
+.book-card,
+.event-card,
+.service-card,
+.info-card,
+.about-story-card,
+.final-cta-inner,
+.hero-stack-frame,
+.faq-item,
+.age-tab-card,
+.staff-pick-full-card,
+.collection-card {
+  border: 1px solid var(--border-subtle);
+}
+
+.genre-card:hover,
+.why-choose-card:hover,
+.mv-card:hover,
+.book-card:hover,
+.event-card:hover,
+.service-card:hover,
+.collection-card:hover {
+  border-color: var(--color-secondary);
+}
 
 /* ==========================================================================
    Buttons
