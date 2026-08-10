@@ -11,6 +11,15 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="non-fiction.html">
 
+<script>
+  (function() {
+    var theme = localStorage.getItem('bookstore-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    var dir = localStorage.getItem('bookstore-dir') || 'ltr';
+    document.documentElement.setAttribute('dir', dir);
+  })();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
@@ -56,132 +65,316 @@
       <div class="book-cover-wrap">
         <span class="badge-custom badge-staff-pick badge-corner">Staff Pick</span>
         <img src="https://picsum.photos/seed/nf-self-01/300/440" alt="Book cover of The Patient Mind by Dr. Aisha Rahman">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$22.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Patient Mind</h5>
-        <p class="book-author">Dr. Aisha Rahman</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$22.00</p>
+        <div>
+          <h5>The Patient Mind</h5>
+          <p class="book-author">Dr. Aisha Rahman</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$22.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Patient Mind" data-author="Dr. Aisha Rahman" data-price="22.00" data-cover="https://picsum.photos/seed/nf-self-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up" data-tag="business">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/nf-biz-01/300/440" alt="Book cover of Systems, Not Sprints by Kwame Boateng">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$26.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Systems, Not Sprints</h5>
-        <p class="book-author">Kwame Boateng</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$26.50</p>
+        <div>
+          <h5>Systems, Not Sprints</h5>
+          <p class="book-author">Kwame Boateng</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$26.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Systems, Not Sprints" data-author="Kwame Boateng" data-price="26.50" data-cover="https://picsum.photos/seed/nf-biz-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up" data-tag="biography">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/nf-bio-01/300/440" alt="Book cover of Salt and Stationery by Joon-ho Lee">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$24.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Salt and Stationery</h5>
-        <p class="book-author">Joon-ho Lee</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$24.00</p>
+        <div>
+          <h5>Salt and Stationery</h5>
+          <p class="book-author">Joon-ho Lee</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$24.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Salt and Stationery" data-author="Joon-ho Lee" data-price="24.00" data-cover="https://picsum.photos/seed/nf-bio-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up" data-tag="history">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/nf-history-01/300/440" alt="Book cover of Empire of Small Rooms by Dr. Fatima Nasser">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$27.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Empire of Small Rooms</h5>
-        <p class="book-author">Dr. Fatima Nasser</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$27.50</p>
+        <div>
+          <h5>Empire of Small Rooms</h5>
+          <p class="book-author">Dr. Fatima Nasser</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$27.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Empire of Small Rooms" data-author="Dr. Fatima Nasser" data-price="27.50" data-cover="https://picsum.photos/seed/nf-history-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up" data-tag="science">
       <div class="book-cover-wrap">
         <span class="badge-custom badge-new badge-corner">New</span>
         <img src="https://picsum.photos/seed/nf-science-01/300/440" alt="Book cover of The Physics of Everyday Rooms by Prof. Elena Marsh">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$25.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Physics of Everyday Rooms</h5>
-        <p class="book-author">Prof. Elena Marsh</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$25.00</p>
+        <div>
+          <h5>The Physics of Everyday Rooms</h5>
+          <p class="book-author">Prof. Elena Marsh</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$25.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Physics of Everyday Rooms" data-author="Prof. Elena Marsh" data-price="25.00" data-cover="https://picsum.photos/seed/nf-science-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up" data-tag="travel">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/nf-travel-01/300/440" alt="Book cover of Roads That Remember by Julian Cortés">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$21.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Roads That Remember</h5>
-        <p class="book-author">Julian Cortés</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$21.50</p>
+        <div>
+          <h5>Roads That Remember</h5>
+          <p class="book-author">Julian Cortés</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$21.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Roads That Remember" data-author="Julian Cortés" data-price="21.50" data-cover="https://picsum.photos/seed/nf-travel-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up" data-tag="self-help">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/nf-self-02/300/440" alt="Book cover of Small Habits, Long Roads by Dr. Marcus Feld">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$20.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Small Habits, Long Roads</h5>
-        <p class="book-author">Dr. Marcus Feld</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$20.00</p>
+        <div>
+          <h5>Small Habits, Long Roads</h5>
+          <p class="book-author">Dr. Marcus Feld</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$20.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Small Habits, Long Roads" data-author="Dr. Marcus Feld" data-price="20.00" data-cover="https://picsum.photos/seed/nf-self-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up" data-tag="business">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/nf-biz-02/300/440" alt="Book cover of Margins of Trust by David Okonkwo">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$27.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Margins of Trust</h5>
-        <p class="book-author">David Okonkwo</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$27.50</p>
+        <div>
+          <h5>Margins of Trust</h5>
+          <p class="book-author">David Okonkwo</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$27.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Margins of Trust" data-author="David Okonkwo" data-price="27.50" data-cover="https://picsum.photos/seed/nf-biz-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up" data-tag="biography">
       <div class="book-cover-wrap">
         <span class="badge-custom badge-staff-pick badge-corner">Staff Pick</span>
         <img src="https://picsum.photos/seed/nf-bio-02/300/440" alt="Book cover of A Life in Footnotes by Margaret Ashworth">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$26.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>A Life in Footnotes</h5>
-        <p class="book-author">Margaret Ashworth</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$26.00</p>
+        <div>
+          <h5>A Life in Footnotes</h5>
+          <p class="book-author">Margaret Ashworth</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$26.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="A Life in Footnotes" data-author="Margaret Ashworth" data-price="26.00" data-cover="https://picsum.photos/seed/nf-bio-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up" data-tag="history">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/nf-history-02/300/440" alt="Book cover of The Lane Between Two Wars by Miriam Kessler">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$28.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Lane Between Two Wars</h5>
-        <p class="book-author">Miriam Kessler</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$28.50</p>
+        <div>
+          <h5>The Lane Between Two Wars</h5>
+          <p class="book-author">Miriam Kessler</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$28.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Lane Between Two Wars" data-author="Miriam Kessler" data-price="28.50" data-cover="https://picsum.photos/seed/nf-history-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up" data-tag="science">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/nf-science-02/300/440" alt="Book cover of Why the Tide Comes Back by Dr. Henrik Voss">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$23.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Why the Tide Comes Back</h5>
-        <p class="book-author">Dr. Henrik Voss</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$23.00</p>
+        <div>
+          <h5>Why the Tide Comes Back</h5>
+          <p class="book-author">Dr. Henrik Voss</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$23.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Why the Tide Comes Back" data-author="Dr. Henrik Voss" data-price="23.00" data-cover="https://picsum.photos/seed/nf-science-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up" data-tag="travel">
       <div class="book-cover-wrap">
         <span class="badge-custom badge-new badge-corner">New</span>
         <img src="https://picsum.photos/seed/nf-travel-02/300/440" alt="Book cover of Nine Cities, One Notebook by Amara Diallo">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$22.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Nine Cities, One Notebook</h5>
-        <p class="book-author">Amara Diallo</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$22.50</p>
+        <div>
+          <h5>Nine Cities, One Notebook</h5>
+          <p class="book-author">Amara Diallo</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$22.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Nine Cities, One Notebook" data-author="Amara Diallo" data-price="22.50" data-cover="https://picsum.photos/seed/nf-travel-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
       </div>
@@ -189,22 +382,22 @@
   </section>
 
   <!-- ============ FINAL CTA ============ -->
-  <section class="final-cta-section">
+  <section class="final-cta-section cta-bg-nonfiction">
     <div class="container-custom">
       <div class="final-cta-card reveal-up">
         <div class="final-cta-icon-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M12 6v6l3-2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
         </div>
-        <h2>Come meet the people <span class="ink-mark">behind the shelves<svg viewBox="0 0 220 20" preserveAspectRatio="none"><path d="M4 14 Q 55 4, 110 12 T 216 10"/></svg></span></h2>
-        <p>Open daily on Aldergate Lane — the kettle's usually on. Step inside for quiet reading, curated discoveries, and warm conversations.</p>
+        <h2>Feed Your Curiosity With <span class="ink-mark">Non-Fiction Masterworks<svg viewBox="0 0 220 20" preserveAspectRatio="none"><path d="M4 14 Q 55 4, 110 12 T 216 10"/></svg></span></h2>
+        <p>From deep histories and philosophical explorations to groundbreaking biographies—discover ideas that reshape how you see our world.</p>
         <div class="final-cta-features">
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Open Daily 9am – 8pm</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Free Reading Corner WiFi</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Hand-Curated Titles</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Historical Biographies</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Science & Philosophy</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Academic & Essay Reviews</span>
         </div>
         <div class="final-cta-actions">
-          <a href="contact.html" class="btn-custom btn-primary-custom">Visit Us Today</a>
-          <a href="book-collections.html" class="btn-custom btn-secondary-custom">Explore Collections</a>
+          <a href="book-collections.html" class="btn-custom btn-primary-custom">Browse Non-Fiction</a>
+          <a href="author-events.html" class="btn-custom btn-secondary-custom">Join Discussion Salon</a>
         </div>
       </div>
     </div>

@@ -48,31 +48,45 @@
         <span>By the Aldergate Booksellers</span>
         <span class="ed-hero-divider">—</span>
         <span>7 min browse</span>
+        <span class="ed-hero-divider">—</span>
+        <span>August Edition</span>
       </div>
     </div>
-    <div class="ed-hero-image reveal-up delay-3">
-      <img src="https://picsum.photos/seed/ed-hero-wide-01/1400/700" alt="Overhead editorial shot of curated books, coffee, and reading glasses on a wooden desk">
+    <div class="ed-hero-image-wrap reveal-up delay-3">
+      <div class="ed-hero-image">
+        <img src="https://picsum.photos/seed/ed-hero-wide-01/1200/540" alt="Overhead editorial shot of curated books, coffee, and reading glasses on a wooden desk">
+        <div class="ed-hero-image-badge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <span>Curated Reading Nook &amp; Desk — Aldergate Lane</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ============ READING JOURNEY (asymmetric feature) ============ -->
+  <!-- ============ READING JOURNEY (Interactive Mood Matrix) ============ -->
   <section class="rj-section">
     <div class="container-custom rj-grid">
       <div class="rj-lead reveal-up">
         <span class="eyebrow">01 — The Journey</span>
         <h2>Every visit starts with one question: what are you in the mood for?</h2>
-        <p>Not genre — mood. Restless, cozy, heartbroken, curious. Tell us, and we'll walk the shelves with you instead of pointing at a bestseller table.</p>
+        <!-- <p>Not genre — mood. Restless, cozy, curious, or atmospheric. Click a mood to filter our current shelf highlights.</p> -->
+        <div class="rj-mood-bar mt-3">
+          <button type="button" class="rj-mood-pill active" data-mood="all">All Moods</button>
+          <button type="button" class="rj-mood-pill" data-mood="restless">Restless</button>
+          <button type="button" class="rj-mood-pill" data-mood="cozy">Cozy</button>
+          <button type="button" class="rj-mood-pill" data-mood="curious">Curious</button>
+        </div>
       </div>
       <div class="rj-cards">
-        <div class="rj-card reveal-up delay-1">
+        <div class="rj-card reveal-up delay-1" data-mood="restless">
           <span class="rj-num">Restless</span>
           <p>Fast plots, short chapters, thrillers that don't let you put the bookmark down.</p>
         </div>
-        <div class="rj-card reveal-up delay-2">
+        <div class="rj-card reveal-up delay-2" data-mood="cozy">
           <span class="rj-num">Cozy</span>
-          <p>Gentle pacing, warm endings, the literary equivalent of a blanket.</p>
+          <p>Gentle pacing, warm endings, the literary equivalent of a warm blanket.</p>
         </div>
-        <div class="rj-card reveal-up delay-3">
+        <div class="rj-card reveal-up delay-3" data-mood="curious">
           <span class="rj-num">Curious</span>
           <p>Essays, science, history — the non-fiction that changes how you see a Tuesday.</p>
         </div>
@@ -141,6 +155,71 @@
     </div>
   </section>
 
+  <!-- ============ UNIQUE BOOK SHOWCASE (3D Interactive Sanctuary) ============ -->
+  <section class="ub-section" id="unique-showcase">
+    <div class="container-custom">
+      <div class="section-heading center reveal-up">
+        <span class="eyebrow">04 — Unique Book Showcase</span>
+        <h2>The Collector's Sanctuary — Interactive Spotlight</h2>
+        <p>Explore 3D edition previews, listen to live prose excerpts, and reserve your curated copy.</p>
+      </div>
+
+      <div class="ub-tabs-bar reveal-up delay-1">
+        <button type="button" class="ub-tab-btn active" data-book="book-1">The Cartography of Grief</button>
+        <button type="button" class="ub-tab-btn" data-book="book-2">The Quiet Ledger</button>
+        <button type="button" class="ub-tab-btn" data-book="book-3">Architects of Memory</button>
+        <button type="button" class="ub-tab-btn" data-book="book-4">Winter at Thornfield</button>
+      </div>
+
+      <div class="ub-showcase-container reveal-up delay-2">
+        <div class="ub-3d-stage">
+          <div class="ub-3d-book-wrap">
+            <img src="https://picsum.photos/seed/fic-award-01/400/580" alt="3D Book Cover of The Cartography of Grief" class="ub-3d-book-cover">
+          </div>
+        </div>
+
+        <div class="ub-details-panel">
+          <div class="ub-header-meta">
+            <span class="ub-book-tag">Literary Masterpiece</span>
+            <span class="ub-book-rating">4.9 ★ (142 reviews)</span>
+          </div>
+
+          <h3 class="ub-book-title">The Cartography of Grief</h3>
+          <span class="ub-book-author">By Noor Abbasi</span>
+
+          <div class="ub-excerpt-box">
+            <p class="ub-excerpt-text">"Mapmaking is not about where the land ends, but where the heart loses its compass. In the coastal town of Al-Minha, three generations of women kept books they never intended to publish..."</p>
+          </div>
+
+          <div class="ub-audio-player">
+            <button type="button" class="ub-audio-play-btn" aria-label="Play audio sample excerpt">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </button>
+            <div class="ub-audio-wave">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <span class="ub-audio-time">03:12</span>
+            <span style="font-size:var(--fs-xs);color:var(--text-muted);margin-left:0.4rem;">Listen to Author Excerpt</span>
+          </div>
+
+          <div class="ub-fmt-row">
+            <div class="ub-fmt-group" data-base-price="24.50">
+              <button type="button" class="ub-fmt-pill active" data-add="0">Hardcover</button>
+              <button type="button" class="ub-fmt-pill" data-add="-8.50">Paperback</button>
+              <button type="button" class="ub-fmt-pill" data-add="20.50">Collector's Edition</button>
+            </div>
+            <span class="ub-price-tag">$24.50</span>
+          </div>
+
+          <div class="ub-actions-row">
+            <button type="button" class="btn-custom btn-primary-custom ub-buy-btn" data-modal="buyNowModal" data-title="The Cartography of Grief" data-price="24.50" data-img="https://picsum.photos/seed/fic-award-01/400/580">Order Now</button>
+            <button type="button" class="btn-custom btn-secondary-custom" data-modal="prebookModal" data-title="The Cartography of Grief" data-author="Noor Abbasi" data-price="24.50">Reserve Reading Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ RARE BOOKS ============ -->
   <section class="rb-section bg-surface-alt-section">
     <div class="container-custom rb-grid">
@@ -148,7 +227,7 @@
         <img src="https://picsum.photos/seed/rare-books-cabinet-01/620/560" alt="Glass cabinet displaying rare leather-bound first-edition books">
       </div>
       <div class="rb-copy reveal-up delay-2">
-        <span class="eyebrow">04 — Rare &amp; Out-of-Print</span>
+        <span class="eyebrow">05 — Rare &amp; Out-of-Print</span>
         <h2>The locked cabinet by the window</h2>
         <p>First editions, signed copies, and titles that stopped printing decades ago. Every piece is catalogued with its condition and provenance — ask a bookseller to open the case.</p>
         <ul class="rb-list">
@@ -175,7 +254,7 @@
   <section class="rs-section bg-surface-alt-section">
     <div class="container-custom">
       <div class="section-heading center reveal-up">
-        <span class="eyebrow">05 — Reading Spaces</span>
+        <span class="eyebrow">06 — Reading Spaces</span>
         <h2>Three corners, three moods</h2>
       </div>
       <div class="rs-grid">
@@ -202,7 +281,7 @@
   <section class="bc-section">
     <div class="container-custom bc-grid">
       <div class="bc-copy reveal-up">
-        <span class="eyebrow">06 — Book Club</span>
+        <span class="eyebrow">07 — Book Club</span>
         <h2>This month, we're reading <em>Harbor of Small Lies</em></h2>
         <p>Meets the third Thursday of every month at 7:00 PM around the community table. New members always welcome — no need to have finished the book.</p>
         <div class="bc-stats">
@@ -222,7 +301,7 @@
     <div class="container-custom">
       <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4 reveal-up">
         <div class="section-heading" style="margin-bottom:0;">
-          <span class="eyebrow">07 — Calendar</span>
+          <span class="eyebrow">08 — Calendar</span>
           <h2>What's on this season</h2>
         </div>
         <a href="author-events.html" class="btn-custom btn-secondary-custom btn-sm-custom">Full Calendar</a>
@@ -256,7 +335,7 @@
   <section class="ed-testimonials">
     <div class="container-custom">
       <div class="section-heading center reveal-up">
-        <span class="eyebrow">08 — Readers Say</span>
+        <span class="eyebrow">09 — Readers Say</span>
         <h2>From our guestbook</h2>
       </div>
       <div class="row g-4">
@@ -277,22 +356,22 @@
   </section>
 
   <!-- ============ FINAL CTA ============ -->
-  <section class="final-cta-section">
+  <section class="final-cta-section cta-bg-home2">
     <div class="container-custom">
       <div class="final-cta-card reveal-up">
         <div class="final-cta-icon-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M12 6v6l3-2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-2 2m-1-1 2 2M11 7l9 9-4 4-9-9 4-4Z"/><path d="m3 21 4-4"/><path d="m14 4 6 6"/></svg>
         </div>
-        <h2>Come meet the people <span class="ink-mark">behind the shelves<svg viewBox="0 0 220 20" preserveAspectRatio="none"><path d="M4 14 Q 55 4, 110 12 T 216 10"/></svg></span></h2>
-        <p>Open daily on Aldergate Lane — the kettle's usually on. Step inside for quiet reading, curated discoveries, and warm conversations.</p>
+        <h2>Elevate Your Sanctuary With <span class="ink-mark">Rare First Editions<svg viewBox="0 0 220 20" preserveAspectRatio="none"><path d="M4 14 Q 55 4, 110 12 T 216 10"/></svg></span></h2>
+        <p>Gain exclusive entry to our private vault of signed first editions, antiquarian leatherbound classics, and preserved historical manuscripts.</p>
         <div class="final-cta-features">
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Open Daily 9am – 8pm</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Free Reading Corner WiFi</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Hand-Curated Titles</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Certificate of Authenticity</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Climate-Controlled Vault Care</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Private Viewing Alcove</span>
         </div>
         <div class="final-cta-actions">
-          <a href="contact.html" class="btn-custom btn-primary-custom">Visit Us Today</a>
-          <a href="book-collections.html" class="btn-custom btn-secondary-custom">Explore Collections</a>
+          <a href="book-collections.html" class="btn-custom btn-primary-custom">Explore Rare Vault</a>
+          <a href="special-orders.html" class="btn-custom btn-secondary-custom">Request Appraisal</a>
         </div>
       </div>
     </div>

@@ -11,6 +11,15 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="children-books.html">
 
+<script>
+  (function() {
+    var theme = localStorage.getItem('bookstore-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    var dir = localStorage.getItem('bookstore-dir') || 'ltr';
+    document.documentElement.setAttribute('dir', dir);
+  })();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
@@ -94,44 +103,106 @@
       <div class="book-cover-wrap">
         <span class="badge-custom badge-staff-pick badge-corner">Staff Pick</span>
         <img src="https://picsum.photos/seed/children-pop-01/300/440" alt="Book cover of The Button Jar by Lucy Pemberton">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$14.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Button Jar</h5>
-        <p class="book-author">Lucy Pemberton</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$14.00</p>
+        <div>
+          <h5>The Button Jar</h5>
+          <p class="book-author">Lucy Pemberton</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$14.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Button Jar" data-author="Lucy Pemberton" data-price="14.00" data-cover="https://picsum.photos/seed/children-pop-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/children-pop-02/300/440" alt="Book cover of Where the Foxes Learn to Read by Oskar Lindqvist">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$15.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Where the Foxes Learn to Read</h5>
-        <p class="book-author">Oskar Lindqvist</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$15.50</p>
+        <div>
+          <h5>Where the Foxes Learn to Read</h5>
+          <p class="book-author">Oskar Lindqvist</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$15.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Where the Foxes Learn to Read" data-author="Oskar Lindqvist" data-price="15.50" data-cover="https://picsum.photos/seed/children-pop-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
         <span class="badge-custom badge-new badge-corner">New</span>
         <img src="https://picsum.photos/seed/children-pop-03/300/440" alt="Book cover of A Very Small Adventure by Grace Odenigbo">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$13.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>A Very Small Adventure</h5>
-        <p class="book-author">Grace Odenigbo</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$13.50</p>
+        <div>
+          <h5>A Very Small Adventure</h5>
+          <p class="book-author">Grace Odenigbo</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$13.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="A Very Small Adventure" data-author="Grace Odenigbo" data-price="13.50" data-cover="https://picsum.photos/seed/children-pop-03/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/children-pop-04/300/440" alt="Book cover of The Map That Drew Itself by Ravi Chandrasekaran">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$16.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Map That Drew Itself</h5>
-        <p class="book-author">Ravi Chandrasekaran</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$16.00</p>
+        <div>
+          <h5>The Map That Drew Itself</h5>
+          <p class="book-author">Ravi Chandrasekaran</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$16.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Map That Drew Itself" data-author="Ravi Chandrasekaran" data-price="16.00" data-cover="https://picsum.photos/seed/children-pop-04/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
       </div>
@@ -139,22 +210,22 @@
   </section>
 
   <!-- ============ FINAL CTA ============ -->
-  <section class="final-cta-section">
+  <section class="final-cta-section cta-bg-children">
     <div class="container-custom">
       <div class="final-cta-card reveal-up">
         <div class="final-cta-icon-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M12 6v6l3-2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.75l-6.172 3.245 1.179-6.873-4.994-4.867 6.9-1.002L12 2l3.087 6.253 6.9 1.002-4.994 4.867 1.179 6.873z"/></svg>
         </div>
-        <h2>Come meet the people <span class="ink-mark">behind the shelves<svg viewBox="0 0 220 20" preserveAspectRatio="none"><path d="M4 14 Q 55 4, 110 12 T 216 10"/></svg></span></h2>
-        <p>Open daily on Aldergate Lane — the kettle's usually on. Step inside for quiet reading, curated discoveries, and warm conversations.</p>
+        <h2>Ignite a Lifelong <span class="ink-mark">Love for Reading<svg viewBox="0 0 220 20" preserveAspectRatio="none"><path d="M4 14 Q 55 4, 110 12 T 216 10"/></svg></span></h2>
+        <p>Discover magical fairytale worlds, interactive pop-up books, and exciting middle-grade adventures designed to spark young imaginations.</p>
         <div class="final-cta-features">
           <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Saturday Storytime 10:30am</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Kids Reading Nook</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Age-Grouped Sections</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Whimsical Kids Reading Nook</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Age-Grouped Story Guides</span>
         </div>
         <div class="final-cta-actions">
-          <a href="author-events.html" class="btn-custom btn-primary-custom">See Event Calendar</a>
-          <a href="contact.html" class="btn-custom btn-secondary-custom">Visit Us Today</a>
+          <a href="author-events.html" class="btn-custom btn-primary-custom">Join Weekend Storytime</a>
+          <a href="contact.html" class="btn-custom btn-secondary-custom">Visit Kids Corner</a>
         </div>
       </div>
     </div>

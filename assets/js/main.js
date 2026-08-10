@@ -8,6 +8,16 @@
   const NAV_LINKS = [
     { label: 'Home', href: 'index.html' },
     { label: 'Home 2', href: 'home-2.html' },
+    {
+      label: 'Genre',
+      dropdown: true,
+      items: [
+        { label: 'Fiction', href: 'fiction.html' },
+        { label: 'Non-Fiction', href: 'non-fiction.html' },
+        { label: 'Children\'s Books', href: 'children-books.html' },
+        { label: 'All Collections', href: 'book-collections.html' }
+      ]
+    },
     { label: 'About', href: 'about.html' },
     {
       label: 'Events',
@@ -692,6 +702,155 @@
     });
   }
 
+  /* ---------------- Unique Book Showcase Interactivity (Home 2) ---------------- */
+
+  function initUniqueBookShowcase() {
+    const bookShowcaseData = {
+      'book-1': {
+        title: 'The Cartography of Grief',
+        author: 'Noor Abbasi',
+        tag: 'Literary Masterpiece',
+        price: 24.50,
+        rating: '4.9 ★ (142 reviews)',
+        img: 'https://picsum.photos/seed/fic-award-01/400/580',
+        excerpt: '"Mapmaking is not about where the land ends, but where the heart loses its compass. In the coastal town of Al-Minha, three generations of women kept books they never intended to publish..."',
+        audioTime: '03:12'
+      },
+      'book-2': {
+        title: 'The Quiet Ledger',
+        author: 'Mara Solenne',
+        tag: 'Mystery & Suspense',
+        price: 26.00,
+        rating: '4.8 ★ (98 reviews)',
+        img: 'https://picsum.photos/seed/fic-lit-01/400/580',
+        excerpt: '"The ledger was bound in dark calfskin, stained at the corners with black tea. Page forty-two listed forty-eight names, but only forty-seven were accounted for in the village churchyard..."',
+        audioTime: '02:45'
+      },
+      'book-3': {
+        title: 'Architects of Memory',
+        author: 'Julian Vance',
+        tag: 'Philosophy & Science',
+        price: 28.00,
+        rating: '4.95 ★ (215 reviews)',
+        img: 'https://picsum.photos/seed/cc-side-history/400/580',
+        excerpt: '"To remember a landmark is easy; to remember the light that fell across its stone on an October afternoon in 1894 requires a different kind of architecture altogether..."',
+        audioTime: '04:05'
+      },
+      'book-4': {
+        title: 'Winter at Thornfield',
+        author: 'E. M. Castellane',
+        tag: 'Vintage Classic',
+        price: 14.00,
+        rating: '4.7 ★ (84 reviews)',
+        img: 'https://picsum.photos/seed/fic-classic-01/400/580',
+        excerpt: '"Snow began falling at three in the afternoon, coating the old stone chimneys until Thornfield looked less like an estate and more like a sleeping beast wrapped in frost..."',
+        audioTime: '02:18'
+      }
+    };
+
+    document.addEventListener('click', function (e) {
+      const tab = e.target.closest('.ub-tab-btn');
+      if (tab) {
+        const bookId = tab.dataset.book;
+        const showcase = tab.closest('.ub-section');
+        if (!showcase || !bookId || !bookShowcaseData[bookId]) return;
+
+        showcase.querySelectorAll('.ub-tab-btn').forEach(b => b.classList.remove('active'));
+        tab.classList.add('active');
+
+        const data = bookShowcaseData[bookId];
+
+        const titleEl = showcase.querySelector('.ub-book-title');
+        const authorEl = showcase.querySelector('.ub-book-author');
+        const tagEl = showcase.querySelector('.ub-book-tag');
+        const priceEl = showcase.querySelector('.ub-price-tag');
+        const ratingEl = showcase.querySelector('.ub-book-rating');
+        const imgEl = showcase.querySelector('.ub-3d-book-cover');
+        const excerptEl = showcase.querySelector('.ub-excerpt-text');
+        const audioTimeEl = showcase.querySelector('.ub-audio-time');
+        const buyBtn = showcase.querySelector('.ub-buy-btn');
+
+        if (titleEl) titleEl.textContent = data.title;
+        if (authorEl) authorEl.textContent = 'By ' + data.author;
+        if (tagEl) tagEl.textContent = data.tag;
+        if (priceEl) priceEl.textContent = '$' + data.price.toFixed(2);
+        if (ratingEl) ratingEl.textContent = data.rating;
+        if (imgEl) {
+          imgEl.src = data.img;
+          imgEl.alt = '3D Book Cover of ' + data.title;
+        }
+        if (excerptEl) excerptEl.textContent = data.excerpt;
+        if (audioTimeEl) audioTimeEl.textContent = data.audioTime;
+
+        if (buyBtn) {
+          buyBtn.dataset.title = data.title;
+          buyBtn.dataset.price = data.price;
+          buyBtn.dataset.img = data.img;
+        }
+
+        const audioBtn = showcase.querySelector('.ub-audio-play-btn');
+        const wave = showcase.querySelector('.ub-audio-wave');
+        if (audioBtn) audioBtn.classList.remove('playing');
+        if (wave) wave.classList.remove('active');
+      }
+
+      const audioBtn = e.target.closest('.ub-audio-play-btn');
+      if (audioBtn) {
+        const isPlaying = audioBtn.classList.contains('playing');
+        const wave = audioBtn.closest('.ub-audio-player')?.querySelector('.ub-audio-wave');
+        if (isPlaying) {
+          audioBtn.classList.remove('playing');
+          if (wave) wave.classList.remove('active');
+          showToast('Audio sample paused');
+        } else {
+          audioBtn.classList.add('playing');
+          if (wave) wave.classList.add('active');
+          showToast('Playing audio excerpt sample...');
+        }
+      }
+
+      const fmtPill = e.target.closest('.ub-fmt-pill');
+      if (fmtPill) {
+        const parent = fmtPill.closest('.ub-fmt-group');
+        if (parent) {
+          parent.querySelectorAll('.ub-fmt-pill').forEach(p => p.classList.remove('active'));
+          fmtPill.classList.add('active');
+          const addPrice = parseFloat(fmtPill.dataset.add) || 0;
+          const section = fmtPill.closest('.ub-section');
+          const basePrice = 24.50;
+          const priceEl = section?.querySelector('.ub-price-tag');
+          if (priceEl) priceEl.textContent = '$' + (basePrice + addPrice).toFixed(2);
+        }
+      }
+    });
+  }
+
+  /* ---------------- Mood Matrix Interactivity (Home 2) ---------------- */
+
+  function initMoodMatrix() {
+    document.addEventListener('click', function (e) {
+      const pill = e.target.closest('.rj-mood-pill');
+      if (!pill) return;
+      const mood = pill.dataset.mood;
+      const section = pill.closest('.rj-section');
+      if (!section) return;
+
+      section.querySelectorAll('.rj-mood-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+
+      const cards = section.querySelectorAll('.rj-card');
+      cards.forEach(card => {
+        if (mood === 'all' || card.dataset.mood === mood) {
+          card.classList.remove('mood-dimmed');
+          card.classList.add('mood-highlighted');
+        } else {
+          card.classList.remove('mood-highlighted');
+          card.classList.add('mood-dimmed');
+        }
+      });
+    });
+  }
+
   /* ---------------- Init ---------------- */
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -702,6 +861,8 @@
     initBackToTop();
     initNewsletterForm();
     initBuyPrebookInteractivity();
+    initUniqueBookShowcase();
+    initMoodMatrix();
   });
 })();
 

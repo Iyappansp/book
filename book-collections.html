@@ -11,6 +11,15 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="book-collections.html">
 
+<script>
+  (function() {
+    var theme = localStorage.getItem('bookstore-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    var dir = localStorage.getItem('bookstore-dir') || 'ltr';
+    document.documentElement.setAttribute('dir', dir);
+  })();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
@@ -67,44 +76,106 @@
       <div class="book-cover-wrap">
         <span class="badge-custom badge-staff-pick badge-corner">Staff Pick</span>
         <img src="https://picsum.photos/seed/col-fiction-01/300/440" alt="Book cover of The Quiet Ledger by Mara Solenne">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$26.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Quiet Ledger</h5>
-        <p class="book-author">Mara Solenne</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$26.00</p>
+        <div>
+          <h5>The Quiet Ledger</h5>
+          <p class="book-author">Mara Solenne</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$26.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Quiet Ledger" data-author="Mara Solenne" data-price="26.00" data-cover="https://picsum.photos/seed/col-fiction-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-fiction-02/300/440" alt="Book cover of Autumn in Reverse by Callum Reyes">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$22.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Autumn in Reverse</h5>
-        <p class="book-author">Callum Reyes</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$22.00</p>
+        <div>
+          <h5>Autumn in Reverse</h5>
+          <p class="book-author">Callum Reyes</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$22.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Autumn in Reverse" data-author="Callum Reyes" data-price="22.00" data-cover="https://picsum.photos/seed/col-fiction-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-fiction-03/300/440" alt="Book cover of The Last Cartographer by Anaïs Ferro">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$24.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Last Cartographer</h5>
-        <p class="book-author">Anaïs Ferro</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$24.50</p>
+        <div>
+          <h5>The Last Cartographer</h5>
+          <p class="book-author">Anaïs Ferro</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$24.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Last Cartographer" data-author="Anaïs Ferro" data-price="24.50" data-cover="https://picsum.photos/seed/col-fiction-03/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
         <span class="badge-custom badge-new badge-corner">New</span>
         <img src="https://picsum.photos/seed/col-fiction-04/300/440" alt="Book cover of Everything We Left Unread by Priya Kaur">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$19.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Everything We Left Unread</h5>
-        <p class="book-author">Priya Kaur</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$19.00</p>
+        <div>
+          <h5>Everything We Left Unread</h5>
+          <p class="book-author">Priya Kaur</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$19.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Everything We Left Unread" data-author="Priya Kaur" data-price="19.00" data-cover="https://picsum.photos/seed/col-fiction-04/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
       </div>
@@ -125,44 +196,105 @@
       <div class="book-cover-wrap">
         <span class="badge-custom badge-staff-pick badge-corner">Staff Pick</span>
         <img src="https://picsum.photos/seed/col-mystery-01/300/440" alt="Book cover of Harbor of Small Lies by D. R. Okafor">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$25.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Harbor of Small Lies</h5>
-        <p class="book-author">D. R. Okafor</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$25.00</p>
+        <div>
+          <h5>Harbor of Small Lies</h5>
+          <p class="book-author">D. R. Okafor</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$25.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Harbor of Small Lies" data-author="D. R. Okafor" data-price="25.00" data-cover="https://picsum.photos/seed/col-mystery-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-mystery-02/300/440" alt="Book cover of The Locksmith's Daughter by Nina Halvorsen">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$24.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Locksmith's Daughter</h5>
-        <p class="book-author">Nina Halvorsen</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$24.00</p>
+        <div>
+          <h5>The Locksmith's Daughter</h5>
+          <p class="book-author">Nina Halvorsen</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$24.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Locksmith's Daughter" data-author="Nina Halvorsen" data-price="24.00" data-cover="https://picsum.photos/seed/col-mystery-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-mystery-03/300/440" alt="Book cover of Static on the Line by Marcus Deane">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$21.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Static on the Line</h5>
-        <p class="book-author">Marcus Deane</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$21.50</p>
+        <div>
+          <h5>Static on the Line</h5>
+          <p class="book-author">Marcus Deane</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$21.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Static on the Line" data-author="Marcus Deane" data-price="21.50" data-cover="https://picsum.photos/seed/col-mystery-03/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-mystery-04/300/440" alt="Book cover of Nine Doors to Midnight by Rosalind Cray">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$23.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Nine Doors to Midnight</h5>
-        <p class="book-author">Rosalind Cray</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$23.00</p>
+        <div>
+          <h5>Nine Doors to Midnight</h5>
+          <p class="book-author">Rosalind Cray</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$23.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Nine Doors to Midnight" data-author="Rosalind Cray" data-price="23.00" data-cover="https://picsum.photos/seed/col-mystery-04/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
       </div>
@@ -181,46 +313,107 @@
       <div class="book-grid">
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-romance-01/300/440" alt="Book cover of The Correspondence by Elise Farrow">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$18.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Correspondence</h5>
-        <p class="book-author">Elise Farrow</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$18.00</p>
+        <div>
+          <h5>The Correspondence</h5>
+          <p class="book-author">Elise Farrow</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$18.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Correspondence" data-author="Elise Farrow" data-price="18.00" data-cover="https://picsum.photos/seed/col-romance-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
         <span class="badge-custom badge-new badge-corner">New</span>
         <img src="https://picsum.photos/seed/col-romance-02/300/440" alt="Book cover of Second Chapter, Same City by Adaeze Nwosu">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$19.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Second Chapter, Same City</h5>
-        <p class="book-author">Adaeze Nwosu</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$19.50</p>
+        <div>
+          <h5>Second Chapter, Same City</h5>
+          <p class="book-author">Adaeze Nwosu</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$19.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Second Chapter, Same City" data-author="Adaeze Nwosu" data-price="19.50" data-cover="https://picsum.photos/seed/col-romance-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-romance-03/300/440" alt="Book cover of Somewhere Warmer by Tomás Vega">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$17.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Somewhere Warmer</h5>
-        <p class="book-author">Tomás Vega</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$17.00</p>
+        <div>
+          <h5>Somewhere Warmer</h5>
+          <p class="book-author">Tomás Vega</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$17.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Somewhere Warmer" data-author="Tomás Vega" data-price="17.00" data-cover="https://picsum.photos/seed/col-romance-03/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-romance-04/300/440" alt="Book cover of The Long Way to Yes by Hana Kobayashi">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$20.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Long Way to Yes</h5>
-        <p class="book-author">Hana Kobayashi</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$20.00</p>
+        <div>
+          <h5>The Long Way to Yes</h5>
+          <p class="book-author">Hana Kobayashi</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$20.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Long Way to Yes" data-author="Hana Kobayashi" data-price="20.00" data-cover="https://picsum.photos/seed/col-romance-04/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
       </div>
@@ -241,44 +434,106 @@
       <div class="book-cover-wrap">
         <span class="badge-custom badge-staff-pick badge-corner">Staff Pick</span>
         <img src="https://picsum.photos/seed/col-fantasy-01/300/440" alt="Book cover of The Cartographer's Debt by Fenwick Ashby">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$27.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Cartographer's Debt</h5>
-        <p class="book-author">Fenwick Ashby</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$27.00</p>
+        <div>
+          <h5>The Cartographer's Debt</h5>
+          <p class="book-author">Fenwick Ashby</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$27.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Cartographer's Debt" data-author="Fenwick Ashby" data-price="27.00" data-cover="https://picsum.photos/seed/col-fantasy-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-fantasy-02/300/440" alt="Book cover of Salt Engines by Yusuf Karim">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$25.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Salt Engines</h5>
-        <p class="book-author">Yusuf Karim</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$25.50</p>
+        <div>
+          <h5>Salt Engines</h5>
+          <p class="book-author">Yusuf Karim</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$25.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Salt Engines" data-author="Yusuf Karim" data-price="25.50" data-cover="https://picsum.photos/seed/col-fantasy-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-fantasy-03/300/440" alt="Book cover of The Glasswright's Oath by Ingrid Solberg">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$26.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Glasswright's Oath</h5>
-        <p class="book-author">Ingrid Solberg</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$26.00</p>
+        <div>
+          <h5>The Glasswright's Oath</h5>
+          <p class="book-author">Ingrid Solberg</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$26.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Glasswright's Oath" data-author="Ingrid Solberg" data-price="26.00" data-cover="https://picsum.photos/seed/col-fantasy-03/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
         <span class="badge-custom badge-new badge-corner">New</span>
         <img src="https://picsum.photos/seed/col-fantasy-04/300/440" alt="Book cover of Nine Suns Over Verrin by Beatrix Onwuka">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$24.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Nine Suns Over Verrin</h5>
-        <p class="book-author">Beatrix Onwuka</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$24.00</p>
+        <div>
+          <h5>Nine Suns Over Verrin</h5>
+          <p class="book-author">Beatrix Onwuka</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$24.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Nine Suns Over Verrin" data-author="Beatrix Onwuka" data-price="24.00" data-cover="https://picsum.photos/seed/col-fantasy-04/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
       </div>
@@ -297,46 +552,107 @@
       <div class="book-grid">
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-children-01/300/440" alt="Book cover of The Button Jar by Lucy Pemberton">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$14.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Button Jar</h5>
-        <p class="book-author">Lucy Pemberton</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$14.00</p>
+        <div>
+          <h5>The Button Jar</h5>
+          <p class="book-author">Lucy Pemberton</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$14.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Button Jar" data-author="Lucy Pemberton" data-price="14.00" data-cover="https://picsum.photos/seed/col-children-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-children-02/300/440" alt="Book cover of Where the Foxes Learn to Read by Oskar Lindqvist">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$15.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Where the Foxes Learn to Read</h5>
-        <p class="book-author">Oskar Lindqvist</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$15.50</p>
+        <div>
+          <h5>Where the Foxes Learn to Read</h5>
+          <p class="book-author">Oskar Lindqvist</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$15.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Where the Foxes Learn to Read" data-author="Oskar Lindqvist" data-price="15.50" data-cover="https://picsum.photos/seed/col-children-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
         <span class="badge-custom badge-new badge-corner">New</span>
         <img src="https://picsum.photos/seed/col-children-03/300/440" alt="Book cover of A Very Small Adventure by Grace Odenigbo">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$13.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>A Very Small Adventure</h5>
-        <p class="book-author">Grace Odenigbo</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$13.50</p>
+        <div>
+          <h5>A Very Small Adventure</h5>
+          <p class="book-author">Grace Odenigbo</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$13.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="A Very Small Adventure" data-author="Grace Odenigbo" data-price="13.50" data-cover="https://picsum.photos/seed/col-children-03/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-children-04/300/440" alt="Book cover of The Map That Drew Itself by Ravi Chandrasekaran">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$16.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Map That Drew Itself</h5>
-        <p class="book-author">Ravi Chandrasekaran</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$16.00</p>
+        <div>
+          <h5>The Map That Drew Itself</h5>
+          <p class="book-author">Ravi Chandrasekaran</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$16.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Map That Drew Itself" data-author="Ravi Chandrasekaran" data-price="16.00" data-cover="https://picsum.photos/seed/col-children-04/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
       </div>
@@ -355,46 +671,106 @@
       <div class="book-grid">
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-academic-01/300/440" alt="Book cover of Foundations of Comparative Literature by Dr. Helen Marsh">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$48.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Foundations of Comparative Literature</h5>
-        <p class="book-author">Dr. Helen Marsh</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$48.00</p>
+        <div>
+          <h5>Foundations of Comparative Literature</h5>
+          <p class="book-author">Dr. Helen Marsh</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$48.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Foundations of Comparative Literature" data-author="Dr. Helen Marsh" data-price="48.00" data-cover="https://picsum.photos/seed/col-academic-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-academic-02/300/440" alt="Book cover of A Concise History of Ideas by Prof. Amara Osei">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$42.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>A Concise History of Ideas</h5>
-        <p class="book-author">Prof. Amara Osei</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$42.00</p>
+        <div>
+          <h5>A Concise History of Ideas</h5>
+          <p class="book-author">Prof. Amara Osei</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$42.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="A Concise History of Ideas" data-author="Prof. Amara Osei" data-price="42.00" data-cover="https://picsum.photos/seed/col-academic-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-academic-03/300/440" alt="Book cover of Structures of Language by Dr. Wen Zhao">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$39.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Structures of Language</h5>
-        <p class="book-author">Dr. Wen Zhao</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$39.50</p>
+        <div>
+          <h5>Structures of Language</h5>
+          <p class="book-author">Dr. Wen Zhao</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$39.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Structures of Language" data-author="Dr. Wen Zhao" data-price="39.50" data-cover="https://picsum.photos/seed/col-academic-03/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-academic-04/300/440" alt="Book cover of Ethics in Practice by Prof. Liam Doherty">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$36.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Ethics in Practice</h5>
-        <p class="book-author">Prof. Liam Doherty</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$36.00</p>
+        <div>
+          <h5>Ethics in Practice</h5>
+          <p class="book-author">Prof. Liam Doherty</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$36.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Ethics in Practice" data-author="Prof. Liam Doherty" data-price="36.00" data-cover="https://picsum.photos/seed/col-academic-04/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
       </div>
@@ -413,46 +789,107 @@
       <div class="book-grid">
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-business-01/300/440" alt="Book cover of The Patient Founder by Renata Alves">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$28.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Patient Founder</h5>
-        <p class="book-author">Renata Alves</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$28.00</p>
+        <div>
+          <h5>The Patient Founder</h5>
+          <p class="book-author">Renata Alves</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$28.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Patient Founder" data-author="Renata Alves" data-price="28.00" data-cover="https://picsum.photos/seed/col-business-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
         <span class="badge-custom badge-new badge-corner">New</span>
         <img src="https://picsum.photos/seed/col-business-02/300/440" alt="Book cover of Systems, Not Sprints by Kwame Boateng">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$26.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Systems, Not Sprints</h5>
-        <p class="book-author">Kwame Boateng</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$26.50</p>
+        <div>
+          <h5>Systems, Not Sprints</h5>
+          <p class="book-author">Kwame Boateng</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$26.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Systems, Not Sprints" data-author="Kwame Boateng" data-price="26.50" data-cover="https://picsum.photos/seed/col-business-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-business-03/300/440" alt="Book cover of The Quiet Negotiation by Sofia Marchetti">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$25.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Quiet Negotiation</h5>
-        <p class="book-author">Sofia Marchetti</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$25.00</p>
+        <div>
+          <h5>The Quiet Negotiation</h5>
+          <p class="book-author">Sofia Marchetti</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$25.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Quiet Negotiation" data-author="Sofia Marchetti" data-price="25.00" data-cover="https://picsum.photos/seed/col-business-03/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-business-04/300/440" alt="Book cover of Margins of Trust by David Okonkwo">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$27.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Margins of Trust</h5>
-        <p class="book-author">David Okonkwo</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$27.50</p>
+        <div>
+          <h5>Margins of Trust</h5>
+          <p class="book-author">David Okonkwo</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$27.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Margins of Trust" data-author="David Okonkwo" data-price="27.50" data-cover="https://picsum.photos/seed/col-business-04/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
       </div>
@@ -473,44 +910,105 @@
       <div class="book-cover-wrap">
         <span class="badge-custom badge-staff-pick badge-corner">Staff Pick</span>
         <img src="https://picsum.photos/seed/col-biography-01/300/440" alt="Book cover of Salt and Stationery by Joon-ho Lee">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$24.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Salt and Stationery</h5>
-        <p class="book-author">Joon-ho Lee</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$24.00</p>
+        <div>
+          <h5>Salt and Stationery</h5>
+          <p class="book-author">Joon-ho Lee</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$24.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Salt and Stationery" data-author="Joon-ho Lee" data-price="24.00" data-cover="https://picsum.photos/seed/col-biography-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-biography-02/300/440" alt="Book cover of A Life in Footnotes by Margaret Ashworth">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$26.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>A Life in Footnotes</h5>
-        <p class="book-author">Margaret Ashworth</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$26.00</p>
+        <div>
+          <h5>A Life in Footnotes</h5>
+          <p class="book-author">Margaret Ashworth</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$26.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="A Life in Footnotes" data-author="Margaret Ashworth" data-price="26.00" data-cover="https://picsum.photos/seed/col-biography-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-biography-03/300/440" alt="Book cover of The Long Correspondence by Émile Rousseau">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$23.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Long Correspondence</h5>
-        <p class="book-author">Émile Rousseau</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$23.50</p>
+        <div>
+          <h5>The Long Correspondence</h5>
+          <p class="book-author">Émile Rousseau</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$23.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Long Correspondence" data-author="Émile Rousseau" data-price="23.50" data-cover="https://picsum.photos/seed/col-biography-03/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-biography-04/300/440" alt="Book cover of Everything I Didn't Say by Wren Okafor">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$22.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Everything I Didn't Say</h5>
-        <p class="book-author">Wren Okafor</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$22.00</p>
+        <div>
+          <h5>Everything I Didn't Say</h5>
+          <p class="book-author">Wren Okafor</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$22.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Everything I Didn't Say" data-author="Wren Okafor" data-price="22.00" data-cover="https://picsum.photos/seed/col-biography-04/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
       </div>
@@ -531,44 +1029,105 @@
       <div class="book-cover-wrap">
         <span class="badge-custom badge-new badge-corner">New</span>
         <img src="https://picsum.photos/seed/col-poetry-01/300/440" alt="Book cover of Field Notes for Leaving by Ingrid Sørensen">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$16.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Field Notes for Leaving</h5>
-        <p class="book-author">Ingrid Sørensen</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$16.00</p>
+        <div>
+          <h5>Field Notes for Leaving</h5>
+          <p class="book-author">Ingrid Sørensen</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$16.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Field Notes for Leaving" data-author="Ingrid Sørensen" data-price="16.00" data-cover="https://picsum.photos/seed/col-poetry-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-poetry-02/300/440" alt="Book cover of Small Weather by Tobias Kwan">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$17.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Small Weather</h5>
-        <p class="book-author">Tobias Kwan</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$17.50</p>
+        <div>
+          <h5>Small Weather</h5>
+          <p class="book-author">Tobias Kwan</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$17.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Small Weather" data-author="Tobias Kwan" data-price="17.50" data-cover="https://picsum.photos/seed/col-poetry-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-poetry-03/300/440" alt="Book cover of The Orchard at Dusk by Camila Reyes">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$15.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Orchard at Dusk</h5>
-        <p class="book-author">Camila Reyes</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$15.00</p>
+        <div>
+          <h5>The Orchard at Dusk</h5>
+          <p class="book-author">Camila Reyes</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$15.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Orchard at Dusk" data-author="Camila Reyes" data-price="15.00" data-cover="https://picsum.photos/seed/col-poetry-03/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-poetry-04/300/440" alt="Book cover of Unfinished Correspondence by Amir Hassan">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$16.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Unfinished Correspondence</h5>
-        <p class="book-author">Amir Hassan</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$16.50</p>
+        <div>
+          <h5>Unfinished Correspondence</h5>
+          <p class="book-author">Amir Hassan</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$16.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Unfinished Correspondence" data-author="Amir Hassan" data-price="16.50" data-cover="https://picsum.photos/seed/col-poetry-04/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
       </div>
@@ -587,46 +1146,107 @@
       <div class="book-grid">
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-history-01/300/440" alt="Book cover of The Cartographers of Silence by Prof. Owen Whitaker">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$29.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Cartographers of Silence</h5>
-        <p class="book-author">Prof. Owen Whitaker</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$29.00</p>
+        <div>
+          <h5>The Cartographers of Silence</h5>
+          <p class="book-author">Prof. Owen Whitaker</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$29.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Cartographers of Silence" data-author="Prof. Owen Whitaker" data-price="29.00" data-cover="https://picsum.photos/seed/col-history-01/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-history-02/300/440" alt="Book cover of Empire of Small Rooms by Dr. Fatima Nasser">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$27.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>Empire of Small Rooms</h5>
-        <p class="book-author">Dr. Fatima Nasser</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$27.50</p>
+        <div>
+          <h5>Empire of Small Rooms</h5>
+          <p class="book-author">Dr. Fatima Nasser</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$27.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="Empire of Small Rooms" data-author="Dr. Fatima Nasser" data-price="27.50" data-cover="https://picsum.photos/seed/col-history-02/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
         <span class="badge-custom badge-new badge-corner">New</span>
         <img src="https://picsum.photos/seed/col-history-03/300/440" alt="Book cover of A History of Forgetting by Lars Eriksson">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$26.00</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>A History of Forgetting</h5>
-        <p class="book-author">Lars Eriksson</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$26.00</p>
+        <div>
+          <h5>A History of Forgetting</h5>
+          <p class="book-author">Lars Eriksson</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$26.00</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="A History of Forgetting" data-author="Lars Eriksson" data-price="26.00" data-cover="https://picsum.photos/seed/col-history-03/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
         <div class="book-card reveal-up">
       <div class="book-cover-wrap">
-        
         <img src="https://picsum.photos/seed/col-history-04/300/440" alt="Book cover of The Lane Between Two Wars by Miriam Kessler">
+        <div class="book-card-overlay">
+          <div>
+            <span class="book-overlay-tag">Aldergate Edit</span>
+            <p class="book-overlay-desc">Hand-curated title with bookseller recommendations, author notes, and reading room highlights.</p>
+          </div>
+          <div class="book-overlay-meta">
+            <span>Edition</span>
+            <span>$28.50</span>
+          </div>
+        </div>
       </div>
       <div class="book-card-body">
-        <h5>The Lane Between Two Wars</h5>
-        <p class="book-author">Miriam Kessler</p>
-        <p class="arrival-price" style="margin-top:0.4rem;">$28.50</p>
+        <div>
+          <h5>The Lane Between Two Wars</h5>
+          <p class="book-author">Miriam Kessler</p>
+          
+        </div>
+        <div class="d-flex align-items-center justify-content-between mt-3 pt-2" style="border-top:1px solid var(--border-subtle);">
+          <span class="arrival-price m-0">$28.50</span>
+          <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-buy-now" data-title="The Lane Between Two Wars" data-author="Miriam Kessler" data-price="28.50" data-cover="https://picsum.photos/seed/col-history-04/300/440">Buy Now</button>
+        </div>
       </div>
     </div>
       </div>
@@ -635,22 +1255,22 @@
 
 
   <!-- ============ FINAL CTA ============ -->
-  <section class="final-cta-section">
+  <section class="final-cta-section cta-bg-collections">
     <div class="container-custom">
       <div class="final-cta-card reveal-up">
         <div class="final-cta-icon-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M12 6v6l3-2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 6 4 14M12 6v14M8 8v12M4 4v16"/></svg>
         </div>
-        <h2>Come meet the people <span class="ink-mark">behind the shelves<svg viewBox="0 0 220 20" preserveAspectRatio="none"><path d="M4 14 Q 55 4, 110 12 T 216 10"/></svg></span></h2>
-        <p>Open daily on Aldergate Lane — the kettle's usually on. Step inside for quiet reading, curated discoveries, and warm conversations.</p>
+        <h2>Build Your Legacy <span class="ink-mark">Personal Library<svg viewBox="0 0 220 20" preserveAspectRatio="none"><path d="M4 14 Q 55 4, 110 12 T 216 10"/></svg></span></h2>
+        <p>Transform your study or home into a master literary display. Work with our master bookbinders for bespoke clothbound and leather set curations.</p>
         <div class="final-cta-features">
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Open Daily 9am – 8pm</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Free Reading Corner WiFi</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Hand-Curated Titles</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Custom Cloth & Leather Binding</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Personal Monogram Embossing</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Whole-Room Library Curation</span>
         </div>
         <div class="final-cta-actions">
-          <a href="contact.html" class="btn-custom btn-primary-custom">Visit Us Today</a>
-          <a href="special-orders.html" class="btn-custom btn-secondary-custom">Request a Special Title</a>
+          <a href="special-orders.html" class="btn-custom btn-primary-custom">Request Library Curation</a>
+          <a href="contact.html" class="btn-custom btn-secondary-custom">Consult Master Binder</a>
         </div>
       </div>
     </div>

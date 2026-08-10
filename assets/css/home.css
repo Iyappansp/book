@@ -351,38 +351,7 @@
 
 /* ---------- Final CTA ---------- */
 
-.final-cta-section {
-  background: var(--color-primary);
-  border-radius: var(--radius-lg);
-  margin: 0 var(--space-sm) var(--space-xl);
-  padding: var(--space-xl) var(--space-md);
-}
-
-.final-cta-inner { text-align: center; }
-.final-cta-inner h2 { color: var(--text-inverse); margin-bottom: var(--space-xs); }
-.final-cta-inner p { color: rgba(255,255,255,0.78); max-width: 46ch; margin: 0 auto var(--space-md); }
-
-[data-theme="dark"] .final-cta-inner p { color: rgba(36,28,21,0.72); }
-[data-theme="dark"] .final-cta-inner h2 { color: var(--color-ink); }
-
-.final-cta-section .btn-secondary-custom {
-  border-color: rgba(255,255,255,0.4);
-  color: #fff;
-}
-.final-cta-section .btn-secondary-custom:hover {
-  border-color: #fff;
-  color: #fff;
-  background: rgba(255,255,255,0.1);
-}
-
-[data-theme="dark"] .final-cta-section .btn-secondary-custom {
-  border-color: rgba(36,28,21,0.4);
-  color: var(--color-ink);
-}
-[data-theme="dark"] .final-cta-section .btn-primary-custom {
-  background: var(--color-ink);
-  color: var(--color-gold);
-}
+/* Final CTA styles handled in components.css for full-width background system */
 
 /* ---------- Responsive ---------- */
 
