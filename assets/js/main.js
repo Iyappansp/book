@@ -8,33 +8,17 @@
   const NAV_LINKS = [
     { label: 'Home', href: 'index.html' },
     { label: 'Home 2', href: 'home-2.html' },
-    {
-      label: 'Genre',
-      dropdown: true,
-      items: [
-        { label: 'Fiction', href: 'fiction.html' },
-        { label: 'Non-Fiction', href: 'non-fiction.html' },
-        { label: 'Children\'s Books', href: 'children-books.html' },
-        { label: 'All Collections', href: 'book-collections.html' }
-      ]
-    },
+    { label: 'All Collections', href: 'book-collections.html' },
     { label: 'About', href: 'about.html' },
     {
       label: 'Events',
       dropdown: true,
       items: [
-        { label: 'Reading Corner', href: 'reading-corner.html' },
-        { label: 'Author Events', href: 'author-events.html' }
+        { label: 'Author Events', href: 'author-events.html' },
+        { label: 'Reading Corner', href: 'reading-corner.html' }
       ]
     },
-    {
-      label: 'Services',
-      dropdown: true,
-      items: [
-        { label: 'Staff Picks', href: 'staff-picks.html' },
-        { label: 'Special Orders', href: 'special-orders.html' }
-      ]
-    },
+    { label: 'Staff Picks', href: 'staff-picks.html' },
     { label: 'Contact', href: 'contact.html' }
   ];
 
@@ -146,9 +130,10 @@
         </a>
         <p>An independent bookstore and reading room devoted to slow reading, thoughtful curation, and the company of good books.</p>
         <div class="footer-social">
-          <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.5 20 12 4M8 14s1.5-2 4-2 4 1.5 4-1-2-3-4-3"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
         </div>
       </div>
 
@@ -552,7 +537,7 @@
 
     titleEl.textContent = cardData.title || 'Selected Book';
     authorEl.textContent = cardData.author || 'Aldergate Author';
-    coverEl.src = cardData.cover || 'https://picsum.photos/seed/book/200/300';
+    coverEl.src = cardData.cover || 'assets/chat-image/collection/Quiet-Ledger.png';
     coverEl.alt = cardData.title || 'Book Cover';
 
     currentBookPrice = parseFloat(cardData.price) || 26.00;
@@ -584,7 +569,7 @@
 
     titleEl.textContent = cardData.title || 'Upcoming Title';
     authorEl.textContent = cardData.author || 'Author';
-    coverEl.src = cardData.cover || 'https://picsum.photos/seed/prebook/200/300';
+    coverEl.src = cardData.cover || 'assets/chat-image/collection/Quiet-Ledger.png';
     dateEl.textContent = cardData.release || 'Releasing Next Month';
 
     modal.classList.add('active');
@@ -612,7 +597,7 @@
         const author = buyBtn.dataset.author || card?.querySelector('.book-author, .vault-author, p:not(.arrival-price)')?.textContent?.trim() || 'Aldergate Author';
         const priceStr = buyBtn.dataset.price || card?.querySelector('.arrival-price, .vault-price, .price-tag, [data-price]')?.textContent || '$24.00';
         const priceClean = priceStr.replace(/[^0-9.]/g, '') || '24.00';
-        const cover = buyBtn.dataset.cover || card?.querySelector('img')?.src || 'https://picsum.photos/seed/book-cover/200/300';
+        const cover = buyBtn.dataset.cover || card?.querySelector('img')?.src || 'assets/chat-image/collection/Quiet-Ledger.png';
 
         openBuyModal({ title, author, price: priceClean, cover });
         return;
@@ -625,7 +610,7 @@
         const title = preBtn.dataset.title || card?.querySelector('h4, h5, .arrival-title')?.textContent?.trim() || 'Upcoming Release';
         const author = preBtn.dataset.author || card?.querySelector('.book-author, .vault-author')?.textContent?.trim() || 'Aldergate Author';
         const release = preBtn.dataset.release || card?.querySelector('.vault-release-badge')?.textContent?.trim() || 'Releasing Sep 2026';
-        const cover = preBtn.dataset.cover || card?.querySelector('img')?.src || 'https://picsum.photos/seed/upcoming/200/300';
+        const cover = preBtn.dataset.cover || card?.querySelector('img')?.src || 'assets/chat-image/collection/Quiet-Ledger.png';
 
         openPrebookModal({ title, author, release, cover });
         return;
@@ -712,7 +697,7 @@
         tag: 'Literary Masterpiece',
         price: 24.50,
         rating: '4.9 ★ (142 reviews)',
-        img: 'https://picsum.photos/seed/fic-award-01/400/580',
+        img: 'assets/chat-image/home2/Cartography.png',
         excerpt: '"Mapmaking is not about where the land ends, but where the heart loses its compass. In the coastal town of Al-Minha, three generations of women kept books they never intended to publish..."',
         audioTime: '03:12'
       },
@@ -722,7 +707,7 @@
         tag: 'Mystery & Suspense',
         price: 26.00,
         rating: '4.8 ★ (98 reviews)',
-        img: 'https://picsum.photos/seed/fic-lit-01/400/580',
+        img: 'assets/chat-image/home2/Quiet-Ledger -Mara.png',
         excerpt: '"The ledger was bound in dark calfskin, stained at the corners with black tea. Page forty-two listed forty-eight names, but only forty-seven were accounted for in the village churchyard..."',
         audioTime: '02:45'
       },
@@ -732,7 +717,7 @@
         tag: 'Philosophy & Science',
         price: 28.00,
         rating: '4.95 ★ (215 reviews)',
-        img: 'https://picsum.photos/seed/cc-side-history/400/580',
+        img: 'assets/chat-image/home2/Architects-Memory.png',
         excerpt: '"To remember a landmark is easy; to remember the light that fell across its stone on an October afternoon in 1894 requires a different kind of architecture altogether..."',
         audioTime: '04:05'
       },
@@ -742,7 +727,7 @@
         tag: 'Vintage Classic',
         price: 14.00,
         rating: '4.7 ★ (84 reviews)',
-        img: 'https://picsum.photos/seed/fic-classic-01/400/580',
+        img: 'assets/chat-image/home2/Winter-Thornfield.png',
         excerpt: '"Snow began falling at three in the afternoon, coating the old stone chimneys until Thornfield looked less like an estate and more like a sleeping beast wrapped in frost..."',
         audioTime: '02:18'
       }

@@ -59,10 +59,14 @@
               <form id="contact-form" novalidate>
                 <div class="row g-3">
                   <div class="col-12 col-md-6">
-                    <label class="form-label" for="c-name">Full Name *</label>
-                    <input type="text" class="form-control" id="c-name" required>
+                    <label class="form-label" for="c-fname">First Name *</label>
+                    <input type="text" class="form-control" id="c-fname" required>
                   </div>
                   <div class="col-12 col-md-6">
+                    <label class="form-label" for="c-lname">Last Name *</label>
+                    <input type="text" class="form-control" id="c-lname" required>
+                  </div>
+                  <div class="col-12">
                     <label class="form-label" for="c-email">Email *</label>
                     <input type="email" class="form-control" id="c-email" required>
                   </div>
@@ -100,7 +104,7 @@
             <table class="hours-table">
               <tr><td>Monday – Friday</td><td>9:00 AM – 8:00 PM</td></tr>
               <tr><td>Saturday</td><td>9:00 AM – 9:00 PM</td></tr>
-              <tr><td>Sunday</td><td>10:00 AM – 6:00 PM</td></tr>
+              <!-- <tr><td>Sunday</td><td>10:00 AM – 6:00 PM</td></tr> -->
             </table>
           </div>
           <div class="info-side-card mb-3">
@@ -124,22 +128,56 @@
         </div>
       </div>
   <!-- ============ FINAL CTA ============ -->
-  <section class="final-cta-section cta-bg-about">
-    <div class="container-custom">
-      <div class="final-cta-card reveal-up">
-        <div class="final-cta-icon-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
+  <section class="final-cta-section cta-bg-about cta-contact-warm">
+    <div class="cta-contact-banner container-custom">
+      <div class="cta-contact-left reveal-up">
+        <div class="cta-contact-eyebrow"><div class="cta-contact-eyebrow-line"></div> Come Visit Us</div>
         <h2>We Can't Wait To <span class="ink-mark">Welcome You<svg viewBox="0 0 220 20" preserveAspectRatio="none"><path d="M4 14 Q 55 4, 110 12 T 216 10"/></svg></span></h2>
         <p>Step inside our doors on Aldergate Lane. A warm cup of tea and thousands of incredible books are waiting for you.</p>
-        <div class="final-cta-features">
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Open Daily 9am – 8pm</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> 14 Aldergate Lane, London</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Direct Phone: (555) 014-2299</span>
+        <div class="cta-contact-info-items">
+          <div class="cta-contact-info-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8Z"/></svg>
+            14 Aldergate Lane, London
+          </div>
+          <div class="cta-contact-info-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            Open Daily 9am – 8pm
+          </div>
+          <div class="cta-contact-info-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Direct Phone: (555) 014-2299
+          </div>
         </div>
         <div class="final-cta-actions">
           <a href="book-collections.html" class="btn-custom btn-primary-custom">Explore Store Collections</a>
           <a href="reading-corner.html" class="btn-custom btn-secondary-custom">Visit Reading Corner</a>
+        </div>
+      </div>
+      <div class="cta-contact-center-divider"></div>
+      <div class="cta-contact-right reveal-up delay-2">
+        <div class="cta-contact-handshake">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6.5 6.5 11 11M17 7l-1-1a2 2 0 0 0-2.83 0L12 7.17l-1.17-1.17a2 2 0 0 0-2.83 0L7 7M17 17l1 1a2 2 0 0 0 2.83 0L22 16.83l-1.17-1.17a2 2 0 0 0-2.83 0L17 17"/></svg>
+        </div>
+        <div class="cta-map-card">
+          <div class="cta-map-header">📍 Store Location</div>
+          <div class="cta-map-dot">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8Z"/></svg>
+            Aldergate Books, 14 Aldergate Lane, EC1
+          </div>
+          <div class="cta-map-dot">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            Mon–Sun, 9:00am – 8:00pm
+          </div>
+        </div>
+        <div class="cta-contact-actions">
+          <a href="mailto:hello@aldergateBooks.com" class="btn-custom btn-primary-custom">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9l20-7z"/></svg>
+            Email Us
+          </a>
+          <a href="tel:5550142299" class="btn-custom btn-secondary-custom">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Us
+          </a>
         </div>
       </div>
     </div>

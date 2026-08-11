@@ -66,9 +66,34 @@
         </div>
       </div>
       <div class="hero-classic-figure reveal-up delay-2">
-        <div class="hero-stack-frame">
-          <img src="https://picsum.photos/seed/aldergate-hero-main/640/760" alt="Warmly lit bookstore interior with tall wooden shelves and a reading nook" class="hero-img-main">
-          <img src="https://picsum.photos/seed/aldergate-hero-detail/300/300" alt="Close-up of stacked hardcover books tied with string" class="hero-img-float">
+        <div class="hero-book-scene">
+          <!-- 3D Animated Book -->
+          <div class="hero-book-3d">
+            <div class="hero-book-cover-front"></div>
+            <div class="hero-book-cover-back"></div>
+            <div class="hero-book-spine"></div>
+            <div class="hero-book-pages">
+              <div class="hero-book-page"></div>
+              <div class="hero-book-page"></div>
+              <div class="hero-book-page"></div>
+              <div class="hero-book-page"></div>
+              <div class="hero-book-page"></div>
+            </div>
+          </div>
+          <!-- Glow effect from open pages -->
+          <div class="hero-book-glow"></div>
+          <!-- Sparkle particles -->
+          <div class="hero-book-sparkles">
+            <span class="sparkle sparkle-1"></span>
+            <span class="sparkle sparkle-2"></span>
+            <span class="sparkle sparkle-3"></span>
+            <span class="sparkle sparkle-4"></span>
+            <span class="sparkle sparkle-5"></span>
+            <span class="sparkle sparkle-6"></span>
+            <span class="sparkle sparkle-7"></span>
+            <span class="sparkle sparkle-8"></span>
+          </div>
+          <!-- Badge -->
           <div class="hero-badge-float">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
             <span>Staff-picked, weekly</span>
@@ -89,42 +114,42 @@
 
       <div class="genre-grid">
         <a href="fiction.html" class="genre-card reveal-up">
-          <img src="https://picsum.photos/seed/genre-fiction-01/420/300" alt="Row of literary fiction paperbacks with worn spines">
+          <img src="assets/chat-image/collection/Quiet-Ledger.png" alt="Row of literary fiction paperbacks with worn spines">
           <div class="genre-card-body">
             <h4>Fiction</h4>
             <p>Literary &amp; contemporary</p>
           </div>
         </a>
         <a href="book-collections.html#mystery" class="genre-card reveal-up delay-1">
-          <img src="https://picsum.photos/seed/genre-mystery-02/420/300" alt="Mystery and thriller novels stacked on a dark wood table">
+          <img src="assets/chat-image/collection/harbour-small-lies.png" alt="Mystery and thriller novels stacked on a dark wood table">
           <div class="genre-card-body">
             <h4>Mystery &amp; Thriller</h4>
             <p>Page-turners &amp; slow burns</p>
           </div>
         </a>
         <a href="book-collections.html#romance" class="genre-card reveal-up delay-2">
-          <img src="https://picsum.photos/seed/genre-romance-03/420/300" alt="Romance novels with pastel covers arranged on a shelf">
+          <img src="assets/chat-image/collection/the-correspondence.png" alt="Romance novels with pastel covers arranged on a shelf">
           <div class="genre-card-body">
             <h4>Romance</h4>
             <p>Contemporary &amp; classic</p>
           </div>
         </a>
         <a href="book-collections.html#fantasy" class="genre-card reveal-up delay-3">
-          <img src="https://picsum.photos/seed/genre-fantasy-04/420/300" alt="Fantasy novels with illustrated covers on a display table">
+          <img src="assets/chat-image/collection/Cartographer's-debt.png" alt="Fantasy novels with illustrated covers on a display table">
           <div class="genre-card-body">
             <h4>Fantasy &amp; Sci-Fi</h4>
             <p>Other worlds, built well</p>
           </div>
         </a>
         <a href="children-books.html" class="genre-card reveal-up">
-          <img src="https://picsum.photos/seed/genre-children-05/420/300" alt="Colorful children's picture books on a low shelf">
+          <img src="assets/chat-image/collection/button-jar.png" alt="Colorful children's picture books on a low shelf">
           <div class="genre-card-body">
             <h4>Children's</h4>
             <p>Picture books to YA</p>
           </div>
         </a>
         <a href="non-fiction.html" class="genre-card reveal-up delay-1">
-          <img src="https://picsum.photos/seed/genre-nonfiction-06/420/300" alt="Non-fiction and biography books stacked with reading glasses">
+          <img src="assets/chat-image/collection/patient-founder.png" alt="Non-fiction and biography books stacked with reading glasses">
           <div class="genre-card-body">
             <h4>Non-Fiction</h4>
             <p>Ideas, lives &amp; history</p>
@@ -151,10 +176,12 @@
           <div class="book-card">
             <div class="book-cover-wrap">
               <span class="badge-custom badge-staff-pick badge-corner">Staff Pick</span>
-              <img src="https://picsum.photos/seed/staffpick-book-01/300/440" alt="Cover of a literary fiction novel titled The Quiet Ledger">
+              <img src="assets/chat-image/collection/Quiet-Ledger.png" alt="Cover of a literary fiction novel titled The Quiet Ledger">
               <div class="book-card-overlay">
                 <div>
                   <span class="book-overlay-tag">Staff Recommended</span>
+                  <h5 class="book-overlay-title">The Quiet Ledger</h5>
+                  <p class="book-overlay-author">Mara Solenne</p>
                   <p class="book-overlay-desc">Recommended by Theo — a slow, aching family novel I couldn't put down.</p>
                 </div>
                 <div class="book-overlay-meta">
@@ -168,10 +195,10 @@
               <p class="book-author">Mara Solenne</p>
               <p class="book-note">"Recommended by Theo — a slow, aching family novel I couldn't put down."</p>
               <div class="btn-action-row">
-                <button type="button" class="btn-buy-now" data-title="The Quiet Ledger" data-author="Mara Solenne" data-price="$26.00" data-cover="https://picsum.photos/seed/staffpick-book-01/300/440">
+                <button type="button" class="btn-buy-now" data-title="The Quiet Ledger" data-author="Mara Solenne" data-price="$26.00" data-cover="assets/chat-image/collection/Quiet-Ledger.png">
                   <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg> Buy Now
                 </button>
-                <button type="button" class="btn-prebook" data-title="The Quiet Ledger (Signed)" data-author="Mara Solenne" data-release="In Stock" data-cover="https://picsum.photos/seed/staffpick-book-01/300/440">
+                <button type="button" class="btn-prebook" data-title="The Quiet Ledger (Signed)" data-author="Mara Solenne" data-release="In Stock" data-cover="assets/chat-image/collection/Quiet-Ledger.png">
                   <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg> Pre-Book
                 </button>
               </div>
@@ -182,10 +209,12 @@
           <div class="book-card">
             <div class="book-cover-wrap">
               <span class="badge-custom badge-staff-pick badge-corner">Staff Pick</span>
-              <img src="https://picsum.photos/seed/staffpick-book-02/300/440" alt="Cover of a mystery novel titled Harbor of Small Lies">
+              <img src="assets/chat-image/collection/harbour-small-lies.png" alt="Cover of a mystery novel titled Harbor of Small Lies">
               <div class="book-card-overlay">
                 <div>
                   <span class="book-overlay-tag">Staff Recommended</span>
+                  <h5 class="book-overlay-title">Harbor of Small Lies</h5>
+                  <p class="book-overlay-author">D. R. Okafor</p>
                   <p class="book-overlay-desc">Recommended by Priya — the twist genuinely surprised me.</p>
                 </div>
                 <div class="book-overlay-meta">
@@ -199,10 +228,10 @@
               <p class="book-author">D. R. Okafor</p>
               <p class="book-note">"Recommended by Priya — the twist genuinely surprised me."</p>
               <div class="btn-action-row">
-                <button type="button" class="btn-buy-now" data-title="Harbor of Small Lies" data-author="D. R. Okafor" data-price="$24.00" data-cover="https://picsum.photos/seed/staffpick-book-02/300/440">
+                <button type="button" class="btn-buy-now" data-title="Harbor of Small Lies" data-author="D. R. Okafor" data-price="$24.00" data-cover="assets/chat-image/collection/harbour-small-lies.png">
                   <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg> Buy Now
                 </button>
-                <button type="button" class="btn-prebook" data-title="Harbor of Small Lies" data-author="D. R. Okafor" data-release="In Stock" data-cover="https://picsum.photos/seed/staffpick-book-02/300/440">
+                <button type="button" class="btn-prebook" data-title="Harbor of Small Lies" data-author="D. R. Okafor" data-release="In Stock" data-cover="assets/chat-image/collection/harbour-small-lies.png">
                   <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg> Pre-Book
                 </button>
               </div>
@@ -213,10 +242,12 @@
           <div class="book-card">
             <div class="book-cover-wrap">
               <span class="badge-custom badge-new badge-corner">New</span>
-              <img src="https://picsum.photos/seed/staffpick-book-03/300/440" alt="Cover of a fantasy novel titled The Cartographer's Debt">
+              <img src="assets/chat-image/collection/Cartographer's-debt.png" alt="Cover of a fantasy novel titled The Cartographer's Debt">
               <div class="book-card-overlay">
                 <div>
                   <span class="book-overlay-tag">Staff Recommended</span>
+                  <h5 class="book-overlay-title">The Cartographer's Debt</h5>
+                  <p class="book-overlay-author">Fenwick Ashby</p>
                   <p class="book-overlay-desc">Recommended by Sam — dense worldbuilding, huge payoff.</p>
                 </div>
                 <div class="book-overlay-meta">
@@ -230,10 +261,10 @@
               <p class="book-author">Fenwick Ashby</p>
               <p class="book-note">"Recommended by Sam — dense worldbuilding, huge payoff."</p>
               <div class="btn-action-row">
-                <button type="button" class="btn-buy-now" data-title="The Cartographer's Debt" data-author="Fenwick Ashby" data-price="$27.50" data-cover="https://picsum.photos/seed/staffpick-book-03/300/440">
+                <button type="button" class="btn-buy-now" data-title="The Cartographer's Debt" data-author="Fenwick Ashby" data-price="$27.50" data-cover="assets/chat-image/collection/Cartographer's-debt.png">
                   <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg> Buy Now
                 </button>
-                <button type="button" class="btn-prebook" data-title="The Cartographer's Debt" data-author="Fenwick Ashby" data-release="In Stock" data-cover="https://picsum.photos/seed/staffpick-book-03/300/440">
+                <button type="button" class="btn-prebook" data-title="The Cartographer's Debt" data-author="Fenwick Ashby" data-release="In Stock" data-cover="assets/chat-image/collection/Cartographer's-debt.png">
                   <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg> Pre-Book
                 </button>
               </div>
@@ -244,10 +275,12 @@
           <div class="book-card">
             <div class="book-cover-wrap">
               <span class="badge-custom badge-staff-pick badge-corner">Staff Pick</span>
-              <img src="https://picsum.photos/seed/staffpick-book-04/300/440" alt="Cover of a memoir titled Salt and Stationery">
+              <img src="assets/chat-image/collection/salt-stationary.png" alt="Cover of a memoir titled Salt and Stationery">
               <div class="book-card-overlay">
                 <div>
                   <span class="book-overlay-tag">Staff Recommended</span>
+                  <h5 class="book-overlay-title">Salt and Stationery</h5>
+                  <p class="book-overlay-author">Joon-ho Lee</p>
                   <p class="book-overlay-desc">Recommended by Theo — funny, then suddenly devastating.</p>
                 </div>
                 <div class="book-overlay-meta">
@@ -261,10 +294,10 @@
               <p class="book-author">Joon-ho Lee</p>
               <p class="book-note">"Recommended by Theo — funny, then suddenly devastating."</p>
               <div class="btn-action-row">
-                <button type="button" class="btn-buy-now" data-title="Salt and Stationery" data-author="Joon-ho Lee" data-price="$22.00" data-cover="https://picsum.photos/seed/staffpick-book-04/300/440">
+                <button type="button" class="btn-buy-now" data-title="Salt and Stationery" data-author="Joon-ho Lee" data-price="$22.00" data-cover="assets/chat-image/collection/salt-stationary.png">
                   <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg> Buy Now
                 </button>
-                <button type="button" class="btn-prebook" data-title="Salt and Stationery" data-author="Joon-ho Lee" data-release="In Stock" data-cover="https://picsum.photos/seed/staffpick-book-04/300/440">
+                <button type="button" class="btn-prebook" data-title="Salt and Stationery" data-author="Joon-ho Lee" data-release="In Stock" data-cover="assets/chat-image/collection/salt-stationary.png">
                   <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg> Pre-Book
                 </button>
               </div>
@@ -291,48 +324,48 @@
 
       <div class="new-arrivals-strip">
         <div class="arrival-item reveal-up">
-          <img src="https://picsum.photos/seed/arrival-title-01/220/320" alt="Cover of new hardcover novel November Ledger">
+          <img src="assets/chat-image/collection/Vintage-November.png" alt="Cover of new hardcover novel November Ledger">
           <p class="arrival-title">November Ledger</p>
           <p class="arrival-price">$26.00</p>
           <div class="btn-action-row">
-            <button type="button" class="btn-buy-now" data-title="November Ledger" data-price="$26.00" data-cover="https://picsum.photos/seed/arrival-title-01/220/320">Buy Now</button>
-            <button type="button" class="btn-prebook" data-title="November Ledger" data-cover="https://picsum.photos/seed/arrival-title-01/220/320">Pre-Book</button>
+            <button type="button" class="btn-buy-now" data-title="November Ledger" data-price="$26.00" data-cover="assets/chat-image/collection/Vintage-November.png">Buy Now</button>
+            <button type="button" class="btn-prebook" data-title="November Ledger" data-cover="assets/chat-image/collection/Vintage-November.png">Pre-Book</button>
           </div>
         </div>
         <div class="arrival-item reveal-up delay-1">
-          <img src="https://picsum.photos/seed/arrival-title-02/220/320" alt="Cover of new paperback The Slow Orchard">
+          <img src="assets/chat-image/collection/Slow-Orchard.png" alt="Cover of new paperback The Slow Orchard">
           <p class="arrival-title">The Slow Orchard</p>
           <p class="arrival-price">$18.50</p>
           <div class="btn-action-row">
-            <button type="button" class="btn-buy-now" data-title="The Slow Orchard" data-price="$18.50" data-cover="https://picsum.photos/seed/arrival-title-02/220/320">Buy Now</button>
-            <button type="button" class="btn-prebook" data-title="The Slow Orchard" data-cover="https://picsum.photos/seed/arrival-title-02/220/320">Pre-Book</button>
+            <button type="button" class="btn-buy-now" data-title="The Slow Orchard" data-price="$18.50" data-cover="assets/chat-image/collection/Slow-Orchard.png">Buy Now</button>
+            <button type="button" class="btn-prebook" data-title="The Slow Orchard" data-cover="assets/chat-image/collection/Slow-Orchard.png">Pre-Book</button>
           </div>
         </div>
         <div class="arrival-item reveal-up delay-2">
-          <img src="https://picsum.photos/seed/arrival-title-03/220/320" alt="Cover of new essay collection Small Weather">
+          <img src="assets/chat-image/collection/small-whether.png" alt="Cover of new essay collection Small Weather">
           <p class="arrival-title">Small Weather</p>
           <p class="arrival-price">$21.00</p>
           <div class="btn-action-row">
-            <button type="button" class="btn-buy-now" data-title="Small Weather" data-price="$21.00" data-cover="https://picsum.photos/seed/arrival-title-03/220/320">Buy Now</button>
-            <button type="button" class="btn-prebook" data-title="Small Weather" data-cover="https://picsum.photos/seed/arrival-title-03/220/320">Pre-Book</button>
+            <button type="button" class="btn-buy-now" data-title="Small Weather" data-price="$21.00" data-cover="assets/chat-image/collection/small-whether.png">Buy Now</button>
+            <button type="button" class="btn-prebook" data-title="Small Weather" data-cover="assets/chat-image/collection/small-whether.png">Pre-Book</button>
           </div>
         </div>
         <div class="arrival-item reveal-up delay-3">
-          <img src="https://picsum.photos/seed/arrival-title-04/220/320" alt="Cover of new poetry collection Field Notes for Leaving">
+          <img src="assets/chat-image/collection/field-notes-leaving.png" alt="Cover of new poetry collection Field Notes for Leaving">
           <p class="arrival-title">Field Notes for Leaving</p>
           <p class="arrival-price">$16.00</p>
           <div class="btn-action-row">
-            <button type="button" class="btn-buy-now" data-title="Field Notes for Leaving" data-price="$16.00" data-cover="https://picsum.photos/seed/arrival-title-04/220/320">Buy Now</button>
-            <button type="button" class="btn-prebook" data-title="Field Notes for Leaving" data-cover="https://picsum.photos/seed/arrival-title-04/220/320">Pre-Book</button>
+            <button type="button" class="btn-buy-now" data-title="Field Notes for Leaving" data-price="$16.00" data-cover="assets/chat-image/collection/field-notes-leaving.png">Buy Now</button>
+            <button type="button" class="btn-prebook" data-title="Field Notes for Leaving" data-cover="assets/chat-image/collection/field-notes-leaving.png">Pre-Book</button>
           </div>
         </div>
         <div class="arrival-item reveal-up delay-4">
-          <img src="https://picsum.photos/seed/arrival-title-05/220/320" alt="Cover of new thriller The Locksmith's Daughter">
+          <img src="assets/chat-image/collection/Locksmith-Daughter.png" alt="Cover of new thriller The Locksmith's Daughter">
           <p class="arrival-title">The Locksmith's Daughter</p>
           <p class="arrival-price">$24.00</p>
           <div class="btn-action-row">
-            <button type="button" class="btn-buy-now" data-title="The Locksmith's Daughter" data-price="$24.00" data-cover="https://picsum.photos/seed/arrival-title-05/220/320">Buy Now</button>
-            <button type="button" class="btn-prebook" data-title="The Locksmith's Daughter" data-cover="https://picsum.photos/seed/arrival-title-05/220/320">Pre-Book</button>
+            <button type="button" class="btn-buy-now" data-title="The Locksmith's Daughter" data-price="$24.00" data-cover="assets/chat-image/collection/Locksmith-Daughter.png">Buy Now</button>
+            <button type="button" class="btn-prebook" data-title="The Locksmith's Daughter" data-cover="assets/chat-image/collection/Locksmith-Daughter.png">Pre-Book</button>
           </div>
         </div>
       </div>
@@ -361,13 +394,13 @@
         <div class="vault-grid">
           <div class="vault-card">
             <span class="vault-release-badge">Releasing Sep 18</span>
-            <img src="https://picsum.photos/seed/vault-book-01/320/440" alt="The Glass Alchemist by Vivienne Thorne" class="vault-cover-img">
+            <img src="assets/chat-image/collection/Glass-Alchemist.png" alt="The Glass Alchemist by Vivienne Thorne" class="vault-cover-img">
             <h4>The Glass Alchemist</h4>
             <div class="vault-author">Vivienne Thorne</div>
             <p class="vault-desc">An atmospheric gothic mystery set in 19th-century Venice, following a secret guild of glassblowers and dangerous alchemical secrets.</p>
             <div class="vault-price-row">
               <span class="vault-price">$28.00</span>
-              <button type="button" class="btn-prebook" data-title="The Glass Alchemist" data-author="Vivienne Thorne" data-release="Sep 18, 2026" data-cover="https://picsum.photos/seed/vault-book-01/320/440">
+              <button type="button" class="btn-prebook" data-title="The Glass Alchemist" data-author="Vivienne Thorne" data-release="Sep 18, 2026" data-cover="assets/chat-image/collection/Glass-Alchemist.png">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
                 Pre-Book Now
               </button>
@@ -376,13 +409,13 @@
 
           <div class="vault-card">
             <span class="vault-release-badge">Releasing Oct 04</span>
-            <img src="https://picsum.photos/seed/vault-book-02/320/440" alt="Letters to a Silent Sea by Julian Vance" class="vault-cover-img">
+            <img src="assets/chat-image/collection/letter-to-silent.png" alt="Letters to a Silent Sea by Julian Vance" class="vault-cover-img">
             <h4>Letters to a Silent Sea</h4>
             <div class="vault-author">Julian Vance</div>
             <p class="vault-desc">A poetic, deeply moving memoir detailing thirty years of solitary lighthouse keeping along the rugged Irish coast.</p>
             <div class="vault-price-row">
               <span class="vault-price">$24.50</span>
-              <button type="button" class="btn-prebook" data-title="Letters to a Silent Sea" data-author="Julian Vance" data-release="Oct 04, 2026" data-cover="https://picsum.photos/seed/vault-book-02/320/440">
+              <button type="button" class="btn-prebook" data-title="Letters to a Silent Sea" data-author="Julian Vance" data-release="Oct 04, 2026" data-cover="assets/chat-image/collection/letter-to-silent.png">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
                 Pre-Book Now
               </button>
@@ -391,13 +424,13 @@
 
           <div class="vault-card">
             <span class="vault-release-badge">Releasing Oct 22</span>
-            <img src="https://picsum.photos/seed/vault-book-03/320/440" alt="Chronicles of the Old Library by E. R. Montgomery" class="vault-cover-img">
+            <img src="assets/chat-image/collection/Chronicles-Old-Library.png" alt="Chronicles of the Old Library by E. R. Montgomery" class="vault-cover-img">
             <h4>Chronicles of the Old Library</h4>
             <div class="vault-author">E. R. Montgomery</div>
             <p class="vault-desc">An epic fantasy masterpiece exploring a forgotten archive holding forbidden spells and lost histories of forgotten kingdoms.</p>
             <div class="vault-price-row">
               <span class="vault-price">$32.00</span>
-              <button type="button" class="btn-prebook" data-title="Chronicles of the Old Library" data-author="E. R. Montgomery" data-release="Oct 22, 2026" data-cover="https://picsum.photos/seed/vault-book-03/320/440">
+              <button type="button" class="btn-prebook" data-title="Chronicles of the Old Library" data-author="E. R. Montgomery" data-release="Oct 22, 2026" data-cover="assets/chat-image/collection/Chronicles-Old-Library.png">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
                 Pre-Book Now
               </button>
@@ -411,7 +444,7 @@
         <div class="spotlight-badge">Collector's Edition Spotlight</div>
         <div class="spotlight-grid">
           <div class="spotlight-figure">
-            <img src="https://picsum.photos/seed/collector-edition-spotlight/340/500" alt="Collector Edition of The Aldergate Anthology">
+            <img src="assets/chat-image/home2/Architects-Memory.png" alt="Collector Edition of The Aldergate Anthology">
           </div>
           <div class="spotlight-content">
             <span class="eyebrow" style="color:var(--color-gold);">Limited Hardcover Edition · Hand-Numbered</span>
@@ -447,15 +480,14 @@
               <div class="spotlight-meta-item"><span class="label">Stock</span><span class="val" style="color:var(--color-burgundy);">Only 14 left</span></div>
             </div>
 
-            <div class="d-flex flex-wrap align-items-center gap-3 mt-4">
-              <span style="font-family:var(--font-display); font-size:1.6rem; font-weight:700; color:var(--color-gold);">$45.00</span>
-              <button type="button" class="btn-buy-now" style="padding:0.6rem 1.4rem; font-size:0.9rem;" data-title="The Aldergate Anthology (Collector's Edition)" data-author="Aldergate Booksellers" data-price="$45.00" data-cover="https://picsum.photos/seed/collector-edition-spotlight/340/500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                Buy Now
+            <div class="spotlight-actions mt-4">
+              <button type="button" class="btn-buy-now" style="padding:0.6rem 1.4rem; font-size:0.9rem;" data-title="The Aldergate Anthology (Collector's Edition)" data-author="Aldergate Booksellers" data-price="$45.00" data-cover="assets/chat-image/home2/Architects-Memory.png">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+                Buy Collector's Edition
               </button>
-              <button type="button" class="btn-prebook" style="padding:0.6rem 1.4rem; font-size:0.9rem;" data-title="The Aldergate Anthology (Collector's Edition)" data-author="Aldergate Booksellers" data-release="Limited Run" data-cover="https://picsum.photos/seed/collector-edition-spotlight/340/500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
-                Pre-Book Deluxe
+              <button type="button" class="btn-prebook" style="padding:0.6rem 1.4rem; font-size:0.9rem;" data-title="The Aldergate Anthology (Collector's Edition)" data-author="Aldergate Booksellers" data-release="Limited Run" data-cover="assets/chat-image/home2/Architects-Memory.png">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+                Pre-Book Signed Copy
               </button>
             </div>
           </div>
@@ -468,7 +500,7 @@
   <section class="reading-corner-teaser">
     <div class="container-custom reading-corner-grid">
       <div class="rc-figure reveal-up">
-        <img src="https://picsum.photos/seed/reading-corner-teaser-01/640/500" alt="Cozy reading corner with armchair, warm lamp, and stacked books">
+        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Cozy reading corner with armchair, warm lamp, and stacked books">
       </div>
       <div class="rc-copy reveal-up delay-2">
         <span class="eyebrow">Stay a while</span>
@@ -534,7 +566,7 @@
         <div class="col-12 col-md-6 col-lg-4 reveal-up">
           <div class="event-card">
             <div class="event-date-block"><span class="event-day">14</span><span class="event-month">Aug</span></div>
-            <img src="https://picsum.photos/seed/event-signing-01/440/260" alt="Author reading at a bookstore event, audience seated among shelves">
+            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Author reading at a bookstore event, audience seated among shelves">
             <div class="event-card-body">
               <h5>Reading &amp; Signing — Mara Solenne</h5>
               <p>The Quiet Ledger · 6:30 PM · Free entry</p>
@@ -544,7 +576,7 @@
         <div class="col-12 col-md-6 col-lg-4 reveal-up delay-1">
           <div class="event-card">
             <div class="event-date-block"><span class="event-day">21</span><span class="event-month">Aug</span></div>
-            <img src="https://picsum.photos/seed/event-signing-02/440/260" alt="Book club members discussing around a table full of novels">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Book club members discussing around a table full of novels">
             <div class="event-card-body">
               <h5>Monthly Book Club Meetup</h5>
               <p>This month: Harbor of Small Lies · 7:00 PM</p>
@@ -554,7 +586,7 @@
         <div class="col-12 col-md-6 col-lg-4 reveal-up delay-2">
           <div class="event-card">
             <div class="event-date-block"><span class="event-day">04</span><span class="event-month">Sep</span></div>
-            <img src="https://picsum.photos/seed/event-signing-03/440/260" alt="Poet reading aloud at a small intimate bookstore gathering">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Poet reading aloud at a small intimate bookstore gathering">
             <div class="event-card-body">
               <h5>Poetry Night — Open Mic</h5>
               <p>Bring your own or read a favorite · 7:30 PM</p>
@@ -576,19 +608,19 @@
         <div class="col-12 col-md-4 reveal-up">
           <div class="quote-block">
             <p class="quote-text">"I came in for one book and left with four, plus a recommendation I'm still thinking about a month later."</p>
-            <div class="quote-author"><img src="https://picsum.photos/seed/testimonial-reader-01/60/60" alt="Portrait of customer Ines Farrow"><div><strong>Ines Farrow</strong><span>Regular since 2021</span></div></div>
+            <div class="quote-author"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&amp;w=120&amp;auto=format&amp;fit=crop" alt="Portrait of customer Ines Farrow"><div><strong>Ines Farrow</strong><span>Regular since 2021</span></div></div>
           </div>
         </div>
         <div class="col-12 col-md-4 reveal-up delay-1">
           <div class="quote-block">
             <p class="quote-text">"They tracked down an out-of-print poetry collection I'd been hunting for two years. I nearly cried at the counter."</p>
-            <div class="quote-author"><img src="https://picsum.photos/seed/testimonial-reader-02/60/60" alt="Portrait of customer Daniel Reyes"><div><strong>Daniel Reyes</strong><span>Special order customer</span></div></div>
+            <div class="quote-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&amp;w=120&amp;auto=format&amp;fit=crop" alt="Portrait of customer Daniel Reyes"><div><strong>Daniel Reyes</strong><span>Special order customer</span></div></div>
           </div>
         </div>
         <div class="col-12 col-md-4 reveal-up delay-2">
           <div class="quote-block">
             <p class="quote-text">"The reading corner is my Sunday ritual now. No one's ever once asked me to buy something to keep sitting there."</p>
-            <div class="quote-author"><img src="https://picsum.photos/seed/testimonial-reader-03/60/60" alt="Portrait of customer Priya Nathan"><div><strong>Priya Nathan</strong><span>Book club member</span></div></div>
+            <div class="quote-author"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&amp;w=120&amp;auto=format&amp;fit=crop" alt="Portrait of customer Priya Nathan"><div><strong>Priya Nathan</strong><span>Book club member</span></div></div>
           </div>
         </div>
       </div>
@@ -624,7 +656,7 @@
           </button>
           <div class="faq-answer"><p>Completely. Grab any book off the shelf and read as long as you like — there's no purchase requirement to sit down.</p></div>
         </div>
-        <div class="faq-item reveal-up delay-3">
+            <div class="faq-item reveal-up delay-3">
           <button class="faq-question" aria-expanded="false">
             <span>Can I host a private event or book club here?</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
@@ -636,22 +668,30 @@
   </section>
 
   <!-- ============ FINAL CTA ============ -->
-  <section class="final-cta-section cta-bg-home1">
-    <div class="container-custom">
-      <div class="final-cta-card reveal-up">
-        <div class="final-cta-icon-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        </div>
+  <section class="final-cta-section cta-bg-home1 cta-split-home">
+    <div class="cta-split-inner container-custom">
+      <div class="cta-split-text reveal-up">
         <h2>Step Into Your New <span class="ink-mark">Literary Sanctuary<svg viewBox="0 0 220 20" preserveAspectRatio="none"><path d="M4 14 Q 55 4, 110 12 T 216 10"/></svg></span></h2>
         <p>Join the Aldergate Reader's Guild today. Enjoy early access to newly curated editions, monthly curator letters, and invitations to private evening readings.</p>
         <div class="final-cta-features">
           <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Open Daily 9am – 8pm</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Free Sanctuary Tea & WiFi</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Free Sanctuary Tea &amp; WiFi</span>
           <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Hand-Curated Masterworks</span>
         </div>
         <div class="final-cta-actions">
           <a href="contact.html" class="btn-custom btn-primary-custom">Join Reader's Guild</a>
           <a href="book-collections.html" class="btn-custom btn-secondary-custom">Explore Collections</a>
+        </div>
+      </div>
+      <div class="cta-split-visual reveal-up delay-2">
+        <div class="cta-orbit-ring cta-orbit-ring-1"><div class="cta-orbit-dot"></div></div>
+        <div class="cta-orbit-ring cta-orbit-ring-2"></div>
+        <div class="cta-book-stack">
+          <div class="cta-book-spine cta-book-spine-3"></div>
+          <div class="cta-book-spine cta-book-spine-2"></div>
+          <div class="cta-book-spine cta-book-spine-1">
+            <div class="cta-book-label"></div>
+          </div>
         </div>
       </div>
     </div>

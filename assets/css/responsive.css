@@ -48,20 +48,67 @@ section { padding: var(--space-lg) 0; }
   }
 }
 
-/* ---------- Desktop (992px+) ---------- */
+/* ---------- 1024px Tablet / Tab View Navigation Guard ---------- */
 
-@media (min-width: 992px) {
-  h1 { font-size: var(--fs-4xl); }
-  h2 { font-size: var(--fs-3xl); }
-  h3 { font-size: var(--fs-2xl); }
+@media (max-width: 1024px) {
+  .main-nav { display: none !important; }
+  .mobile-menu-btn { display: inline-flex !important; }
+}
 
-  .main-nav { display: flex; }
-  .mobile-menu-btn { display: none; }
+@media (min-width: 1025px) {
+  .main-nav { display: flex !important; }
+  .mobile-menu-btn { display: none !important; }
 
   .header-actions .icon-toggle { width: 40px; height: 40px; }
 
   .footer-top {
     grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  }
+}
+
+/* ---------- Desktop (992px+) Layout Typography ---------- */
+
+@media (min-width: 992px) {
+  h1 { font-size: var(--fs-4xl); }
+  h2 { font-size: var(--fs-3xl); }
+  h3 { font-size: var(--fs-2xl); }
+}
+
+/* ---------- Tab View Odd Container Centering (601px - 1024px) ---------- */
+
+@media (max-width: 1024px) and (min-width: 601px) {
+  /* When a grid container has an odd total number of items in tab view, center the last item */
+  .book-grid > *:nth-child(odd):last-child,
+  .books-grid > *:nth-child(odd):last-child,
+  .collections-grid > *:nth-child(odd):last-child,
+  .events-grid > *:nth-child(odd):last-child,
+  .staff-grid > *:nth-child(odd):last-child,
+  .feature-grid > *:nth-child(odd):last-child,
+  .reading-grid > *:nth-child(odd):last-child,
+  .corner-essay-grid > *:nth-child(odd):last-child,
+  .gift-card-grid > *:nth-child(odd):last-child,
+  .age-tabs > *:nth-child(odd):last-child,
+  .author-events-grid > *:nth-child(odd):last-child,
+  .faq-grid > *:nth-child(odd):last-child,
+  .grid-custom > *:nth-child(odd):last-child,
+  .card-grid > *:nth-child(odd):last-child,
+  .shelves-grid > *:nth-child(odd):last-child,
+  .category-grid > *:nth-child(odd):last-child,
+  .new-arrivals-grid > *:nth-child(odd):last-child,
+  .quick-jump-grid > *:nth-child(odd):last-child,
+  .grid-container-custom > *:nth-child(odd):last-child {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Centering for Bootstrap flex rows with odd items in tab view */
+  .row > [class*="col-"]:nth-child(odd):last-child {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 

@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="assets/css/dark-mode.css">
 <link rel="stylesheet" href="assets/css/rtl.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/home.css">
 <link rel="stylesheet" href="assets/css/home2.css">
 </head>
 <body>
@@ -39,25 +40,32 @@
 
 <main id="main-content">
 
-  <!-- ============ EDITORIAL HERO ============ -->
-  <section class="ed-hero">
-    <div class="container-custom ed-hero-inner">
-      <span class="ed-hero-kicker reveal-up">The Editorial Edit — Issue No. 14</span>
-      <h1 class="ed-hero-title reveal-up delay-1">Books chosen the way a magazine chooses its cover.</h1>
-      <div class="ed-hero-meta reveal-up delay-2">
-        <span>By the Aldergate Booksellers</span>
-        <span class="ed-hero-divider">—</span>
-        <span>7 min browse</span>
-        <span class="ed-hero-divider">—</span>
-        <span>August Edition</span>
+  <!-- ============ HERO (Video Background) ============ -->
+  <section class="hero-video-section">
+    <video class="hero-video-bg" autoplay muted loop playsinline>
+      <source src="assets/17489505-sd_426_240_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+    <div class="container-custom hero-video-content">
+      <span class="eyebrow hero-video-eyebrow reveal-up">Est. Aldergate Lane</span>
+      <h1 class="hero-video-title reveal-up delay-1">A quiet room, <span class="ink-mark">full of<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M4 14 Q 50 4, 100 12 T 196 10"/></svg></span> other people's worlds.</h1>
+      <p class="hero-video-lede reveal-up delay-2">Aldergate is an independent bookstore and reading room built for slow afternoons — shelves curated by hand, a staff who actually read what they sell, and a corner chair that's usually warm.</p>
+      <div class="hero-video-cta reveal-up delay-3">
+        <a href="book-collections.html" class="btn-custom btn-primary-custom">Browse the Shelves</a>
+        <a href="reading-corner.html" class="btn-custom btn-secondary-custom">Visit the Reading Corner</a>
       </div>
-    </div>
-    <div class="ed-hero-image-wrap reveal-up delay-3">
-      <div class="ed-hero-image">
-        <img src="https://picsum.photos/seed/ed-hero-wide-01/1200/540" alt="Overhead editorial shot of curated books, coffee, and reading glasses on a wooden desk">
-        <div class="ed-hero-image-badge">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          <span>Curated Reading Nook &amp; Desk — Aldergate Lane</span>
+      <div class="hero-trust-row hero-video-trust reveal-up delay-4">
+        <div class="hero-trust-item">
+          <strong data-counter="14200" data-suffix="+">0</strong>
+          <span>Titles in stock</span>
+        </div>
+        <div class="hero-trust-item">
+          <strong data-counter="26">0</strong>
+          <span>Years on Aldergate Lane</span>
+        </div>
+        <div class="hero-trust-item">
+          <strong data-counter="480" data-suffix="+">0</strong>
+          <span>Author events hosted</span>
         </div>
       </div>
     </div>
@@ -103,7 +111,7 @@
       </div>
       <div class="cc-magazine-grid">
         <a href="fiction.html" class="cc-feature reveal-up">
-          <img src="https://picsum.photos/seed/cc-feature-fiction/900/620" alt="Large editorial photo of a fiction reading table with layered novels">
+          <img src="assets/chat-image/collection/cartographers-silence.png" alt="Large editorial photo of a fiction reading table with layered novels">
           <div class="cc-feature-overlay">
             <span class="eyebrow" style="color:#F3ECDD;">Featured Shelf</span>
             <h3>Contemporary Fiction, Reconsidered</h3>
@@ -111,11 +119,11 @@
         </a>
         <div class="cc-side-stack">
           <a href="book-collections.html#poetry" class="cc-side-card reveal-up delay-1">
-            <img src="https://picsum.photos/seed/cc-side-poetry/460/300" alt="Poetry collection books arranged with a single dried flower">
+            <img src="assets/chat-image/collection/the-correspondence.png" alt="Poetry collection books arranged with a single dried flower">
             <div><h5>Poetry, Slowly</h5><p>For reading one page a night.</p></div>
           </a>
           <a href="book-collections.html#history" class="cc-side-card reveal-up delay-2">
-            <img src="https://picsum.photos/seed/cc-side-history/460/300" alt="History books stacked beside an antique map">
+            <img src="assets/chat-image/collection/concise-history-ideas.png" alt="History books stacked beside an antique map">
             <div><h5>History Rediscovered</h5><p>The past, told well.</p></div>
           </a>
         </div>
@@ -132,22 +140,22 @@
       </div>
       <div class="fa-row">
         <div class="fa-card reveal-up">
-          <div class="fa-portrait"><img src="https://picsum.photos/seed/author-portrait-01/340/420" alt="Portrait of author Mara Solenne"></div>
+          <div class="fa-portrait"><img src="assets/chat-image/collection/Quiet-Ledger.png" alt="Portrait of author Mara Solenne"></div>
           <h5>Mara Solenne</h5>
           <p>Author of <em>The Quiet Ledger</em> — visiting Aug 14 for a reading and signing.</p>
         </div>
         <div class="fa-card reveal-up delay-1">
-          <div class="fa-portrait"><img src="https://picsum.photos/seed/author-portrait-02/340/420" alt="Portrait of author D. R. Okafor"></div>
+          <div class="fa-portrait"><img src="assets/chat-image/home2/Harbor-Small.png" alt="Portrait of author D. R. Okafor"></div>
           <h5>D. R. Okafor</h5>
           <p>Author of <em>Harbor of Small Lies</em> — our July book club selection.</p>
         </div>
         <div class="fa-card reveal-up delay-2">
-          <div class="fa-portrait"><img src="https://picsum.photos/seed/author-portrait-03/340/420" alt="Portrait of author Fenwick Ashby"></div>
+          <div class="fa-portrait"><img src="assets/chat-image/collection/Cartographer's-debt.png" alt="Portrait of author Fenwick Ashby"></div>
           <h5>Fenwick Ashby</h5>
           <p>Author of <em>The Cartographer's Debt</em> — three books into a series worth starting.</p>
         </div>
         <div class="fa-card reveal-up delay-3">
-          <div class="fa-portrait"><img src="https://picsum.photos/seed/author-portrait-04/340/420" alt="Portrait of author Joon-ho Lee"></div>
+          <div class="fa-portrait"><img src="assets/chat-image/collection/salt-stationary.png" alt="Portrait of author Joon-ho Lee"></div>
           <h5>Joon-ho Lee</h5>
           <p>Author of <em>Salt and Stationery</em> — a memoir our staff keeps re-gifting.</p>
         </div>
@@ -174,7 +182,7 @@
       <div class="ub-showcase-container reveal-up delay-2">
         <div class="ub-3d-stage">
           <div class="ub-3d-book-wrap">
-            <img src="https://picsum.photos/seed/fic-award-01/400/580" alt="3D Book Cover of The Cartography of Grief" class="ub-3d-book-cover">
+            <img src="assets/chat-image/home2/Cartography.png" alt="3D Book Cover of The Cartography of Grief" class="ub-3d-book-cover">
           </div>
         </div>
 
@@ -212,7 +220,7 @@
           </div>
 
           <div class="ub-actions-row">
-            <button type="button" class="btn-custom btn-primary-custom ub-buy-btn" data-modal="buyNowModal" data-title="The Cartography of Grief" data-price="24.50" data-img="https://picsum.photos/seed/fic-award-01/400/580">Order Now</button>
+            <button type="button" class="btn-custom btn-primary-custom ub-buy-btn" data-modal="buyNowModal" data-title="The Cartography of Grief" data-price="24.50" data-img="assets/chat-image/home2/Cartography.png">Order Now</button>
             <button type="button" class="btn-custom btn-secondary-custom" data-modal="prebookModal" data-title="The Cartography of Grief" data-author="Noor Abbasi" data-price="24.50">Reserve Reading Copy</button>
           </div>
         </div>
@@ -224,7 +232,7 @@
   <section class="rb-section bg-surface-alt-section">
     <div class="container-custom rb-grid">
       <div class="rb-figure reveal-up">
-        <img src="https://picsum.photos/seed/rare-books-cabinet-01/620/560" alt="Glass cabinet displaying rare leather-bound first-edition books">
+        <img src="assets/chat-image/collection/Chronicles-Old-Library.png" alt="Glass cabinet displaying rare leather-bound first-edition books">
       </div>
       <div class="rb-copy reveal-up delay-2">
         <span class="eyebrow">05 — Rare &amp; Out-of-Print</span>
@@ -259,17 +267,17 @@
       </div>
       <div class="rs-grid">
         <div class="rs-card reveal-up">
-          <img src="https://picsum.photos/seed/reading-space-window/420/520" alt="Window seat reading nook with natural light and cushions">
+          <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Window seat reading nook with natural light and cushions">
           <h5>The Window Seat</h5>
           <p>Best for afternoons, natural light, and long chapters.</p>
         </div>
         <div class="rs-card reveal-up delay-1">
-          <img src="https://picsum.photos/seed/reading-space-table/420/520" alt="Communal reading table with several people reading quietly">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Communal reading table with several people reading quietly">
           <h5>The Community Table</h5>
           <p>Shared, quiet, and where most of our book clubs meet.</p>
         </div>
         <div class="rs-card reveal-up delay-2">
-          <img src="https://picsum.photos/seed/reading-space-nook/420/520" alt="Small private reading nook tucked between tall bookshelves">
+          <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Small private reading nook tucked between tall bookshelves">
           <h5>The Back Nook</h5>
           <p>Tucked behind Fiction — the quietest seat in the store.</p>
         </div>
@@ -291,7 +299,7 @@
         <a href="author-events.html" class="btn-custom btn-primary-custom">Reserve a Seat</a>
       </div>
       <div class="bc-figure reveal-up delay-2">
-        <img src="https://picsum.photos/seed/book-club-table-02/560/640" alt="Book club members gathered around a table with copies of the same novel">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Book club members gathered around a table with copies of the same novel">
       </div>
     </div>
   </section>
@@ -342,13 +350,13 @@
         <div class="col-12 col-md-6 reveal-up">
           <div class="quote-block">
             <p class="quote-text">"Aldergate is the only bookstore where I trust the staff picks more than any bestseller list."</p>
-            <div class="quote-author"><img src="https://picsum.photos/seed/ed-testimonial-01/60/60" alt="Portrait of customer Wren Okafor"><div><strong>Wren Okafor</strong><span>Newsletter subscriber</span></div></div>
+            <div class="quote-author"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&amp;w=120&amp;auto=format&amp;fit=crop" alt="Portrait of customer Wren Okafor"><div><strong>Wren Okafor</strong><span>Newsletter subscriber</span></div></div>
           </div>
         </div>
         <div class="col-12 col-md-6 reveal-up delay-1">
           <div class="quote-block">
             <p class="quote-text">"The rare books cabinet alone is worth the visit. I found a first edition I'd been chasing for years."</p>
-            <div class="quote-author"><img src="https://picsum.photos/seed/ed-testimonial-02/60/60" alt="Portrait of customer Tomas Bekele"><div><strong>Tomas Bekele</strong><span>Collector</span></div></div>
+            <div class="quote-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&amp;w=120&amp;auto=format&amp;fit=crop" alt="Portrait of customer Tomas Bekele"><div><strong>Tomas Bekele</strong><span>Collector</span></div></div>
           </div>
         </div>
       </div>
@@ -356,14 +364,24 @@
   </section>
 
   <!-- ============ FINAL CTA ============ -->
-  <section class="final-cta-section cta-bg-home2">
+  <section class="final-cta-section cta-bg-home2 cta-vault-home2">
     <div class="container-custom">
-      <div class="final-cta-card reveal-up">
-        <div class="final-cta-icon-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-2 2m-1-1 2 2M11 7l9 9-4 4-9-9 4-4Z"/><path d="m3 21 4-4"/><path d="m14 4 6 6"/></svg>
+      <div class="cta-vault-frame reveal-up">
+        <div class="cta-vault-corner-br"></div>
+        <div class="cta-vault-corner-tr"></div>
+        <div class="cta-hex-seal">
+          <svg class="hex-bg" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="36,4 66,20 66,52 36,68 6,52 6,20" fill="rgba(212,175,55,0.08)" stroke="rgba(212,175,55,0.45)" stroke-width="1.5"/>
+          </svg>
+          <svg class="hex-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21 2-2 2m-1-1 2 2M11 7l9 9-4 4-9-9 4-4Z"/><path d="m3 21 4-4"/><path d="m14 4 6 6"/></svg>
         </div>
         <h2>Elevate Your Sanctuary With <span class="ink-mark">Rare First Editions<svg viewBox="0 0 220 20" preserveAspectRatio="none"><path d="M4 14 Q 55 4, 110 12 T 216 10"/></svg></span></h2>
         <p>Gain exclusive entry to our private vault of signed first editions, antiquarian leatherbound classics, and preserved historical manuscripts.</p>
+        <div class="cta-vault-divider">
+          <div class="cta-vault-divider-line"></div>
+          <div class="cta-vault-divider-icon">✦ ✦ ✦</div>
+          <div class="cta-vault-divider-line"></div>
+        </div>
         <div class="final-cta-features">
           <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Certificate of Authenticity</span>
           <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Climate-Controlled Vault Care</span>
