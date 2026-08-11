@@ -395,15 +395,18 @@ section.section-bordered .container-custom {
 }
 
 .btn-secondary-custom {
-  background: transparent;
-  color: var(--text-primary);
-  border-color: var(--border-strong);
+  background: rgba(59, 42, 30, 0.04);
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  font-weight: 600;
 }
 
 .btn-secondary-custom:hover {
+  background: var(--color-primary);
   border-color: var(--color-primary);
-  color: var(--color-primary);
+  color: #FFFFFF !important;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 42, 30, 0.25);
 }
 
 .btn-sm-custom { padding: 0.6rem 1.25rem; font-size: var(--fs-xs); }
