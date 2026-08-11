@@ -52,74 +52,144 @@
 
   <section>
     <div class="container-custom">
-      <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4 reveal-up">
-          <div class="event-card">
-            <div class="event-date-block"><span class="event-day">14</span><span class="event-month">Aug</span></div>
-            <img src="assets/images/events/event-mara-reading.png" alt="Author reading at bookstore event with seated audience">
-            <div class="event-card-body">
-              <h5>Reading &amp; Signing — Mara Solenne</h5>
-              <p>6:30 PM · Free entry</p>
-              <p style="margin-top:0.4rem;font-size:var(--fs-xs);">Join us for a reading from The Quiet Ledger followed by a signing.</p>
+      
+      <!-- ============ EVENT SEARCH & CATEGORY FILTER BAR ============ -->
+      <div class="events-filter-bar mb-4 reveal-up">
+        <div class="row g-3 align-items-center justify-content-between">
+          <div class="col-12 col-md-6 col-lg-5">
+            <div class="event-search-wrapper">
+              <svg class="search-icon input-icon-start" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="text" id="eventSearchInput" class="form-control has-icon-start" placeholder="Search events by author, title, or topic..." aria-label="Search author events">
             </div>
           </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4 reveal-up">
-          <div class="event-card">
-            <div class="event-date-block"><span class="event-day">21</span><span class="event-month">Aug</span></div>
-            <img src="assets/images/events/event-book-club.png" alt="Book club members discussing around a table">
-            <div class="event-card-body">
-              <h5>Monthly Book Club Meetup</h5>
-              <p>7:00 PM · Community Table</p>
-              <p style="margin-top:0.4rem;font-size:var(--fs-xs);">This month: Harbor of Small Lies by D. R. Okafor.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4 reveal-up">
-          <div class="event-card">
-            <div class="event-date-block"><span class="event-day">04</span><span class="event-month">Sep</span></div>
-            <img src="assets/images/events/event-poetry-night.png" alt="Poet reading at intimate bookstore gathering">
-            <div class="event-card-body">
-              <h5>Poetry Night — Open Mic</h5>
-              <p>7:30 PM · Free entry</p>
-              <p style="margin-top:0.4rem;font-size:var(--fs-xs);">Bring your own poem or read a favorite. All levels welcome.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4 reveal-up">
-          <div class="event-card">
-            <div class="event-date-block"><span class="event-day">18</span><span class="event-month">Sep</span></div>
-            <img src="assets/images/events/event-editing-workshop.png" alt="Writing workshop with participants around laptops and notebooks">
-            <div class="event-card-body">
-              <h5>Workshop — Editing Your First Draft</h5>
-              <p>10:00 AM · $15</p>
-              <p style="margin-top:0.4rem;font-size:var(--fs-xs);">A hands-on workshop for writers with a completed first draft.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4 reveal-up">
-          <div class="event-card">
-            <div class="event-date-block"><span class="event-day">02</span><span class="event-month">Oct</span></div>
-            <img src="assets/images/events/event-story-time.png" alt="Children sitting on floor listening to story time reading">
-            <div class="event-card-body">
-              <h5>Children's Story Time</h5>
-              <p>10:30 AM · Free, no booking</p>
-              <p style="margin-top:0.4rem;font-size:var(--fs-xs);">Weekly story time in the Children's section, ages 3–7.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4 reveal-up">
-          <div class="event-card">
-            <div class="event-date-block"><span class="event-day">16</span><span class="event-month">Oct</span></div>
-            <img src="assets/images/events/event-fenwick-talk.png" alt="Author in conversation on stage at bookstore">
-            <div class="event-card-body">
-              <h5>Meet the Author — Fenwick Ashby</h5>
-              <p>6:00 PM · Free entry</p>
-              <p style="margin-top:0.4rem;font-size:var(--fs-xs);">A conversation about worldbuilding with the author of The Cartographer's Debt.</p>
+          <div class="col-12 col-md-12 col-lg-7">
+            <div class="filter-chips-wrap d-flex gap-2 flex-wrap justify-content-lg-end" role="tablist" aria-label="Filter events by type">
+              <button type="button" class="filter-chip active" data-filter="all">All Events</button>
+              <button type="button" class="filter-chip" data-filter="signing">Signings &amp; Readings</button>
+              <button type="button" class="filter-chip" data-filter="bookclub">Book Club</button>
+              <button type="button" class="filter-chip" data-filter="workshop">Workshops</button>
+              <button type="button" class="filter-chip" data-filter="children">Story Time</button>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- ============ EVENTS GRID ============ -->
+      <div class="row g-4" id="eventsGrid">
+        <div class="col-12 col-md-6 col-lg-4 reveal-up event-item-col" data-category="signing" data-title="Reading & Signing — Mara" data-author="Mara Solenne">
+          <div class="event-card">
+            <div class="event-date-block"><span class="event-day">14</span><span class="event-month">Aug</span></div>
+            <img src="assets/images/events/event-mara-reading.png" alt="Author reading at bookstore event with seated audience">
+            <div class="event-card-body">
+              <span class="event-cat-badge">Reading &amp; Signing</span>
+              <h5>Reading &amp; Signing — Mara</h5>
+              <p class="event-time-text">6:30 PM · Free entry</p>
+              <p style="margin-top:0.4rem;font-size:var(--fs-xs);">Join us for a reading from The Quiet Ledger followed by an intimate signing session.</p>
+              <div class="event-card-footer mt-3">
+                <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-event-rsvp w-100" data-event-title="Reading & Signing — Mara" data-event-date="Aug 14, 2026" data-event-price="Free Entry" data-event-time="6:30 PM">
+                  Reserve Pass
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal-up event-item-col" data-category="bookclub" data-title="Monthly Book Club Meetup" data-author="D. R. Okafor">
+          <div class="event-card">
+            <div class="event-date-block"><span class="event-day">21</span><span class="event-month">Aug</span></div>
+            <img src="assets/images/events/event-book-club.png" alt="Book club members discussing around a table">
+            <div class="event-card-body">
+              <span class="event-cat-badge">Book Club</span>
+              <h5>Monthly Book Club Meetup</h5>
+              <p class="event-time-text">7:00 PM · Community Table</p>
+              <p style="margin-top:0.4rem;font-size:var(--fs-xs);">This month: Harbor of Small Lies by D. R. Okafor with open group discussion.</p>
+              <div class="event-card-footer mt-3">
+                <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-event-rsvp w-100" data-event-title="Monthly Book Club Meetup" data-event-date="Aug 21, 2026" data-event-price="Free Entry" data-event-time="7:00 PM">
+                  Reserve Pass
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal-up event-item-col" data-category="signing" data-title="Poetry Night — Open Mic" data-author="Poetry Community">
+          <div class="event-card">
+            <div class="event-date-block"><span class="event-day">04</span><span class="event-month">Sep</span></div>
+            <img src="assets/images/events/event-poetry-night.png" alt="Poet reading at intimate bookstore gathering">
+            <div class="event-card-body">
+              <span class="event-cat-badge">Open Mic &amp; Poetry</span>
+              <h5>Poetry Night — Open Mic</h5>
+              <p class="event-time-text">7:30 PM · Free entry</p>
+              <p style="margin-top:0.4rem;font-size:var(--fs-xs);">Bring your own poem or read a favorite piece. All poets and listeners welcome.</p>
+              <div class="event-card-footer mt-3">
+                <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-event-rsvp w-100" data-event-title="Poetry Night — Open Mic" data-event-date="Sep 04, 2026" data-event-price="Free Entry" data-event-time="7:30 PM">
+                  Reserve Pass
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal-up event-item-col" data-category="workshop" data-title="Workshop — Editing Your First Draft" data-author="Marcus Thorne">
+          <div class="event-card">
+            <div class="event-date-block"><span class="event-day">18</span><span class="event-month">Sep</span></div>
+            <img src="assets/images/events/event-editing-workshop.png" alt="Writing workshop with participants around laptops and notebooks">
+            <div class="event-card-body">
+              <span class="event-cat-badge">Workshop</span>
+              <h5>Workshop — Editing Your First Draft</h5>
+              <p class="event-time-text">10:00 AM · $15 Entry</p>
+              <p style="margin-top:0.4rem;font-size:var(--fs-xs);">A hands-on workshop for writers with a completed manuscript or first draft.</p>
+              <div class="event-card-footer mt-3">
+                <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-event-rsvp w-100" data-event-title="Workshop — Editing Your First Draft" data-event-date="Sep 18, 2026" data-event-price="$15 Entry" data-event-time="10:00 AM">
+                  Reserve Pass ($15)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal-up event-item-col" data-category="children" data-title="Children's Story Time" data-author="Clara Bennett">
+          <div class="event-card">
+            <div class="event-date-block"><span class="event-day">02</span><span class="event-month">Oct</span></div>
+            <img src="assets/images/events/event-story-time.png" alt="Children sitting on floor listening to story time reading">
+            <div class="event-card-body">
+              <span class="event-cat-badge">Children</span>
+              <h5>Children's Story Time</h5>
+              <p class="event-time-text">10:30 AM · Free, no booking required</p>
+              <p style="margin-top:0.4rem;font-size:var(--fs-xs);">Weekly story reading and craft session in the Children's nook, ages 3–7.</p>
+              <div class="event-card-footer mt-3">
+                <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-event-rsvp w-100" data-event-title="Children's Story Time" data-event-date="Oct 02, 2026" data-event-price="Free Entry" data-event-time="10:30 AM">
+                  Reserve Free Spot
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 reveal-up event-item-col" data-category="signing" data-title="Meet the Author — Fenwick" data-author="Fenwick">
+          <div class="event-card">
+            <div class="event-date-block"><span class="event-day">16</span><span class="event-month">Oct</span></div>
+            <img src="assets/images/events/event-fenwick-talk.png" alt="Author in conversation on stage at bookstore">
+            <div class="event-card-body">
+              <span class="event-cat-badge">Meet the Author</span>
+              <h5>Meet the Author — Fenwick</h5>
+              <p class="event-time-text">6:00 PM · Free entry</p>
+              <p style="margin-top:0.4rem;font-size:var(--fs-xs);">A conversation about worldbuilding with the author of The Cartographer's Debt.</p>
+              <div class="event-card-footer mt-3">
+                <button type="button" class="btn-custom btn-primary-custom btn-sm-custom btn-event-rsvp w-100" data-event-title="Meet the Author — Fenwick" data-event-date="Oct 16, 2026" data-event-price="Free Entry" data-event-time="6:00 PM">
+                  Reserve Pass
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="noEventsMessage" class="text-center py-5 d-none">
+        <h5 style="color:var(--text-muted);">No events found matching your search or category filter.</h5>
+        <p style="font-size:var(--fs-sm);color:var(--text-muted);">Try clearing your search query or selecting a different category.</p>
+      </div>
+
     </div>
   </section>
 
@@ -183,7 +253,7 @@
             <div class="premium-item-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/></svg>
             </div>
-            <h5>Reserved Front Velvet Lounge</h5>
+            <h5>Reserved Front Velvet</h5>
             <p>Dedicated plush armchair seating in the front row for all public events.</p>
           </div>
           <div class="premium-item-box">
@@ -286,6 +356,220 @@
     </div>
   </section>
 
+  <!-- ============ KEYNOTE FEATURE: UPCOMING FEATURED AUTHOR KEYNOTE ============ -->
+  <section class="keynote-spotlight-section reveal-up">
+    <div class="container-custom">
+      <div class="keynote-glass-card">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-7">
+            <div class="keynote-content">
+              <span class="keynote-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Autumn Flagship Keynote
+              </span>
+              <h2 class="keynote-title">An Evening with Julian Vance: <em>Memory &amp; Modern History</em></h2>
+              <p class="keynote-desc">Join Pulitzer-nominated historian Julian Vance for an exclusive preview of his unpublished archive on early 20th-century European literary salons, followed by an audience Q&amp;A and wine reception.</p>
+              
+              <div class="keynote-meta-grid">
+                <div class="keynote-meta-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>Friday, Sept 28 · 7:00 PM</span>
+                </div>
+                <div class="keynote-meta-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>Main Gallery &amp; Mezzanine</span>
+                </div>
+              </div>
+
+              <!-- Seat Progress Gauge -->
+              <div class="seat-gauge-wrap">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="seat-label">Seat Availability</span>
+                  <span class="seat-count"><strong>18</strong> / 25 Reserved</span>
+                </div>
+                <div class="seat-progress-bar">
+                  <div class="seat-progress-fill" style="width: 72%;"></div>
+                </div>
+              </div>
+
+              <div class="keynote-actions">
+                <button type="button" class="btn-custom btn-primary-custom btn-event-rsvp" data-event-title="An Evening with Julian Vance" data-event-date="Sept 28, 2026" data-event-price="Free Admission" data-event-time="7:00 PM">
+                  Claim Keynote Seat
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="#author-faq" class="btn-custom btn-secondary-custom">Event Guidelines</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 col-lg-5">
+            <div class="countdown-widget-box">
+              <h4 class="countdown-widget-title">Event Starts In</h4>
+              <div class="countdown-grid" id="eventCountdown">
+                <div class="countdown-unit">
+                  <span class="countdown-num" id="cd-days">18</span>
+                  <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-unit">
+                  <span class="countdown-num" id="cd-hours">09</span>
+                  <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-unit">
+                  <span class="countdown-num" id="cd-mins">42</span>
+                  <span class="countdown-label">Mins</span>
+                </div>
+                <div class="countdown-unit">
+                  <span class="countdown-num" id="cd-secs">15</span>
+                  <span class="countdown-label">Secs</span>
+                </div>
+              </div>
+              <div class="countdown-note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Free entry with RSVP. Early arrival recommended for front row seating.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EVENT HOSTS & DISCUSSION LEADS ============ -->
+  <section class="bg-surface-alt-section reveal-up">
+    <div class="container-custom">
+      <div class="section-heading center reveal-up">
+        <span class="eyebrow">Behind the Discussions</span>
+        <h2>Meet Our Event Hosts &amp; Facilitators</h2>
+        <p style="max-width:600px;margin:0.5rem auto 0;color:var(--text-muted);">Our passionate booksellers, authors-in-residence, and section curators lead every Q&amp;A, book club, and writing workshop.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3 reveal-up">
+          <div class="host-card">
+            <div class="host-avatar-wrap">
+              <img src="assets/images/authors/joon-ho-lee.png" alt="Julian Vance" class="host-avatar">
+              <span class="host-role-badge">Lead Moderator</span>
+            </div>
+            <div class="host-body">
+              <h5>Julian Vance</h5>
+              <p class="host-title">Senior Curator &amp; Essayist</p>
+              <p class="host-bio">Hosts author keynote conversations, non-fiction Q&amp;A panels, and VIP Salon.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal-up delay-1">
+          <div class="host-card">
+            <div class="host-avatar-wrap">
+              <img src="assets/images/authors/mara-solenne.png" alt="Elena Rostova" class="host-avatar">
+              <span class="host-role-badge">Book Club Lead</span>
+            </div>
+            <div class="host-body">
+              <h5>Elena Rostova</h5>
+              <p class="host-title">Fiction &amp; Poetry Specialist</p>
+              <p class="host-bio">Facilitates our monthly fiction book club and curates open mic poetry.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal-up delay-2">
+          <div class="host-card">
+            <div class="host-avatar-wrap">
+              <img src="assets/images/authors/dr-okafor.png" alt="Marcus Thorne" class="host-avatar">
+              <span class="host-role-badge">Workshop Director</span>
+            </div>
+            <div class="host-body">
+              <h5>Marcus Thorne</h5>
+              <p class="host-title">Published Novelist &amp; Editor</p>
+              <p class="host-bio">Leads hands-on writing craft, manuscript editing, and publishing.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 reveal-up delay-3">
+          <div class="host-card">
+            <div class="host-avatar-wrap">
+              <img src="assets/images/authors/fenwick-ashby.png" alt="Clara Bennett" class="host-avatar">
+              <span class="host-role-badge">Storyteller</span>
+            </div>
+            <div class="host-body">
+              <h5>Clara Bennett</h5>
+              <p class="host-title">Children's Bookseller</p>
+              <p class="host-bio">Leads weekly interactive story time, craft hours, and youth reader clubs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EVENT FAQ ============ -->
+  <section class="reveal-up" id="author-faq">
+    <div class="container-custom">
+      <div class="row g-4">
+        <div class="col-12">
+          <div class="section-heading center reveal-up mb-5">
+            <span class="eyebrow">Common Questions</span>
+            <h2>Author Event Guidelines &amp; FAQ</h2>
+            <p style="max-width:600px;margin:0.5rem auto 0;color:var(--text-muted);">Everything you need to know before visiting Aldergate Lane for an evening reading or signing session.</p>
+          </div>
+
+          <div class="accordion-custom" id="eventFaqAccordion">
+            <div class="accordion-item-custom reveal-up">
+              <button class="accordion-header-custom" type="button" aria-expanded="true">
+                <span>Are regular author readings and signings free to attend?</span>
+                <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="accordion-body-custom open">
+                <p>Yes! The vast majority of our author readings, signings, open mics, and story time sessions are completely free and open to the public. RSVPs are recommended so we can guarantee seating for all attendees.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item-custom reveal-up">
+              <button class="accordion-header-custom" type="button" aria-expanded="false">
+                <span>Can I bring my own books for the author to sign?</span>
+                <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="accordion-body-custom">
+                <p>To support visiting authors and independent bookselling, we request that at least one book signed during the evening be purchased at Aldergate Books. You are welcome to bring up to two backlist titles from home for signing alongside your new purchase.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item-custom reveal-up">
+              <button class="accordion-header-custom" type="button" aria-expanded="false">
+                <span>How do VIP Salon dinner passes work?</span>
+                <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="accordion-body-custom">
+                <p>VIP Salon passes ($75) include an intimate 3-course dinner with the visiting author in our mezzanine reading room before the public reading, front-row reserved velvet armchair seating, wine/cocktail service, and a signed numbered first-edition book.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item-custom reveal-up">
+              <button class="accordion-header-custom" type="button" aria-expanded="false">
+                <span>Where is parking located, and is the store accessible?</span>
+                <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="accordion-body-custom">
+                <p>Aldergate Books is fully step-free accessible with an elevator to the mezzanine level. Dedicated event parking is available at the Market Square Garage (2 minutes walk), with validation offered for VIP Salon patrons.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item-custom reveal-up">
+              <button class="accordion-header-custom" type="button" aria-expanded="false">
+                <span>Can I request or suggest an author for future events?</span>
+                <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="accordion-body-custom">
+                <p>We welcome author suggestions and book club host requests! Contact our head bookseller via our <a href="contact.html">Contact Page</a> or speak to any bookseller in store.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ FINAL CTA ============ -->
   <section class="final-cta-section cta-ticket-events">
     <div class="container-custom">
@@ -314,7 +598,7 @@
             </div>
           </div>
           <div class="final-cta-actions">
-            <a href="contact.html" class="btn-custom btn-primary-custom">Reserve VIP Pass</a>
+            <button type="button" class="btn-custom btn-primary-custom btn-event-rsvp" data-event-title="VIP Season Author Pass" data-event-date="All Upcoming Author Nights" data-event-price="Free RSVP / VIP Available" data-event-time="7:00 PM">Reserve VIP Pass</button>
             <a href="contact.html" class="btn-custom btn-secondary-custom">Host Private Event</a>
           </div>
         </div>
@@ -325,6 +609,90 @@
 </main>
 
 <footer id="main-footer"></footer>
+
+<!-- EVENT RSVP & PASS BOOKING MODAL -->
+<div class="book-modal-backdrop" id="eventRsvpModal" role="dialog" aria-modal="true" aria-labelledby="rsvpModalTitle">
+  <div class="book-modal-dialog">
+    <div class="book-modal-header">
+      <h4 id="rsvpModalTitle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Event Pass Reservation
+      </h4>
+      <button type="button" class="book-modal-close" data-close-modal="eventRsvpModal" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <form id="eventRsvpForm">
+      <div class="book-modal-body">
+        <div class="modal-book-preview" style="background:var(--bg-surface-alt);padding:1rem;border-radius:var(--radius-md);margin-bottom:1.25rem;">
+          <div class="modal-book-meta" style="width:100%;">
+            <h5 id="rsvpEventTitle" style="font-size:1.1rem;color:var(--text-primary);margin-bottom:0.25rem;">Author Event</h5>
+            <div style="font-size:0.85rem;color:var(--color-primary);font-weight:600;" id="rsvpEventDate">Date &amp; Time</div>
+            <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.2rem;" id="rsvpEventVenue">Aldergate Lane Main Gallery</div>
+          </div>
+        </div>
+
+        <div class="modal-form-group">
+          <label>Select Pass Tier</label>
+          <div class="format-selector" id="rsvpFormatSelector">
+            <div class="format-option selected" data-tier="free" data-price="0">
+              <span class="fmt-title">General Admission</span>
+              <span class="fmt-price">Free</span>
+            </div>
+            <div class="format-option" data-tier="vip" data-price="15">
+              <span class="fmt-title">VIP Reserved Seat</span>
+              <span class="fmt-price">+$15.00</span>
+            </div>
+            <div class="format-option" data-tier="salon" data-price="75">
+              <span class="fmt-title">Salon &amp; Dinner</span>
+              <span class="fmt-price">+$75.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-2">
+          <div class="col-6">
+            <div class="modal-form-group">
+              <label for="rsvpGuests">Number of Guests</label>
+              <select class="modal-form-control" id="rsvpGuests">
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="modal-form-group">
+              <label for="rsvpName">Attendee Name</label>
+              <input type="text" class="modal-form-control" id="rsvpName" placeholder="Your Name" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-form-group">
+          <label for="rsvpEmail">Confirmation Email</label>
+          <input type="email" class="modal-form-control" id="rsvpEmail" placeholder="you@example.com" required>
+        </div>
+
+        <div class="modal-form-group">
+          <label for="rsvpNotes">Dietary / Accessibility Notes (Optional)</label>
+          <input type="text" class="modal-form-control" id="rsvpNotes" placeholder="e.g. Wheelchair access, Vegetarian">
+        </div>
+
+        <div class="price-summary-box mt-3">
+          <div class="summary-row"><span>Pass Tier:</span><span id="rsvpTierLabel">General Admission</span></div>
+          <div class="summary-row"><span>Passes Count:</span><span id="rsvpGuestCountLabel">1 Guest</span></div>
+          <div class="summary-row total"><span>Total Cost:</span><span id="rsvpTotalCost">FREE</span></div>
+        </div>
+      </div>
+      <div class="book-modal-footer">
+        <button type="button" class="btn-custom btn-secondary-custom btn-sm-custom" data-close-modal="eventRsvpModal">Cancel</button>
+        <button type="submit" class="btn-custom btn-primary-custom btn-sm-custom" id="btnSubmitRsvp">Confirm Pass RSVP</button>
+      </div>
+    </form>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/main.js"></script>

@@ -882,6 +882,260 @@
     });
   }
 
+  /* ---------------- Author Events Page Interactivity ---------------- */
+
+  function initAuthorEventsFilter() {
+    const searchInput = document.getElementById('eventSearchInput');
+    const filterChips = document.querySelectorAll('.events-filter-bar .filter-chip');
+    const eventCols = document.querySelectorAll('.event-item-col');
+    const noEventsMsg = document.getElementById('noEventsMessage');
+
+    if (!eventCols.length) return;
+
+    let activeFilter = 'all';
+    let searchQuery = '';
+
+    function filterEvents() {
+      let visibleCount = 0;
+      eventCols.forEach(col => {
+        const cat = col.dataset.category || '';
+        const title = (col.dataset.title || '').toLowerCase();
+        const author = (col.dataset.author || '').toLowerCase();
+        const cardText = col.textContent.toLowerCase();
+
+        const matchesCat = activeFilter === 'all' || cat === activeFilter;
+        const matchesQuery = !searchQuery || title.includes(searchQuery) || author.includes(searchQuery) || cardText.includes(searchQuery);
+
+        if (matchesCat && matchesQuery) {
+          col.style.display = '';
+          visibleCount++;
+        } else {
+          col.style.display = 'none';
+        }
+      });
+
+      if (noEventsMsg) {
+        noEventsMsg.classList.toggle('d-none', visibleCount > 0);
+      }
+    }
+
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', function () {
+        filterChips.forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        activeFilter = this.dataset.filter || 'all';
+        filterEvents();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        searchQuery = this.value.trim().toLowerCase();
+        filterEvents();
+      });
+    }
+  }
+
+  function initAuthorEventsCountdown() {
+    const daysEl = document.getElementById('cd-days');
+    const hoursEl = document.getElementById('cd-hours');
+    const minsEl = document.getElementById('cd-mins');
+    const secsEl = document.getElementById('cd-secs');
+
+    if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+    // Target date: 48 days from now or fixed target
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 18);
+    targetDate.setHours(19, 0, 0, 0);
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minsEl.textContent = '00';
+        secsEl.textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+      daysEl.textContent = String(days).padStart(2, '0');
+      hoursEl.textContent = String(hours).padStart(2, '0');
+      minsEl.textContent = String(mins).padStart(2, '0');
+      secsEl.textContent = String(secs).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+
+  function initAccordionEvents() {
+    document.addEventListener('click', function (e) {
+      const header = e.target.closest('.accordion-header-custom');
+      if (!header) return;
+
+      const item = header.closest('.accordion-item-custom');
+      const body = item?.querySelector('.accordion-body-custom');
+      if (!body) return;
+
+      const isExpanded = header.getAttribute('aria-expanded') === 'true';
+
+      // Close all accordions in same container
+      const accordion = header.closest('.accordion-custom');
+      if (accordion) {
+        accordion.querySelectorAll('.accordion-header-custom').forEach(h => {
+          h.setAttribute('aria-expanded', 'false');
+          const b = h.closest('.accordion-item-custom')?.querySelector('.accordion-body-custom');
+          if (b) b.classList.remove('open');
+        });
+      }
+
+      if (!isExpanded) {
+        header.setAttribute('aria-expanded', 'true');
+        body.classList.add('open');
+      }
+    });
+  }
+
+  function initAuthorEventsRsvpModal() {
+    let currentPassPrice = 0;
+    let currentTierName = 'General Admission';
+
+    function recalculateRsvpTotal() {
+      const guestsSelect = document.getElementById('rsvpGuests');
+      const tierLabel = document.getElementById('rsvpTierLabel');
+      const guestCountLabel = document.getElementById('rsvpGuestCountLabel');
+      const totalCostEl = document.getElementById('rsvpTotalCost');
+
+      if (!guestsSelect || !totalCostEl) return;
+
+      const guests = parseInt(guestsSelect.value, 10) || 1;
+      const total = currentPassPrice * guests;
+
+      if (tierLabel) tierLabel.textContent = currentTierName;
+      if (guestCountLabel) guestCountLabel.textContent = guests + (guests === 1 ? ' Guest' : ' Guests');
+
+      if (total === 0) {
+        totalCostEl.textContent = 'FREE';
+      } else {
+        totalCostEl.textContent = '$' + total.toFixed(2);
+      }
+    }
+
+    document.addEventListener('click', function (e) {
+      const btnRsvp = e.target.closest('.btn-event-rsvp');
+      if (btnRsvp) {
+        e.preventDefault();
+        const title = btnRsvp.dataset.eventTitle || 'Author Event';
+        const date = btnRsvp.dataset.eventDate || 'Upcoming Date';
+        const time = btnRsvp.dataset.eventTime || '7:00 PM';
+
+        const modal = document.getElementById('eventRsvpModal');
+        const titleEl = document.getElementById('rsvpEventTitle');
+        const dateEl = document.getElementById('rsvpEventDate');
+
+        if (titleEl) titleEl.textContent = title;
+        if (dateEl) dateEl.textContent = `${date} · ${time}`;
+
+        // Reset format selection to default free tier
+        currentPassPrice = 0;
+        currentTierName = 'General Admission';
+        const formatOpts = document.querySelectorAll('#rsvpFormatSelector .format-option');
+        formatOpts.forEach((opt, idx) => {
+          if (idx === 0) opt.classList.add('selected');
+          else opt.classList.remove('selected');
+        });
+
+        recalculateRsvpTotal();
+
+        if (modal) {
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+        return;
+      }
+
+      // Format tier option click
+      const formatOpt = e.target.closest('#rsvpFormatSelector .format-option');
+      if (formatOpt) {
+        document.querySelectorAll('#rsvpFormatSelector .format-option').forEach(o => o.classList.remove('selected'));
+        formatOpt.classList.add('selected');
+
+        currentPassPrice = parseFloat(formatOpt.dataset.price) || 0;
+        currentTierName = formatOpt.querySelector('.fmt-title')?.textContent || 'General Admission';
+        recalculateRsvpTotal();
+        return;
+      }
+    });
+
+    const guestsSelect = document.getElementById('rsvpGuests');
+    if (guestsSelect) {
+      guestsSelect.addEventListener('change', recalculateRsvpTotal);
+    }
+
+    const rsvpForm = document.getElementById('eventRsvpForm');
+    if (rsvpForm) {
+      rsvpForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const titleEl = document.getElementById('rsvpEventTitle');
+        const title = titleEl ? titleEl.textContent : 'Author Event';
+        const nameInput = document.getElementById('rsvpName');
+        const name = nameInput ? nameInput.value.trim() : 'Reader';
+
+        closeModal('eventRsvpModal');
+        showToast(`Pass RSVP Confirmed! Ticket reserved for ${name} (${title}).`);
+        rsvpForm.reset();
+      });
+    }
+  }
+
+  function initReadingAlcoveModal() {
+    let alcovePrice = 0;
+    let alcoveTier = 'Standard Reading Seat';
+
+    document.addEventListener('click', function (e) {
+      const openBtn = e.target.closest('.btn-premium-gold, [data-open-modal="alcoveModal"]');
+      if (openBtn && document.getElementById('alcoveModal') && window.location.pathname.includes('reading-corner')) {
+        e.preventDefault();
+        const modal = document.getElementById('alcoveModal');
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        return;
+      }
+
+      const opt = e.target.closest('#alcoveTierSelector .format-option');
+      if (opt) {
+        document.querySelectorAll('#alcoveTierSelector .format-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        alcovePrice = parseFloat(opt.dataset.price) || 0;
+        alcoveTier = opt.querySelector('.fmt-title')?.textContent || 'Standard Reading Seat';
+
+        const label = document.getElementById('alcoveTierLabel');
+        const cost = document.getElementById('alcoveTotalCost');
+        if (label) label.textContent = alcoveTier;
+        if (cost) cost.textContent = alcovePrice === 0 ? 'FREE' : '$' + alcovePrice.toFixed(2);
+      }
+    });
+
+    const alcoveForm = document.getElementById('alcoveForm');
+    if (alcoveForm) {
+      alcoveForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = document.getElementById('alcoveName')?.value || 'Guest';
+        closeModal('alcoveModal');
+        showToast(`Sanctuary Alcove Pass Reserved for ${name}!`);
+        alcoveForm.reset();
+      });
+    }
+  }
+
   /* ---------------- Dynamic Header Height CSS Variable ---------------- */
 
   function updateHeaderHeightVar() {
@@ -906,7 +1160,13 @@
     initUniqueBookShowcase();
     initMoodMatrix();
     initQuickJumpToggle();
+    initAuthorEventsFilter();
+    initAuthorEventsCountdown();
+    initAccordionEvents();
+    initAuthorEventsRsvpModal();
+    initReadingAlcoveModal();
     setTimeout(updateHeaderHeightVar, 50);
   });
 })();
+
 

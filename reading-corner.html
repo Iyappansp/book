@@ -275,6 +275,73 @@
     </div>
   </section>
 
+  <!-- ============ READING CORNER FAQ (FULL-WIDTH) ============ -->
+  <section class="reveal-up" id="reading-faq">
+    <div class="container-custom">
+      <div class="row g-4">
+        <div class="col-12">
+          <div class="section-heading center reveal-up mb-5">
+            <span class="eyebrow">Common Questions</span>
+            <h2>Reading Corner Guidelines &amp; FAQ</h2>
+            <p style="max-width:600px;margin:0.5rem auto 0;color:var(--text-muted);">Everything you need to know about visiting, reserving, and enjoying our reading room spaces.</p>
+          </div>
+
+          <div class="accordion-custom" id="readingFaqAccordion">
+            <div class="accordion-item-custom reveal-up">
+              <button class="accordion-header-custom" type="button" aria-expanded="true">
+                <span>Is a reservation required to sit in the Reading Corner?</span>
+                <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="accordion-body-custom open">
+                <p>No reservation is required for our general armchairs, window seats, and community tables — they operate on a free, first-come, first-served basis. Sanctuary Alcove private reserves ($29) can be booked in advance for guaranteed window seating with pour-over coffee service.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item-custom reveal-up">
+              <button class="accordion-header-custom" type="button" aria-expanded="false">
+                <span>Can I bring outside coffee, tea, or snacks?</span>
+                <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="accordion-body-custom">
+                <p>Yes! Coffee, tea, and drinks with a lid are welcome in all reading zones. We ask that snacks be enjoyed at the Community Table or Café Corner rather than near the rare book shelves.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item-custom reveal-up">
+              <button class="accordion-header-custom" type="button" aria-expanded="false">
+                <span>Are laptops and studying allowed in the Quiet Zone?</span>
+                <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="accordion-body-custom">
+                <p>Laptops are permitted if typed quietly and muted. Video calls and phone conversations are strictly prohibited in the Quiet Zone. We encourage laptops to be used at the Community Table during peak afternoon hours.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item-custom reveal-up">
+              <button class="accordion-header-custom" type="button" aria-expanded="false">
+                <span>Can I bring a book from home to read in the room?</span>
+                <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="accordion-body-custom">
+                <p>Of course! Whether you are reading an Aldergate shelf book, a library loan, or your own copy from home, our room is your room.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item-custom reveal-up">
+              <button class="accordion-header-custom" type="button" aria-expanded="false">
+                <span>How can I host my own private reading club or study group?</span>
+                <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="accordion-body-custom">
+                <p>Our Community Table can be reserved for private book clubs after 6:00 PM on weekdays. Inquire via our <a href="contact.html">Contact Page</a> to reserve the space free of charge.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ FINAL CTA ============ -->
   <section class="final-cta-section cta-bg-readingcorner cta-newsletter-reading">
     <div class="container-custom">
@@ -329,6 +396,75 @@
 </main>
 
 <footer id="main-footer"></footer>
+
+<!-- SANCTUARY ALCOVE PASS MODAL -->
+<div class="book-modal-backdrop" id="alcoveModal" role="dialog" aria-modal="true" aria-labelledby="alcoveModalTitle">
+  <div class="book-modal-dialog">
+    <div class="book-modal-header">
+      <h4 id="alcoveModalTitle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Sanctuary Alcove Reservation
+      </h4>
+      <button type="button" class="book-modal-close" data-close-modal="alcoveModal" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <form id="alcoveForm">
+      <div class="book-modal-body">
+        <div class="modal-form-group">
+          <label>Select Duration &amp; Access Tier</label>
+          <div class="format-selector" id="alcoveTierSelector">
+            <div class="format-option selected" data-tier="free" data-price="0">
+              <span class="fmt-title">Standard Reading Seat</span>
+              <span class="fmt-price">Free</span>
+            </div>
+            <div class="format-option" data-tier="2hr" data-price="15">
+              <span class="fmt-title">2-Hr Alcove Reserve</span>
+              <span class="fmt-price">+$15.00</span>
+            </div>
+            <div class="format-option" data-tier="fullday" data-price="29">
+              <span class="fmt-title">Full-Day Sanctuary Pass</span>
+              <span class="fmt-price">+$29.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-2">
+          <div class="col-6">
+            <div class="modal-form-group">
+              <label for="alcoveName">Full Name</label>
+              <input type="text" class="modal-form-control" id="alcoveName" placeholder="Your Name" required>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="modal-form-group">
+              <label for="alcoveCoffee">Coffee / Tea Choice</label>
+              <select class="modal-form-control" id="alcoveCoffee">
+                <option value="pour-over">Single-Origin Drip</option>
+                <option value="matcha">Organic Japanese Matcha</option>
+                <option value="chamomile">Botanical Herbal Tea</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-form-group">
+          <label for="alcoveEmail">Confirmation Email</label>
+          <input type="email" class="modal-form-control" id="alcoveEmail" placeholder="you@example.com" required>
+        </div>
+
+        <div class="price-summary-box mt-3">
+          <div class="summary-row"><span>Selected Tier:</span><span id="alcoveTierLabel">Standard Reading Seat</span></div>
+          <div class="summary-row total"><span>Total Amount:</span><span id="alcoveTotalCost">FREE</span></div>
+        </div>
+      </div>
+      <div class="book-modal-footer">
+        <button type="button" class="btn-custom btn-secondary-custom btn-sm-custom" data-close-modal="alcoveModal">Cancel</button>
+        <button type="submit" class="btn-custom btn-primary-custom btn-sm-custom">Confirm Alcove Pass</button>
+      </div>
+    </form>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/main.js"></script>

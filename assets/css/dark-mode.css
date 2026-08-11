@@ -308,3 +308,148 @@
 .theme-transitioning * {
   transition: background var(--transition-base), color var(--transition-base), border-color var(--transition-base) !important;
 }
+
+/* Author Events Dark Mode Overrides */
+[data-theme="dark"] .events-filter-bar {
+  background: var(--bg-surface);
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .event-cat-badge {
+  background: rgba(212, 182, 133, 0.15);
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .host-card {
+  background: var(--bg-surface);
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .host-role-badge {
+  background: rgba(10, 6, 3, 0.9);
+  color: var(--color-primary);
+  border-color: rgba(212, 182, 133, 0.35);
+}
+
+[data-theme="dark"] .accordion-item-custom {
+  background: var(--bg-surface);
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .accordion-header-custom {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .accordion-header-custom:hover {
+  background: var(--bg-surface-alt);
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .venue-info-card {
+  background: var(--bg-surface);
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .venue-badge {
+  background: rgba(212, 182, 133, 0.15);
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .keynote-glass-card {
+  background: linear-gradient(135deg, rgba(28, 20, 14, 0.95) 0%, rgba(18, 12, 8, 0.98) 100%);
+  border-color: rgba(212, 182, 133, 0.25);
+  color: #F8F5EE;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .keynote-badge {
+  color: #D4AF37;
+  background: rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+[data-theme="dark"] .keynote-title {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .keynote-title em {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .keynote-desc {
+  color: rgba(248, 245, 238, 0.82);
+}
+
+[data-theme="dark"] .keynote-meta-grid {
+  color: #E2D9CC;
+}
+
+[data-theme="dark"] .keynote-meta-item svg {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .seat-gauge-wrap {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .seat-label {
+  color: rgba(248, 245, 238, 0.7);
+}
+
+[data-theme="dark"] .seat-count {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .seat-count strong {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .seat-progress-bar {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .seat-progress-fill {
+  background: linear-gradient(90deg, var(--color-primary) 0%, #D4AF37 100%);
+}
+
+[data-theme="dark"] .countdown-widget-box {
+  background: rgba(10, 7, 4, 0.75);
+  border-color: rgba(212, 182, 133, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .countdown-widget-title {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .countdown-unit {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .countdown-num {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .countdown-label {
+  color: rgba(248, 245, 238, 0.65);
+}
+
+[data-theme="dark"] .countdown-note {
+  color: rgba(248, 245, 238, 0.75);
+}
+
+[data-theme="dark"] .keynote-actions .btn-secondary-custom {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+  background: transparent;
+}
+
+[data-theme="dark"] .keynote-actions .btn-secondary-custom:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: rgba(212, 182, 133, 0.08);
+}
+
+

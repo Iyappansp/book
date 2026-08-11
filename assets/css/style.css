@@ -131,30 +131,50 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
 .container-custom {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-}
-
-@media (max-width: 768px) {
-  .container-custom {
-    padding: 0 var(--space-md);
-  }
-}
-
-section {
-  padding: var(--space-2xl) 0;
+  max-width: var(--container-max, 1280px);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--space-lg, 2rem) !important;
+  padding-right: var(--space-lg, 2rem) !important;
+  width: 100%;
 }
 
 @media (max-width: 992px) {
-  section {
-    padding: var(--space-xl) 0;
+  .container-custom {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .container-custom {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+section,
+section.py-5,
+section.sp-section {
+  padding-top: var(--space-2xl, 4rem) !important;
+  padding-bottom: var(--space-2xl, 4rem) !important;
+}
+
+@media (max-width: 992px) {
+  section,
+  section.py-5,
+  section.sp-section {
+    padding-top: var(--space-xl, 3rem) !important;
+    padding-bottom: var(--space-xl, 3rem) !important;
   }
 }
 
 @media (max-width: 576px) {
-  section {
-    padding: var(--space-lg) 0;
+  section,
+  section.py-5,
+  section.sp-section {
+    padding-top: var(--space-lg, 2.25rem) !important;
+    padding-bottom: var(--space-lg, 2.25rem) !important;
   }
 }
 
@@ -165,10 +185,14 @@ section {
   text-transform: uppercase;
   color: var(--color-secondary);
   font-weight: 600;
-  display: inline-flex;
-  align-items: center;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   gap: var(--space-xs);
   margin-bottom: var(--space-xs);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
 }
 
 .eyebrow::before {
@@ -178,16 +202,74 @@ section {
   background: var(--color-secondary);
 }
 
-.section-heading {
-  max-width: 640px;
+/* ==========================================================================
+   CENTERED SECTION HEADINGS (EYEBROW, TITLE, SUBTITLE)
+   ========================================================================== */
+
+.section-heading,
+.page-header {
+  max-width: 720px;
   margin-bottom: var(--space-lg);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
 }
 
-.section-heading.center { margin-left: auto; margin-right: auto; text-align: center; }
+.page-header {
+  text-align: center !important;
+}
 
-.section-heading p {
+.page-header .container-custom {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.breadcrumb-custom {
+  justify-content: center !important;
+  display: flex !important;
+}
+
+.section-heading.center { 
+  margin-left: auto !important; 
+  margin-right: auto !important; 
+  text-align: center !important; 
+}
+
+/* 1. Eyebrow Class Centered */
+.section-heading .eyebrow,
+.page-header .eyebrow,
+.eyebrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/* 2. Heading / Title Class Centered */
+.section-heading h1,
+.section-heading h2,
+.section-heading h3,
+.page-header h1,
+.page-header h2 {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 3. Subtitle / Paragraph Class Centered */
+.section-heading p,
+.page-header p,
+.section-subtitle {
   margin-top: var(--space-sm);
   font-size: var(--fs-md);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  max-width: 650px !important;
 }
 
 /* --- Ink-stroke underline signature (scroll-reveal reading mark with continuous loop) --- */

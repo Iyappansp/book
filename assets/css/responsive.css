@@ -147,17 +147,30 @@ section { padding: var(--space-lg) 0; }
   }
 }
 
-/* ---------- Desktop (992px+) Layout Typography ---------- */
+/* ---------- Desktop (992px+) Layout Typography & Grids ---------- */
 
 @media (min-width: 992px) {
   h1 { font-size: var(--fs-4xl); }
   h2 { font-size: var(--fs-3xl); }
   h3 { font-size: var(--fs-2xl); }
+
+  .new-arrivals-strip {
+    display: grid !important;
+    grid-auto-flow: initial !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    overflow-x: visible !important;
+    gap: var(--space-md, 1.25rem) !important;
+  }
+
+  .new-arrivals-strip > * {
+    grid-column: auto !important;
+    justify-self: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 }
 
-/* ---------- Tab View Odd Container Centering (601px - 1024px) ---------- */
-
-/* ---------- Tab View 3*2 Grid Layout (601px - 1024px) ---------- */
+/* ---------- Tab View 2-Column Grid Layout with Odd Last Item Centered (601px - 1024px) ---------- */
 
 @media (max-width: 1024px) and (min-width: 601px) {
   .book-grid,
@@ -176,97 +189,39 @@ section { padding: var(--space-lg) 0; }
   .shelves-grid,
   .category-grid,
   .catalog-grid,
-  .vault-grid {
+  .vault-grid,
+  .why-choose-grid,
+  .new-arrivals-strip,
+  .sp-gallery-grid {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: var(--space-sm, 1rem) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--space-md, 1.25rem) !important;
   }
 
-  .new-arrivals-strip {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    grid-auto-flow: row !important;
-    overflow-x: visible !important;
-    gap: var(--space-sm, 1rem) !important;
-  }
-
-  /* -------------------------------------------------------------
-     Single Last Item Centering (1 item remaining in Row 2 or 3)
-     e.g., 4th item in 4 total, 7th item in 7 total, etc.
-     ------------------------------------------------------------- */
-  .book-grid > *:nth-child(3n+1):last-child,
-  .books-grid > *:nth-child(3n+1):last-child,
-  .collections-grid > *:nth-child(3n+1):last-child,
-  .events-grid > *:nth-child(3n+1):last-child,
-  .staff-grid > *:nth-child(3n+1):last-child,
-  .feature-grid > *:nth-child(3n+1):last-child,
-  .reading-grid > *:nth-child(3n+1):last-child,
-  .corner-essay-grid > *:nth-child(3n+1):last-child,
-  .gift-card-grid > *:nth-child(3n+1):last-child,
-  .author-events-grid > *:nth-child(3n+1):last-child,
-  .grid-custom > *:nth-child(3n+1):last-child,
-  .card-grid > *:nth-child(3n+1):last-child,
-  .shelves-grid > *:nth-child(3n+1):last-child,
-  .category-grid > *:nth-child(3n+1):last-child,
-  .catalog-grid > *:nth-child(3n+1):last-child,
-  .vault-grid > *:nth-child(3n+1):last-child,
-  .why-choose-grid > *:nth-child(3n+1):last-child,
-  .new-arrivals-strip > *:nth-child(3n+1):last-child {
-    grid-column: 2 / 3 !important;
+  /* Single Last Odd Item Centered in Row (e.g. 3rd item in 3, 5th item in 5) */
+  .book-grid > *:nth-child(2n+1):last-child,
+  .books-grid > *:nth-child(2n+1):last-child,
+  .collections-grid > *:nth-child(2n+1):last-child,
+  .events-grid > *:nth-child(2n+1):last-child,
+  .staff-grid > *:nth-child(2n+1):last-child,
+  .feature-grid > *:nth-child(2n+1):last-child,
+  .reading-grid > *:nth-child(2n+1):last-child,
+  .corner-essay-grid > *:nth-child(2n+1):last-child,
+  .gift-card-grid > *:nth-child(2n+1):last-child,
+  .author-events-grid > *:nth-child(2n+1):last-child,
+  .grid-custom > *:nth-child(2n+1):last-child,
+  .card-grid > *:nth-child(2n+1):last-child,
+  .shelves-grid > *:nth-child(2n+1):last-child,
+  .category-grid > *:nth-child(2n+1):last-child,
+  .catalog-grid > *:nth-child(2n+1):last-child,
+  .vault-grid > *:nth-child(2n+1):last-child,
+  .why-choose-grid > *:nth-child(2n+1):last-child,
+  .new-arrivals-strip > *:nth-child(2n+1):last-child,
+  .sp-gallery-grid > *:nth-child(2n+1):last-child {
+    grid-column: 1 / -1 !important;
     justify-self: center !important;
     width: 100% !important;
-  }
-
-  /* -------------------------------------------------------------
-     Two Last Items Centering (2 items remaining in Row 2 or 3)
-     e.g., 4th & 5th items in 5 total, 7th & 8th items in 8 total, etc.
-     ------------------------------------------------------------- */
-  .book-grid > *:nth-child(3n+1):nth-last-child(2),
-  .books-grid > *:nth-child(3n+1):nth-last-child(2),
-  .collections-grid > *:nth-child(3n+1):nth-last-child(2),
-  .events-grid > *:nth-child(3n+1):nth-last-child(2),
-  .staff-grid > *:nth-child(3n+1):nth-last-child(2),
-  .feature-grid > *:nth-child(3n+1):nth-last-child(2),
-  .reading-grid > *:nth-child(3n+1):nth-last-child(2),
-  .corner-essay-grid > *:nth-child(3n+1):nth-last-child(2),
-  .gift-card-grid > *:nth-child(3n+1):nth-last-child(2),
-  .author-events-grid > *:nth-child(3n+1):nth-last-child(2),
-  .grid-custom > *:nth-child(3n+1):nth-last-child(2),
-  .card-grid > *:nth-child(3n+1):nth-last-child(2),
-  .shelves-grid > *:nth-child(3n+1):nth-last-child(2),
-  .category-grid > *:nth-child(3n+1):nth-last-child(2),
-  .catalog-grid > *:nth-child(3n+1):nth-last-child(2),
-  .vault-grid > *:nth-child(3n+1):nth-last-child(2),
-  .why-choose-grid > *:nth-child(3n+1):nth-last-child(2),
-  .new-arrivals-strip > *:nth-child(3n+1):nth-last-child(2) {
-    grid-column: 1 / 3 !important;
-    justify-self: end !important;
-    width: 100% !important;
-    max-width: 320px !important;
-  }
-
-  .book-grid > *:nth-child(3n+2):last-child,
-  .books-grid > *:nth-child(3n+2):last-child,
-  .collections-grid > *:nth-child(3n+2):last-child,
-  .events-grid > *:nth-child(3n+2):last-child,
-  .staff-grid > *:nth-child(3n+2):last-child,
-  .feature-grid > *:nth-child(3n+2):last-child,
-  .reading-grid > *:nth-child(3n+2):last-child,
-  .corner-essay-grid > *:nth-child(3n+2):last-child,
-  .gift-card-grid > *:nth-child(3n+2):last-child,
-  .author-events-grid > *:nth-child(3n+2):last-child,
-  .grid-custom > *:nth-child(3n+2):last-child,
-  .card-grid > *:nth-child(3n+2):last-child,
-  .shelves-grid > *:nth-child(3n+2):last-child,
-  .category-grid > *:nth-child(3n+2):last-child,
-  .catalog-grid > *:nth-child(3n+2):last-child,
-  .vault-grid > *:nth-child(3n+2):last-child,
-  .why-choose-grid > *:nth-child(3n+2):last-child,
-  .new-arrivals-strip > *:nth-child(3n+2):last-child {
-    grid-column: 2 / 4 !important;
-    justify-self: start !important;
-    width: 100% !important;
-    max-width: 320px !important;
+    max-width: 540px !important;
   }
 
   /* Centering for Bootstrap flex rows with odd items in tab view */
@@ -292,3 +247,73 @@ section { padding: var(--space-lg) 0; }
 /* Prevent any accidental overflow */
 img, video, svg { max-width: 100%; height: auto; }
 table { display: block; overflow-x: auto; white-space: nowrap; }
+
+/* Author Events Responsive Adjustments */
+@media (max-width: 992px) {
+  .keynote-glass-card {
+    padding: 2rem 1.5rem;
+  }
+  .countdown-widget-box {
+    margin-top: 1rem;
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .events-filter-bar {
+    padding: 1rem;
+  }
+  .filter-chips-wrap {
+    justify-content: flex-start !important;
+  }
+  .countdown-grid {
+    gap: 0.4rem;
+  }
+  .countdown-unit {
+    padding: 0.5rem 0.15rem;
+  }
+  .countdown-num {
+    font-size: 1.35rem;
+  }
+  .keynote-glass-card {
+    padding: 1.5rem 1rem;
+  }
+  .venue-info-card {
+    padding: 1.5rem 1.15rem;
+  }
+
+  /* Format Selector: 1-by-1 vertical stacked options */
+  .format-selector {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+  }
+  .format-option {
+    width: 100% !important;
+    flex: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.75rem 1rem !important;
+    text-align: left !important;
+  }
+  [dir="rtl"] .format-option {
+    text-align: right !important;
+  }
+
+  /* Mobile Modal Footer: Cancel button at the very bottom */
+  .book-modal-footer {
+    flex-direction: column-reverse !important;
+    gap: 0.65rem !important;
+    padding: 1rem 1.25rem !important;
+  }
+  .book-modal-footer .btn-custom,
+  .book-modal-footer button,
+  .book-modal-footer a {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+

@@ -109,3 +109,33 @@
   right: auto !important;
   left: 1.5rem !important;
 }
+
+/* Author Events RTL Enhancements */
+[dir="rtl"] .event-search-wrapper .search-icon {
+  right: 1rem;
+  left: auto;
+}
+
+[dir="rtl"] .event-search-wrapper input.has-icon-start {
+  padding-right: 2.75rem !important;
+  padding-left: 1rem !important;
+}
+
+[dir="rtl"] .host-role-badge {
+  right: 0.75rem;
+  left: auto;
+}
+
+[dir="rtl"] .accordion-header-custom {
+  text-align: right;
+}
+
+[dir="rtl"] .keynote-glass-card::before {
+  left: -20%;
+  right: auto;
+}
+
+[dir="rtl"] .seat-progress-fill {
+  background: linear-gradient(270deg, var(--color-primary) 0%, #D4AF37 100%);
+}
+
