@@ -146,10 +146,17 @@ img { max-width: 100%; display: block; }
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 576px) {
   .container-custom {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .container-custom {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
   }
 }
 
