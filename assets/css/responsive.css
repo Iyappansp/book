@@ -59,7 +59,7 @@ section { padding: var(--space-lg) 0; }
     display: grid !important;
     grid-template-columns: 1fr !important;
     grid-auto-flow: row !important;
-    overflow-x: visible !important;
+    overflow-x: clip !important;
     gap: var(--space-md, 1.25rem) !important;
   }
 
@@ -207,7 +207,7 @@ section { padding: var(--space-lg) 0; }
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     grid-auto-flow: row !important;
-    overflow-x: visible !important;
+    overflow-x: clip !important;
     gap: var(--space-md, 1.25rem) !important;
   }
 
