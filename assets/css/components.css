@@ -1101,8 +1101,8 @@
 .cta-spotlight-section {
   width: 100%;
   position: relative;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding-top: 4.5rem !important;
+  padding-bottom: 4.5rem !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   background-size: cover;
@@ -1110,6 +1110,44 @@
   background-repeat: no-repeat;
   overflow: hidden;
   box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 991px) {
+  .final-cta-section,
+  [class*="cta-bg-"],
+  [class*="cta-section"],
+  .cta-banner,
+  .cta-split-home,
+  .cta-vault-home2,
+  .cta-playful-children,
+  .cta-community-staff,
+  .cta-detective-orders,
+  .cta-newsletter-reading,
+  .cta-contact-section,
+  .cta-ticket-section,
+  .cta-spotlight-section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .final-cta-section,
+  [class*="cta-bg-"],
+  [class*="cta-section"],
+  .cta-banner,
+  .cta-split-home,
+  .cta-vault-home2,
+  .cta-playful-children,
+  .cta-community-staff,
+  .cta-detective-orders,
+  .cta-newsletter-reading,
+  .cta-contact-section,
+  .cta-ticket-section,
+  .cta-spotlight-section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
 }
 
 .final-cta-section::before {
@@ -1418,7 +1456,6 @@
    ============================================================ */
 .cta-split-home {
   background: linear-gradient(135deg, #1A0E08 0%, #2C1A10 40%, #3A2414 70%, #1A0E08 100%) !important;
-  padding: 0 !important;
   box-shadow: none !important;
   overflow: hidden;
 }
@@ -1434,7 +1471,7 @@
   min-height: auto;
   align-items: center;
   gap: 2.5rem;
-  padding: 4.5rem 2.5rem;
+  padding: 0 1rem;
   position: relative;
   z-index: 2;
 }
@@ -1650,8 +1687,6 @@
    ============================================================ */
 .cta-vault-home2 {
   background: linear-gradient(160deg, #0D0808 0%, #1C1010 30%, #241816 60%, #100A08 100%) !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
   position: relative;
 }
 
@@ -1792,8 +1827,6 @@
    ============================================================ */
 .cta-timeline-about {
   background: var(--bg-surface-alt, #EDE5D4) !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
 }
 
 [data-theme="dark"] .cta-timeline-about {
@@ -1931,8 +1964,6 @@
    ============================================================ */
 .cta-ticket-events {
   background: linear-gradient(145deg, #0E0A12 0%, #1A1020 40%, #221535 70%, #0E0A12 100%) !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
 }
 
 .cta-ticket-events::before {
@@ -2134,7 +2165,6 @@
    ============================================================ */
 .cta-playful-children {
   background: linear-gradient(135deg, #1A2A0A 0%, #0E2014 40%, #1A3010 70%, #0A1A08 100%) !important;
-  padding: 0 !important;
   overflow: hidden;
 }
 
@@ -2329,7 +2359,6 @@
    ============================================================ */
 .cta-arch-collections {
   background: linear-gradient(160deg, #080C10 0%, #0C1218 40%, #101820 70%, #080C10 100%) !important;
-  padding: 0 !important;
 }
 
 .cta-arch-collections::before {
@@ -2446,7 +2475,6 @@
    ============================================================ */
 .cta-noir-fiction {
   background: linear-gradient(170deg, #0A0608 0%, #16090E 30%, #1E0E14 60%, #100608 100%) !important;
-  padding: 0 !important;
   overflow: hidden;
 }
 
@@ -2582,8 +2610,6 @@
    ============================================================ */
 .cta-ledger-nonfiction {
   background: linear-gradient(160deg, #08100E 0%, #0C1612 40%, #101E18 70%, #08100E 100%) !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
 }
 
 .cta-ledger-nonfiction::before {
@@ -2802,8 +2828,6 @@
    ============================================================ */
 .cta-community-staff {
   background: linear-gradient(145deg, #100C06 0%, #1C1408 40%, #241A0A 70%, #100C06 100%) !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
 }
 
 .cta-community-staff::before {
@@ -2817,7 +2841,7 @@
   align-items: center;
   max-width: 900px;
   margin: 0 auto;
-  padding: 4.5rem 2rem;
+  padding: 0 2rem;
 }
 
 .cta-avatar-ring {
@@ -3752,7 +3776,6 @@
    ============================================================ */
 .cta-detective-orders {
   background: linear-gradient(160deg, #080A0E 0%, #0C1018 40%, #101620 70%, #080A0E 100%) !important;
-  padding: 6rem 0 !important;
 }
 
 .cta-detective-orders::before {
@@ -3766,7 +3789,7 @@
   align-items: center;
   max-width: 900px;
   margin: 0 auto;
-  padding: 4.5rem 2rem;
+  padding: 0 2rem;
 }
 
 .cta-detective-text h2 {
@@ -3952,7 +3975,6 @@
    ============================================================ */
 .cta-contact-warm {
   background: linear-gradient(135deg, #1A0E08 0%, #2C1A10 50%, #221208 100%) !important;
-  padding: 0 !important;
 }
 
 .cta-contact-warm::before {
@@ -4153,7 +4175,6 @@
    ============================================================ */
 .cta-chat-faq {
   background: var(--bg-surface-alt, #EDE5D4) !important;
-  padding: 5.5rem 0 !important;
 }
 
 [data-theme="dark"] .cta-chat-faq {

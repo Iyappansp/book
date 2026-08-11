@@ -628,6 +628,7 @@
 }
 .event-card-body h5 { font-size: var(--fs-md); margin-bottom: 0.25rem; }
 .event-card-body p { font-size: var(--fs-sm); margin: 0; flex-grow: 1; }
+.event-card-body .event-cat-badge { align-self: flex-start; width: fit-content; max-width: fit-content; }
 
 /* ---------- Testimonials ---------- */
 

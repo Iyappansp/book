@@ -53,24 +53,14 @@
   <section>
     <div class="container-custom">
       
-      <!-- ============ EVENT SEARCH & CATEGORY FILTER BAR ============ -->
+      <!-- ============ EVENT CATEGORY FILTER BAR ============ -->
       <div class="events-filter-bar mb-4 reveal-up">
-        <div class="row g-3 align-items-center justify-content-between">
-          <div class="col-12 col-md-6 col-lg-5">
-            <div class="event-search-wrapper">
-              <svg class="search-icon input-icon-start" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-              <input type="text" id="eventSearchInput" class="form-control has-icon-start" placeholder="Search events by author, title, or topic..." aria-label="Search author events">
-            </div>
-          </div>
-          <div class="col-12 col-md-12 col-lg-7">
-            <div class="filter-chips-wrap d-flex gap-2 flex-wrap justify-content-lg-end" role="tablist" aria-label="Filter events by type">
-              <button type="button" class="filter-chip active" data-filter="all">All Events</button>
-              <button type="button" class="filter-chip" data-filter="signing">Signings &amp; Readings</button>
-              <button type="button" class="filter-chip" data-filter="bookclub">Book Club</button>
-              <button type="button" class="filter-chip" data-filter="workshop">Workshops</button>
-              <button type="button" class="filter-chip" data-filter="children">Story Time</button>
-            </div>
-          </div>
+        <div class="filter-chips-wrap d-flex gap-2 flex-wrap justify-content-center" role="tablist" aria-label="Filter events by type">
+          <button type="button" class="filter-chip active" data-filter="all">All Events</button>
+          <button type="button" class="filter-chip" data-filter="signing">Signings &amp; Readings</button>
+          <button type="button" class="filter-chip" data-filter="bookclub">Book Club</button>
+          <button type="button" class="filter-chip" data-filter="workshop">Workshops</button>
+          <button type="button" class="filter-chip" data-filter="children">Story Time</button>
         </div>
       </div>
 
@@ -201,24 +191,33 @@
       </div>
       <div class="mission-strip">
         <div class="mission-card reveal-up">
-          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg></div>
+          <div class="rule-card-img-wrap">
+            <img src="assets/author/book-signing.png" alt="Book Signings" class="rule-card-img">
+          </div>
           <h5>Book Signings</h5>
-          <p>Meet the authors behind our staff picks and new arrivals.</p>
+          <p>Meet the authors behind our staff picks new arrivals.</p>
         </div>
         <div class="mission-card reveal-up delay-1">
-          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-          <h5>Reading Sessions</h5>
+          <div class="rule-card-img-wrap">
+            <img src="assets/author/reading.png" alt="Reading Sessions" class="rule-card-img">
+          </div>
+          <h5>Read Sessions</h5>
           <p>Authors read aloud from new and upcoming work.</p>
         </div>
         <div class="mission-card reveal-up delay-2">
-          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+          <div class="rule-card-img-wrap">
+            <img src="assets/author/meeting-author.png" alt="Meet the Author" class="rule-card-img">
+          </div>
           <h5>Meet the Author</h5>
           <p>Q&amp;A conversations moderated by our head bookseller.</p>
         </div>
         <div class="mission-card reveal-up delay-3">
-          <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+          <div class="rule-card-img-wrap">
+            <img src="assets/author/workshops.png" alt="Workshops" class="rule-card-img">
+          </div>
           <h5>Workshops</h5>
           <p>Hands-on sessions on craft, editing, and getting published.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -236,32 +235,32 @@
         
         <div class="premium-grid-4">
           <div class="premium-item-box">
-            <div class="premium-item-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <div class="premium-card-img-wrap">
+              <img src="assets/author/dinners.png" alt="Private Author Dinners" class="premium-card-img">
             </div>
             <h5>Private Author Dinners</h5>
             <p>Seated 3-course dinner with featured authors before public reading sessions.</p>
           </div>
           <div class="premium-item-box">
-            <div class="premium-item-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            <div class="premium-card-img-wrap">
+              <img src="assets/author/Signed.png" alt="Signed First Editions" class="premium-card-img">
             </div>
             <h5>Signed First Editions</h5>
             <p>Guaranteed numbered & dedicated first print copies for every salon dinner.</p>
           </div>
           <div class="premium-item-box">
-            <div class="premium-item-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/></svg>
+            <div class="premium-card-img-wrap">
+              <img src="assets/author/reserved.png" alt="Reserved Front Velvet" class="premium-card-img">
             </div>
             <h5>Reserved Front Velvet</h5>
             <p>Dedicated plush armchair seating in the front row for all public events.</p>
           </div>
           <div class="premium-item-box">
-            <div class="premium-item-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v3a2 2 0 0 1-2 2H3"/><path d="M21 8h-3a2 2 0 0 1-2-2V3"/><path d="M3 16h3a2 2 0 0 1 2 2v3"/><path d="M16 21v-3a2 2 0 0 1 2-2h3"/></svg>
+            <div class="premium-card-img-wrap">
+              <img src="assets/author/Mezzanine-Bar-Access.png" alt="Mezzanine Bar Access" class="premium-card-img">
             </div>
             <h5>Mezzanine Bar Access</h5>
-            <p>Complimentary sommelier-curated wine & artisanal cocktails during all events.</p>
+            <p>Complimentary sommelier-curated wine & artisanal cocktails during events.</p>
           </div>
         </div>
 
@@ -296,7 +295,7 @@
             <div class="d-flex align-items-center justify-content-between mb-3">
               <span class="premium-badge-gold m-0">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                Featured Event Audio
+                Featured
               </span>
               <span class="archive-media-badge">48 Min Audio · Transcribed</span>
             </div>
