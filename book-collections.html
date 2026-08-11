@@ -61,8 +61,17 @@
     <section class="collections-filter-sticky">
       <div class="container-custom">
         <div class="collections-filter-wrapper">
-          <span class="filter-label">Quick Jump:</span>
-          <div class="collections-filter-chips">
+          <div class="filter-header-row">
+            <span class="filter-label">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+              Quick Jump:
+            </span>
+            <button type="button" class="filter-toggle-btn" id="filter-toggle-btn" aria-expanded="true" title="Hide Quick Jump Filters">
+              <span class="toggle-text">Hide Filters</span>
+              <svg class="toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
+            </button>
+          </div>
+          <div class="collections-filter-chips" id="collections-filter-chips">
             <a href="#fiction" class="filter-chip">Fiction</a>
             <a href="#mystery" class="filter-chip">Mystery &amp; Thriller</a>
             <a href="#romance" class="filter-chip">Romance</a>

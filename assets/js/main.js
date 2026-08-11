@@ -8,8 +8,8 @@
   const NAV_LINKS = [
     { label: 'Home', href: 'index.html' },
     { label: 'Home 2', href: 'home-2.html' },
-    { label: 'All Collections', href: 'book-collections.html' },
     { label: 'About', href: 'about.html' },
+    { label: 'All Collections', href: 'book-collections.html' },
     {
       label: 'Events',
       dropdown: true,
@@ -859,6 +859,40 @@
     });
   }
 
+  /* ---------------- Quick Jump Filter Hide/Show Toggle ---------------- */
+
+  function initQuickJumpToggle() {
+    const toggleBtn = document.getElementById('filter-toggle-btn');
+    const filterChips = document.getElementById('collections-filter-chips');
+    const filterSticky = toggleBtn ? toggleBtn.closest('.collections-filter-sticky') : null;
+    if (!toggleBtn || !filterChips) return;
+
+    toggleBtn.addEventListener('click', function () {
+      const isHidden = filterChips.classList.toggle('is-hidden');
+      toggleBtn.classList.toggle('is-collapsed', isHidden);
+      toggleBtn.setAttribute('aria-expanded', !isHidden);
+      if (filterSticky) {
+        filterSticky.classList.toggle('is-collapsed-bar', isHidden);
+      }
+
+      const toggleText = toggleBtn.querySelector('.toggle-text');
+      if (toggleText) {
+        toggleText.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
+      }
+    });
+  }
+
+  /* ---------------- Dynamic Header Height CSS Variable ---------------- */
+
+  function updateHeaderHeightVar() {
+    const header = document.getElementById('main-header');
+    if (header) {
+      document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+    }
+  }
+
+  window.addEventListener('resize', updateHeaderHeightVar);
+
   /* ---------------- Init ---------------- */
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -871,6 +905,8 @@
     initBuyPrebookInteractivity();
     initUniqueBookShowcase();
     initMoodMatrix();
+    initQuickJumpToggle();
+    setTimeout(updateHeaderHeightVar, 50);
   });
 })();
 

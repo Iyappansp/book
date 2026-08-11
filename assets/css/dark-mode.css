@@ -223,6 +223,86 @@
   color: var(--color-ink);
 }
 
+/* Dark Mode Collections Sticky Filter Bar */
+[data-theme="dark"] .collections-filter-sticky {
+  background: rgba(18, 12, 8, 0.95);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .collections-filter-sticky .filter-label {
+  color: #D4AF37;
+}
+
+[data-theme="dark"] .collections-filter-sticky .filter-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 175, 55, 0.3);
+  color: #D4AF37;
+}
+
+[data-theme="dark"] .collections-filter-sticky .filter-toggle-btn:hover {
+  background: #D4AF37;
+  color: #120C08;
+  border-color: #D4AF37;
+}
+
+[data-theme="dark"] .collections-filter-sticky .filter-chip {
+  background: rgba(30, 22, 16, 0.85);
+  color: #F5EFE4;
+  border-color: rgba(212, 175, 55, 0.25);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .collections-filter-sticky .filter-chip:hover,
+[data-theme="dark"] .collections-filter-sticky .filter-chip:focus {
+  background: #D4AF37;
+  color: #120C08;
+  border-color: #D4AF37;
+}
+
+/* Dark Mode Premium Item Box Overrides */
+[data-theme="dark"] .premium-item-box {
+  background: rgba(26, 18, 12, 0.95);
+  border-color: rgba(212, 175, 55, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .premium-item-box h5 {
+  color: #F8F5EE !important;
+}
+
+[data-theme="dark"] .premium-item-box p {
+  color: rgba(248, 245, 238, 0.78) !important;
+}
+
+[data-theme="dark"] .premium-item-icon {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.35);
+  color: #D4AF37;
+}
+
+[data-theme="dark"] .premium-item-box:hover {
+  background: rgba(45, 30, 18, 0.98) !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25) !important;
+  transform: translateY(-4px);
+}
+
+[data-theme="dark"] .premium-item-box:hover h5 {
+  color: #D4AF37 !important;
+}
+
+[data-theme="dark"] .premium-item-box:hover p {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .premium-item-box:hover .premium-item-icon {
+  background: #D4AF37 !important;
+  border-color: #D4AF37 !important;
+  color: #120C08 !important;
+}
+
 /* Theme transition guard: prevent flash on load */
 .theme-transitioning,
 .theme-transitioning * {
