@@ -520,16 +520,12 @@
 .book-author { font-size: var(--fs-xs); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-xs); }
 .book-note { font-family: var(--font-quote); font-size: var(--fs-md); font-style: italic; color: var(--text-secondary); line-height: 1.4; margin: 0; }
 
-/* ---------- New arrivals horizontal strip ---------- */
+/* ---------- New arrivals grid strip ---------- */
 
 .new-arrivals-strip {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 46%;
-  gap: var(--space-sm);
-  overflow-x: auto;
-  padding-bottom: var(--space-xs);
-  scroll-snap-type: x mandatory;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-md);
 }
 
 .arrival-item { scroll-snap-align: start; }
@@ -706,7 +702,6 @@
 
 @media (min-width: 768px) {
   .genre-grid { grid-template-columns: repeat(3, 1fr); }
-  .new-arrivals-strip { grid-auto-columns: 28%; }
 }
 
 @media (min-width: 1024px) {
@@ -714,7 +709,6 @@
   .hero-classic-copy h1 { font-size: var(--fs-4xl); }
   .genre-grid { grid-template-columns: repeat(3, 1fr); }
   .reading-corner-grid { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
-  .new-arrivals-strip { grid-auto-flow: initial; grid-template-columns: repeat(5, 1fr); overflow-x: visible; }
 }
 
 /* ---------- Reserve Vault & Collector's Spotlight Section ---------- */

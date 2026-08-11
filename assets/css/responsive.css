@@ -44,9 +44,22 @@ section { padding: var(--space-lg) 0; }
   .catalog-grid,
   .vault-grid,
   .why-choose-grid,
-  .new-arrivals-strip {
+  .new-arrivals-strip,
+  .sp-gallery-grid,
+  .cc-magazine-grid,
+  .fa-row,
+  .rs-grid,
+  .ub-showcase-container,
+  .rj-grid,
+  .rj-cards,
+  .rb-grid,
+  .bc-grid,
+  .team-grid,
+  .gallery-grid {
     display: grid !important;
     grid-template-columns: 1fr !important;
+    grid-auto-flow: row !important;
+    overflow-x: visible !important;
     gap: var(--space-md, 1.25rem) !important;
   }
 
@@ -67,7 +80,18 @@ section { padding: var(--space-lg) 0; }
   .catalog-grid > *,
   .vault-grid > *,
   .why-choose-grid > *,
-  .new-arrivals-strip > * {
+  .new-arrivals-strip > *,
+  .sp-gallery-grid > *,
+  .cc-magazine-grid > *,
+  .fa-row > *,
+  .rs-grid > *,
+  .ub-showcase-container > *,
+  .rj-grid > *,
+  .rj-cards > *,
+  .rb-grid > *,
+  .bc-grid > *,
+  .team-grid > *,
+  .gallery-grid > * {
     grid-column: 1 / -1 !important;
     width: 100% !important;
     max-width: 100% !important;
@@ -147,29 +171,6 @@ section { padding: var(--space-lg) 0; }
   }
 }
 
-/* ---------- Desktop (992px+) Layout Typography & Grids ---------- */
-
-@media (min-width: 992px) {
-  h1 { font-size: var(--fs-4xl); }
-  h2 { font-size: var(--fs-3xl); }
-  h3 { font-size: var(--fs-2xl); }
-
-  .new-arrivals-strip {
-    display: grid !important;
-    grid-auto-flow: initial !important;
-    grid-template-columns: repeat(5, 1fr) !important;
-    overflow-x: visible !important;
-    gap: var(--space-md, 1.25rem) !important;
-  }
-
-  .new-arrivals-strip > * {
-    grid-column: auto !important;
-    justify-self: stretch !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-}
-
 /* ---------- Tab View 2-Column Grid Layout with Odd Last Item Centered (601px - 1024px) ---------- */
 
 @media (max-width: 1024px) and (min-width: 601px) {
@@ -192,9 +193,21 @@ section { padding: var(--space-lg) 0; }
   .vault-grid,
   .why-choose-grid,
   .new-arrivals-strip,
-  .sp-gallery-grid {
+  .sp-gallery-grid,
+  .cc-magazine-grid,
+  .fa-row,
+  .rs-grid,
+  .ub-showcase-container,
+  .rj-grid,
+  .rj-cards,
+  .rb-grid,
+  .bc-grid,
+  .team-grid,
+  .gallery-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
+    grid-auto-flow: row !important;
+    overflow-x: visible !important;
     gap: var(--space-md, 1.25rem) !important;
   }
 
@@ -217,7 +230,17 @@ section { padding: var(--space-lg) 0; }
   .vault-grid > *:nth-child(2n+1):last-child,
   .why-choose-grid > *:nth-child(2n+1):last-child,
   .new-arrivals-strip > *:nth-child(2n+1):last-child,
-  .sp-gallery-grid > *:nth-child(2n+1):last-child {
+  .sp-gallery-grid > *:nth-child(2n+1):last-child,
+  .cc-magazine-grid > *:nth-child(2n+1):last-child,
+  .fa-row > *:nth-child(2n+1):last-child,
+  .rs-grid > *:nth-child(2n+1):last-child,
+  .ub-showcase-container > *:nth-child(2n+1):last-child,
+  .rj-grid > *:nth-child(2n+1):last-child,
+  .rj-cards > *:nth-child(2n+1):last-child,
+  .rb-grid > *:nth-child(2n+1):last-child,
+  .bc-grid > *:nth-child(2n+1):last-child,
+  .team-grid > *:nth-child(2n+1):last-child,
+  .gallery-grid > *:nth-child(2n+1):last-child {
     grid-column: 1 / -1 !important;
     justify-self: center !important;
     width: 100% !important;
@@ -228,6 +251,29 @@ section { padding: var(--space-lg) 0; }
   .row > [class*="col-"]:nth-child(odd):last-child {
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+}
+
+/* ---------- Desktop (1025px+) Layout Typography & Grids ---------- */
+
+@media (min-width: 1025px) {
+  h1 { font-size: var(--fs-4xl); }
+  h2 { font-size: var(--fs-3xl); }
+  h3 { font-size: var(--fs-2xl); }
+
+  .new-arrivals-strip {
+    display: grid !important;
+    grid-auto-flow: initial !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    overflow-x: visible !important;
+    gap: var(--space-md, 1.25rem) !important;
+  }
+
+  .new-arrivals-strip > * {
+    grid-column: auto !important;
+    justify-self: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 }
 
@@ -315,5 +361,42 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
     justify-content: center !important;
   }
 }
+
+/* ---------- Universal CTA Actions Alignment ---------- */
+
+.final-cta-actions,
+.cta-actions,
+.hero-actions,
+.about-hero-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+  margin-top: 1.25rem !important;
+}
+
+@media (max-width: 576px) {
+  .final-cta-actions,
+  .cta-actions,
+  .hero-actions,
+  .about-hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .final-cta-actions .btn-custom,
+  .final-cta-actions a,
+  .final-cta-actions button,
+  .cta-actions .btn-custom,
+  .cta-actions a,
+  .hero-actions .btn-custom,
+  .hero-actions a {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
 
 
