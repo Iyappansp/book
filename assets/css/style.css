@@ -433,3 +433,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     scroll-behavior: auto !important;
   }
 }
+
+/* ==========================================================================
+   Uniform Container & Card Heights across all Grids
+   ========================================================================== */
+.staff-pick-full-card,
+.book-card,
+.collection-card,
+.event-card,
+.author-card,
+.article-card,
+.genre-card,
+.why-choose-card,
+.mv-card,
+.age-tab-card,
+.gift-card-option,
+.service-card,
+.step-card,
+.team-card,
+.info-card,
+.stat-card,
+.card-custom {
+  height: 100%;
+}
+

@@ -13,6 +13,16 @@ section { padding: var(--space-lg) 0; }
 
 .container-custom { padding: 0 var(--space-sm); }
 
+@media (max-width: 576px) {
+  .container-custom { padding: 0 1.25rem; }
+  .auth-section { padding: 1.5rem 0 2.5rem; }
+  .auth-body { padding: 1.25rem 1rem 1.75rem; }
+}
+
+@media (max-width: 380px) {
+  .container-custom { padding: 0 0.85rem; }
+}
+
 .main-nav,
 .header-actions .icon-toggle.desktop-only { display: none; }
 
@@ -28,8 +38,8 @@ section { padding: var(--space-lg) 0; }
 
 .footer-bottom { flex-direction: column; text-align: center; justify-content: center; }
 
-.back-to-top { bottom: 18px; right: 18px; width: 42px; height: 42px; }
-[dir="rtl"] .back-to-top { left: 18px; right: auto; }
+.back-to-top { bottom: 20px; right: 16px; width: 42px; height: 42px; z-index: 1000; }
+[dir="rtl"] .back-to-top { left: 16px; right: auto; }
 
 /* ---------- Tablet (768px+) ---------- */
 
@@ -53,11 +63,19 @@ section { padding: var(--space-lg) 0; }
 @media (max-width: 1024px) {
   .main-nav { display: none !important; }
   .mobile-menu-btn { display: inline-flex !important; }
+  .header-actions .btn-rtl-toggle,
+  .header-actions .icon-toggle,
+  .header-actions .btn-primary-custom,
+  .header-actions a[href="login.html"] { display: none !important; }
 }
 
 @media (min-width: 1025px) {
   .main-nav { display: flex !important; }
   .mobile-menu-btn { display: none !important; }
+  .header-actions .btn-rtl-toggle,
+  .header-actions .icon-toggle,
+  .header-actions .btn-primary-custom,
+  .header-actions a[href="login.html"] { display: inline-flex !important; }
 
   .header-actions .icon-toggle { width: 40px; height: 40px; }
 
@@ -76,39 +94,64 @@ section { padding: var(--space-lg) 0; }
 
 /* ---------- Tab View Odd Container Centering (601px - 1024px) ---------- */
 
+/* ---------- Tab View 3*2 Grid Layout (601px - 1024px) ---------- */
+
 @media (max-width: 1024px) and (min-width: 601px) {
-  /* When a grid container has an odd total number of items in tab view, center the last item */
-  .book-grid > *:nth-child(odd):last-child,
-  .books-grid > *:nth-child(odd):last-child,
-  .collections-grid > *:nth-child(odd):last-child,
-  .events-grid > *:nth-child(odd):last-child,
-  .staff-grid > *:nth-child(odd):last-child,
-  .feature-grid > *:nth-child(odd):last-child,
-  .reading-grid > *:nth-child(odd):last-child,
-  .corner-essay-grid > *:nth-child(odd):last-child,
-  .gift-card-grid > *:nth-child(odd):last-child,
-  .age-tabs > *:nth-child(odd):last-child,
-  .author-events-grid > *:nth-child(odd):last-child,
-  .faq-grid > *:nth-child(odd):last-child,
-  .grid-custom > *:nth-child(odd):last-child,
-  .card-grid > *:nth-child(odd):last-child,
-  .shelves-grid > *:nth-child(odd):last-child,
-  .category-grid > *:nth-child(odd):last-child,
-  .new-arrivals-grid > *:nth-child(odd):last-child,
-  .quick-jump-grid > *:nth-child(odd):last-child,
-  .grid-container-custom > *:nth-child(odd):last-child {
-    grid-column: 1 / -1 !important;
-    justify-self: center !important;
-    width: 100% !important;
-    max-width: 500px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+  .book-grid,
+  .books-grid,
+  .collections-grid,
+  .events-grid,
+  .staff-grid,
+  .feature-grid,
+  .reading-grid,
+  .corner-essay-grid,
+  .gift-card-grid,
+  .age-tabs,
+  .author-events-grid,
+  .grid-custom,
+  .card-grid,
+  .shelves-grid,
+  .category-grid,
+  .catalog-grid,
+  .vault-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: var(--space-sm, 1rem) !important;
+  }
+
+  .new-arrivals-strip {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-auto-flow: row !important;
+    overflow-x: visible !important;
+    gap: var(--space-sm, 1rem) !important;
   }
 
   /* Centering for Bootstrap flex rows with odd items in tab view */
   .row > [class*="col-"]:nth-child(odd):last-child {
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+}
+
+/* ---------- Center Last Two Items in 5-Item 3-Column Grids on Tab View ---------- */
+@media (max-width: 1024px) and (min-width: 601px) {
+  .book-grid > *:nth-child(4):nth-last-child(2),
+  .new-arrivals-strip > *:nth-child(4):nth-last-child(2),
+  .vault-grid > *:nth-child(4):nth-last-child(2),
+  .catalog-grid > *:nth-child(4):nth-last-child(2) {
+    grid-column: 1 / 3;
+    justify-self: end;
+    width: 100%;
+  }
+
+  .book-grid > *:nth-child(5):last-child,
+  .new-arrivals-strip > *:nth-child(5):last-child,
+  .vault-grid > *:nth-child(5):last-child,
+  .catalog-grid > *:nth-child(5):last-child {
+    grid-column: 2 / 4;
+    justify-self: start;
+    width: 100%;
   }
 }
 

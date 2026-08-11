@@ -60,14 +60,18 @@
     const drawerHtml = NAV_LINKS.map(link => {
       if (link.dropdown) {
         const isChildActive = link.items.some(item => item.href === path);
-        const activeGroup = isChildActive ? ' active-group' : '';
+        const openClass = isChildActive ? ' open' : '';
+        const ariaExpanded = isChildActive ? 'true' : 'false';
         const itemsHtml = link.items.map(item => {
           const itemActive = item.href === path ? ' class="active"' : '';
           return `<a href="${item.href}"${itemActive}>${item.label}</a>`;
         }).join('');
         return `
-          <div class="mobile-dropdown-group${activeGroup}">
-            <div class="mobile-dropdown-title">${link.label}</div>
+          <div class="mobile-dropdown-group${openClass}">
+            <button type="button" class="mobile-dropdown-toggle" aria-expanded="${ariaExpanded}">
+              <span>${link.label}</span>
+              <svg class="mobile-dropdown-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
             <div class="mobile-dropdown-links">
               ${itemsHtml}
             </div>
@@ -77,13 +81,10 @@
         const active = link.href === path ? ' class="active"' : '';
         return `<a href="${link.href}"${active}>${link.label}</a>`;
       }
-    }).join('');
-
-    return `
+    }).join('');    return `
     <div class="header-inner">
       <a href="index.html" class="brand-logo">
-        ${LOGO_SVG}
-        <span>Aldergate<span class="brand-sub">Books &amp; Reading Room</span></span>
+        <img src="assets/log2o.png" alt="Aldergate Books" class="brand-logo-img">
       </a>
 
       <nav class="main-nav" aria-label="Primary navigation">
@@ -94,9 +95,9 @@
         <button type="button" class="btn-rtl-toggle" id="rtl-toggle" aria-label="Toggle layout direction" title="Toggle RTL Layout">
           <span class="rtl-text">RTL</span>
         </button>
-        <button type="button" class="icon-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <button type="button" class="icon-toggle theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
           <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
         <a href="login.html" class="btn-custom btn-primary-custom btn-sm-custom">Login</a>
         <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
@@ -106,14 +107,29 @@
     </div>
 
     <div class="mobile-nav-drawer" id="mobile-nav-drawer">
-      <div class="d-flex align-items-center justify-content-between mb-3">
+      <div class="drawer-header">
+        <a href="index.html" class="brand-logo brand-logo-drawer">
+          <img src="assets/log2o.png" alt="Aldergate Books" class="brand-logo-img">
+        </a>
         <button type="button" class="drawer-close" id="drawer-close" aria-label="Close menu">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
       </div>
-      <nav aria-label="Mobile navigation">${drawerHtml}</nav>
-      <div class="d-flex flex-column gap-2 mt-4">
-        <a href="login.html" class="btn-custom btn-primary-custom w-100">Login</a>
+      
+      <nav aria-label="Mobile navigation" class="drawer-nav-body">${drawerHtml}</nav>
+      
+      <div class="drawer-footer-controls">
+        <div class="drawer-toggles-row">
+          <button type="button" class="btn-rtl-toggle" id="drawer-rtl-toggle" aria-label="Toggle layout direction" title="Toggle RTL Layout">
+            <span class="rtl-text">RTL</span>
+          </button>
+          <button type="button" class="icon-toggle theme-toggle-btn" id="drawer-theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+        
+        <a href="login.html" class="btn-custom btn-primary-custom w-100 text-center drawer-login-btn">Login</a>
       </div>
     </div>
     <div class="drawer-overlay" id="drawer-overlay"></div>
@@ -125,8 +141,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="index.html" class="brand-logo">
-          ${LOGO_SVG}
-          <span>Aldergate<span class="brand-sub">Books &amp; Reading Room</span></span>
+          <img src="assets/log2o.png" alt="Aldergate Books" class="brand-logo-img">
         </a>
         <p>An independent bookstore and reading room devoted to slow reading, thoughtful curation, and the company of good books.</p>
         <div class="footer-social">
@@ -278,6 +293,14 @@
           d.classList.remove('open');
           d.querySelector('.dropdown-toggle-btn')?.setAttribute('aria-expanded', 'false');
         });
+      }
+
+      const mobileDropdownToggle = e.target.closest('.mobile-dropdown-toggle');
+      if (mobileDropdownToggle) {
+        const group = mobileDropdownToggle.closest('.mobile-dropdown-group');
+        const isOpen = group.classList.contains('open');
+        group.classList.toggle('open', !isOpen);
+        mobileDropdownToggle.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
       }
 
       if (e.target.closest('#mobile-menu-btn')) {
