@@ -859,7 +859,7 @@
     });
   }
 
-  /* ---------------- Quick Jump Filter Hide/Show Toggle ---------------- */
+  /* ---------------- Quick Jump Filter Hide/Show Toggle + Scroll Tracking ---------------- */
 
   function initQuickJumpToggle() {
     const toggleBtn = document.getElementById('filter-toggle-btn');
@@ -867,19 +867,98 @@
     const filterSticky = toggleBtn ? toggleBtn.closest('.collections-filter-sticky') : null;
     if (!toggleBtn || !filterChips) return;
 
+    /* ---- Hide/Show toggle ---- */
     toggleBtn.addEventListener('click', function () {
       const isHidden = filterChips.classList.toggle('is-hidden');
       toggleBtn.classList.toggle('is-collapsed', isHidden);
-      toggleBtn.setAttribute('aria-expanded', !isHidden);
+      toggleBtn.setAttribute('aria-expanded', String(!isHidden));
       if (filterSticky) {
         filterSticky.classList.toggle('is-collapsed-bar', isHidden);
       }
-
       const toggleText = toggleBtn.querySelector('.toggle-text');
       if (toggleText) {
         toggleText.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
       }
+      // Re-sync scroll padding after toggle
+      updateScrollPaddingTop();
     });
+
+    /* ---- Smooth scroll with precise offset on chip click ---- */
+    filterChips.querySelectorAll('.filter-chip[href^="#"]').forEach(chip => {
+      chip.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').slice(1);
+        const targetEl = document.getElementById(targetId);
+        if (!targetEl) return;
+
+        const offset = getScrollOffset();
+        const targetTop = targetEl.getBoundingClientRect().top + window.scrollY - offset;
+
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+
+        // Set active chip immediately
+        filterChips.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+
+        // Update URL hash without jump
+        if (history.pushState) {
+          history.pushState(null, null, '#' + targetId);
+        }
+      });
+    });
+
+    /* ---- Calculate total scroll offset (header + sticky bar) ---- */
+    function getScrollOffset() {
+      const header = document.getElementById('main-header');
+      const headerH = header ? header.offsetHeight : 74;
+      const stickyH = (filterSticky && !filterSticky.classList.contains('is-collapsed-bar'))
+        ? filterSticky.offsetHeight
+        : (filterSticky && filterSticky.classList.contains('is-collapsed-bar') ? filterSticky.offsetHeight : 0);
+      return headerH + stickyH + 16; // 16px breathing room
+    }
+
+    /* ---- Set dynamic scroll-padding-top on <html> ---- */
+    function updateScrollPaddingTop() {
+      const offset = getScrollOffset();
+      document.documentElement.style.scrollPaddingTop = offset + 'px';
+    }
+
+    /* ---- Intersection Observer: highlight active chip on scroll ---- */
+    const sectionIds = Array.from(filterChips.querySelectorAll('.filter-chip[href^="#"]'))
+      .map(chip => chip.getAttribute('href').slice(1))
+      .filter(id => document.getElementById(id));
+
+    if ('IntersectionObserver' in window && sectionIds.length) {
+      let activeSectionId = null;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            activeSectionId = entry.target.id;
+            syncActiveChip(activeSectionId);
+          }
+        });
+      }, {
+        rootMargin: `-${getScrollOffset()}px 0px -55% 0px`,
+        threshold: 0
+      });
+
+      sectionIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    }
+
+    function syncActiveChip(sectionId) {
+      filterChips.querySelectorAll('.filter-chip').forEach(chip => {
+        const chipId = chip.getAttribute('href').slice(1);
+        chip.classList.toggle('active', chipId === sectionId);
+      });
+    }
+
+    // Init scroll padding on load
+    updateScrollPaddingTop();
+    window.addEventListener('resize', updateScrollPaddingTop, { passive: true });
   }
 
   /* ---------------- Author Events Page Interactivity ---------------- */
@@ -1153,6 +1232,8 @@
     injectHeaderFooter();
     initTheme();
     initRTL();
+    // Update header height variable immediately after injection so other inits can rely on it
+    updateHeaderHeightVar();
     initNavEvents();
     initBackToTop();
     initNewsletterForm();
@@ -1165,7 +1246,14 @@
     initAccordionEvents();
     initAuthorEventsRsvpModal();
     initReadingAlcoveModal();
+    // Re-measure after fonts/layout settle
     setTimeout(updateHeaderHeightVar, 50);
+    // Re-fire scroll-padding update after header is fully rendered
+    setTimeout(function () {
+      updateHeaderHeightVar();
+      // Trigger a resize event so initQuickJumpToggle's resize listener updates scroll padding
+      window.dispatchEvent(new Event('resize'));
+    }, 200);
   });
 })();
 

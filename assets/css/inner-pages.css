@@ -348,7 +348,7 @@
 
 .category-block {
   padding: 2rem 0 2.5rem;
-  scroll-margin-top: 145px;
+  scroll-margin-top: calc(var(--header-height, 74px) + 62px);
 }
 
 .category-block:not(:last-child) {
@@ -1462,17 +1462,17 @@
 .collections-filter-sticky {
   position: sticky !important;
   top: var(--header-height, 74px) !important;
-  z-index: 90 !important;
+  z-index: 200 !important;
   background: rgba(22, 16, 11, 0.95) !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   border-top: 1px solid rgba(212, 175, 55, 0.15) !important;
   border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
-  padding: 0.3rem 0 !important;
+  padding: 0.35rem 0 !important;
   margin-top: 0 !important;
-  margin-bottom: 0.85rem !important;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4) !important;
-  transition: all 0.3s ease;
+  margin-bottom: 0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .collections-filter-sticky.is-collapsed-bar {
@@ -2845,14 +2845,22 @@
    MOBILE X-AXIS OVERFLOW PREVENTION & RIGHT SIDE ALIGNMENT FIX (Down to 320px)
    ========================================================================== */
 
+/* Prevent horizontal overflow WITHOUT breaking position:sticky.
+   overflow-x:hidden on html/body/main/section creates scroll containers
+   that break sticky positioning. Use max-width constraints instead. */
 html,
 body,
 main,
 #main-content,
-header,
-footer,
 section,
 .page-header {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* header and footer don't contain sticky children — safe to clip */
+header,
+footer {
   overflow-x: hidden !important;
   max-width: 100% !important;
   box-sizing: border-box !important;

@@ -99,7 +99,11 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* Fallback scroll-padding-top before JS calculates exact offset */
+  scroll-padding-top: calc(var(--header-height, 74px) + 60px);
+}
 
 body {
   font-family: var(--font-body);
@@ -108,7 +112,6 @@ body {
   font-size: var(--fs-base);
   line-height: 1.65;
   transition: background var(--transition-base), color var(--transition-base);
-  overflow-x: clip;
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -369,11 +369,21 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
 .hero-actions,
 .about-hero-actions {
   display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  align-items: center;
+  justify-content: center;
   gap: 1rem !important;
   flex-wrap: wrap !important;
   margin-top: 1.25rem !important;
+}
+
+/* Left-aligned CTAs & Hero Action Rows */
+.cta-split-text .final-cta-actions,
+.cta-split-home .final-cta-actions,
+.cta-split-inner .final-cta-actions,
+.cta-contact-left .final-cta-actions,
+.hero-classic-copy .hero-cta-row,
+.hero-cta-row {
+  justify-content: flex-start !important;
 }
 
 @media (max-width: 576px) {
@@ -397,9 +407,6 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
     justify-content: center !important;
   }
 
-  html, body {
-    overflow-x: hidden !important;
-  }
 
   .section-heading h2 {
     font-size: clamp(1.5rem, 5.5vw, 2.1rem) !important;
@@ -427,7 +434,6 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
   .age-tabs,
   .filter-bar,
   .filter-chips-wrap,
-  .collections-filter-chips,
   .events-filter-bar,
   .sp-filter-toolbar,
   .spotlight-tabs-nav,
@@ -440,11 +446,33 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
     flex-wrap: wrap !important;
   }
 
+  /* Quick Jump filter chips: horizontal scroll on mobile (don't stack vertically) */
+  .collections-filter-chips {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: 0.4rem !important;
+    padding-bottom: 2px !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  .collections-filter-chips::-webkit-scrollbar {
+    display: none !important;
+  }
+  .collections-filter-chips .filter-chip {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    padding: 0.25rem 0.7rem !important;
+    font-size: 0.73rem !important;
+  }
+
   .ub-tab-btn,
   .rj-mood-pill,
   .ub-fmt-pill,
   .age-tab-btn,
-  .filter-chip,
   .sp-filter-chip,
   .spotlight-tab-btn,
   .format-option {

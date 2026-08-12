@@ -223,7 +223,18 @@
   color: var(--color-ink);
 }
 
-/* Dark Mode Collections Sticky Filter Bar */
+/* Dark Mode Navigation Dropdown */
+[data-theme="dark"] .dropdown-menu-custom {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .dropdown-menu-custom a:hover,
+[data-theme="dark"] .dropdown-menu-custom a.active {
+  background: var(--bg-surface-alt);
+  color: var(--color-secondary);
+}
+
+
 [data-theme="dark"] .collections-filter-sticky {
   background: rgba(18, 12, 8, 0.95);
   border-top: 1px solid rgba(212, 175, 55, 0.15);
