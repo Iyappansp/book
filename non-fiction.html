@@ -52,14 +52,26 @@
 
   <section class="collections-filter-sticky">
     <div class="container-custom">
-      <div class="filter-bar" id="nonfiction-filters">
-        <button class="filter-chip active" data-filter="all">All</button>
-        <button class="filter-chip" data-filter="self-help">Self-Help</button>
-        <button class="filter-chip" data-filter="business">Business</button>
-        <button class="filter-chip" data-filter="biography">Biography</button>
-        <button class="filter-chip" data-filter="history">History</button>
-        <button class="filter-chip" data-filter="science">Science</button>
-        <button class="filter-chip" data-filter="travel">Travel</button>
+      <div class="collections-filter-wrapper">
+        <div class="filter-header-row">
+          <span class="filter-label">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            Filter Non-Fiction Topics:
+          </span>
+          <button type="button" class="filter-toggle-btn" id="nonfiction-filter-toggle-btn" aria-expanded="true" title="Hide Non-Fiction Filters">
+            <span class="toggle-text">Hide Filters</span>
+            <svg class="toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="collections-filter-chips" id="nonfiction-filters">
+          <button type="button" class="filter-chip active" data-filter="all">All Non-Fiction</button>
+          <button type="button" class="filter-chip" data-filter="self-help">Self-Help</button>
+          <button type="button" class="filter-chip" data-filter="business">Business</button>
+          <button type="button" class="filter-chip" data-filter="biography">Biography</button>
+          <button type="button" class="filter-chip" data-filter="history">History</button>
+          <button type="button" class="filter-chip" data-filter="science">Science</button>
+          <button type="button" class="filter-chip" data-filter="travel">Travel</button>
+        </div>
       </div>
     </div>
   </section>
@@ -466,23 +478,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/animations.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  var bar = document.getElementById("nonfiction-filters");
-  var grid = document.getElementById("nonfiction-grid");
-  if (!bar || !grid) return;
-  bar.addEventListener("click", function (e) {
-    var btn = e.target.closest(".filter-chip");
-    if (!btn) return;
-    bar.querySelectorAll(".filter-chip").forEach(function (c) { c.classList.remove("active"); });
-    btn.classList.add("active");
-    var filter = btn.getAttribute("data-filter");
-    grid.querySelectorAll(".book-card").forEach(function (card) {
-      var match = filter === "all" || card.getAttribute("data-tag") === filter;
-      card.classList.toggle("is-hidden", !match);
-    });
-  });
-});
-</script>
 </body>
 </html>

@@ -163,7 +163,7 @@
           <div class="filter-header-row mb-3 d-flex align-items-center justify-content-between">
             <span class="filter-label d-inline-flex align-items-center gap-2 fw-semibold fs-sm">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-              Filter &amp; Search Recommendations:
+              Staff Picks:
             </span>
             <button type="button" class="filter-toggle-btn" id="staff-filter-toggle-btn" aria-expanded="true" title="Hide Filters">
               <span class="toggle-text">Hide Filters</span>
@@ -171,47 +171,7 @@
             </button>
           </div>
           <div class="sp-filter-content-wrapper" id="staff-filter-content">
-            <div class="row g-3 align-items-center">
-              <!-- Keyword Search -->
-              <div class="col-12 col-md-5 col-lg-4">
-                <div class="sp-search-wrapper">
-                  <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                  <input type="text" id="staffSearchInput" class="form-control" placeholder="Search by title, author, or reviewer..." aria-label="Search staff picks">
-                </div>
-              </div>
-
-              <!-- Curator Dropdown -->
-              <div class="col-12 col-sm-6 col-md-3 col-lg-3">
-                <select id="curatorFilterSelect" class="form-select sp-filter-select" aria-label="Filter by reviewer">
-                  <option value="all" selected>All Bookseller Curators</option>
-                  <option value="Theo Marsh">Theo Marsh (Head Bookseller)</option>
-                  <option value="Priya Anand">Priya Anand (Mystery Lead)</option>
-                  <option value="Sam Whitfield">Sam Whitfield (Fantasy Lead)</option>
-                  <option value="Eleanor Voss">Eleanor Voss (Founder)</option>
-                  <option value="Marcus Vance">Marcus Vance (Memoir Lead)</option>
-                </select>
-              </div>
-
-              <!-- Reading Time Filter -->
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <select id="readingTimeSelect" class="form-select sp-filter-select" aria-label="Filter by reading time">
-                  <option value="all" selected>Any Reading Time</option>
-                  <option value="quick">&lt; 4 Hours (Quick Read)</option>
-                  <option value="medium">4 – 7 Hours (Standard)</option>
-                  <option value="long">8+ Hours (Deep Dive)</option>
-                </select>
-              </div>
-
-              <!-- Sort Select -->
-              <div class="col-12 col-lg-2 text-lg-end">
-                <select id="sortPicksSelect" class="form-select sp-filter-select" aria-label="Sort staff picks">
-                  <option value="featured" selected>Sort: Featured</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="title">Title A-Z</option>
-                </select>
-              </div>
-            </div>
+           
 
             <!-- Genre Filter Chips Row -->
             <div class="d-flex flex-wrap gap-2 mt-3 pt-3 border-top" role="tablist" aria-label="Filter picks by genre">
@@ -785,7 +745,7 @@
                 </div>
 
                 <button type="button" id="runQuizBtn" class="btn-custom btn-primary-custom w-100 py-2 fs-6">
-                  Reveal My Staff Recommendation
+                  Reveal Recommendation
                 </button>
               </form>
 
@@ -1083,13 +1043,13 @@
               <span class="period">/ quarter · cancel anytime</span>
             </div>
             <div class="d-flex gap-3 flex-wrap">
-              <a href="contact.html" class="btn-custom btn-premium-gold">
+              <a href="contact.html" class="btn-custom btn-primary-custom">
                 Join Concierge Society
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>
-              <a href="contact.html" class="btn-custom btn-primary-custom">Schedule Curator Session</a>
+              <a href="contact.html" class="btn-custom btn-secondary-custom">Schedule Curator Session</a>
             </div>
           </div>
         </div>

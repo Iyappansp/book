@@ -459,15 +459,15 @@
 }
 
 [data-theme="dark"] .keynote-actions .btn-secondary-custom {
-  color: var(--text-primary);
-  border-color: var(--border-strong);
-  background: transparent;
+  color: var(--text-primary) !important;
+  border-color: var(--border-strong) !important;
+  background: transparent !important;
 }
 
 [data-theme="dark"] .keynote-actions .btn-secondary-custom:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  background: rgba(212, 182, 133, 0.08);
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+  background: rgba(212, 182, 133, 0.08) !important;
 }
 
 /* ==========================================================================

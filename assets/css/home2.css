@@ -166,9 +166,19 @@
   gap: var(--space-md);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) and (min-width: 601px) {
   .rj-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .rj-cards-grid > *:nth-child(2n+1):last-child,
+  .rj-card:nth-child(2n+1):last-child {
+    grid-column: 1 / -1 !important;
+    width: 65% !important;
+    max-width: 580px !important;
+    justify-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 

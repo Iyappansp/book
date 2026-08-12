@@ -347,8 +347,12 @@
 /* ---------- Category anchor sections (Book Collections page) ---------- */
 
 .category-block {
-  padding: 2rem 0 2.5rem;
+  padding: 1.5rem 0 1.5rem;
   scroll-margin-top: calc(var(--header-height, 74px) + 62px);
+}
+
+.category-block:last-of-type {
+  padding-bottom: 0.75rem;
 }
 
 .category-block:not(:last-child) {
@@ -1497,37 +1501,43 @@
 }
 
 .filter-header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  gap: 0.5rem !important;
 }
 
 .filter-label {
   font-size: var(--fs-xs);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #D4AF37 !important;
-  white-space: nowrap;
+  white-space: normal;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .filter-toggle-btn {
   background: rgba(255, 255, 255, 0.08) !important;
   border: 1px solid rgba(212, 175, 55, 0.3) !important;
   color: #D4AF37 !important;
-  padding: 0.2rem 0.65rem !important;
+  padding: 0.22rem 0.65rem !important;
   border-radius: var(--radius-pill);
   font-size: 0.72rem;
   font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
   cursor: pointer;
   transition: all 220ms ease;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
 }
 
 .filter-toggle-btn:hover {
@@ -2005,7 +2015,7 @@
 .events-filter-bar {
   position: sticky !important;
   top: var(--header-height, 74px) !important;
-  z-index: 90 !important;
+  z-index: 990 !important;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
@@ -2187,16 +2197,16 @@
 }
 
 .keynote-actions .btn-secondary-custom {
-  color: #1C140E;
-  border-color: rgba(180, 140, 75, 0.6);
-  background: rgba(255, 255, 255, 0.85);
+  color: #1C140E !important;
+  border-color: rgba(180, 140, 75, 0.6) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
   font-weight: 600;
 }
 
 .keynote-actions .btn-secondary-custom:hover {
-  background: rgba(180, 140, 75, 0.18);
-  color: #7A5310;
-  border-color: #7A5310;
+  background: rgba(180, 140, 75, 0.18) !important;
+  color: #7A5310 !important;
+  border-color: #7A5310 !important;
 }
 
 /* Countdown Widget */
@@ -2614,7 +2624,7 @@
 .sp-filter-toolbar {
   position: sticky !important;
   top: var(--header-height, 74px) !important;
-  z-index: 90 !important;
+  z-index: 990 !important;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
@@ -3023,31 +3033,6 @@ footer {
     margin-bottom: 1rem;
   }
 
-  .sp-spotlight-footer {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    flex-wrap: wrap !important;
-    gap: 1rem !important;
-  }
-
-  .sp-spotlight-reviewer-info {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 0.75rem !important;
-    text-align: left !important;
-  }
-
-  .sp-spotlight-actions {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
-    flex-wrap: wrap !important;
-  }
-
   .sp-filter-toolbar {
     padding: 1rem 0.75rem !important;
   }
@@ -3070,8 +3055,10 @@ footer {
   }
 
   .sp-quiz-option-btn {
-    font-size: 0.75rem;
-    padding: 0.65rem 0.75rem;
+    font-size: 0.72rem !important;
+    padding: 0.55rem 0.4rem !important;
+    justify-content: center !important;
+    text-align: center !important;
   }
 
   .sp-checklist-item {
@@ -3114,23 +3101,372 @@ footer {
   }
 }
 
-@media (max-width: 380px) {
-  .staff-pick-full-card .d-flex.align-items-center.justify-content-between {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 0.75rem !important;
+/* ==========================================================================
+   BUTTON LAYOUT SYSTEM: DESKTOP (ONE ROW ONLY) | TAB & MOBILE (ONE BY ONE METHOD)
+   ========================================================================== */
+
+/* ---------- DESKTOP VIEW (1025px and up): ONE ROW ONLY ---------- */
+@media (min-width: 1025px) {
+  /* Spotlight Banner Actions */
+  .sp-spotlight-footer {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1.5rem !important;
   }
 
-  .staff-pick-full-card .d-flex.gap-2 {
+  .sp-spotlight-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 0.75rem !important;
+    width: auto !important;
+    margin-left: auto !important;
+  }
+
+  .sp-spotlight-actions .btn-custom {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+
+  /* Recommendation Cards Actions */
+  .staff-pick-full-card .d-flex.align-items-center.justify-content-between {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
     width: 100% !important;
   }
 
+  .staff-pick-full-card .d-flex.gap-2 {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 0.5rem !important;
+    width: auto !important;
+  }
+
   .staff-pick-full-card .d-flex.gap-2 .btn-custom {
-    flex: 1 !important;
-    text-align: center;
-    justify-content: center;
-    padding: 0.4rem 0.5rem !important;
-    font-size: 0.72rem !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+
+  /* Concierge Society Actions Bar */
+  .premium-actions-bar {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1.5rem !important;
+  }
+
+  .premium-actions-bar .d-flex.gap-3 {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 1rem !important;
+    width: auto !important;
+  }
+
+  .premium-actions-bar .btn-custom {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+
+  /* Final CTA Actions */
+  .final-cta-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 1rem !important;
+    width: auto !important;
+  }
+
+  .final-cta-actions .btn-custom {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ---------- TAB & MOBILE VIEWS (<= 1024px): ONE BY ONE METHOD ---------- */
+@media (max-width: 1024px) {
+  /* Spotlight Banner Actions */
+  .sp-spotlight-footer {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1rem !important;
+  }
+
+  .sp-spotlight-reviewer-info {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+
+  .sp-spotlight-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 0.5rem !important;
+    margin-left: 0 !important;
+  }
+
+  .sp-spotlight-actions .btn-custom {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.65rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Recommendation Cards Actions */
+  .staff-pick-full-card .d-flex.align-items-center.justify-content-between {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+
+  .staff-pick-full-card .d-flex.align-items-center.justify-content-between .arrival-price {
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+  }
+
+  .staff-pick-full-card .d-flex.gap-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.45rem !important;
+  }
+
+  .staff-pick-full-card .d-flex.gap-2 .btn-custom {
+    width: 100% !important;
+    flex: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.55rem 0.75rem !important;
+    font-size: 0.82rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Concierge Society & Final CTA Section Buttons */
+  .premium-actions-bar {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1.25rem !important;
+    text-align: center !important;
+  }
+
+  .premium-actions-bar .d-flex.gap-3 {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.65rem !important;
+  }
+
+  .premium-actions-bar .btn-custom {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.75rem 1.25rem !important;
+  }
+
+  .final-cta-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.65rem !important;
+  }
+
+  .final-cta-actions .btn-custom {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.75rem 1.25rem !important;
+  }
+
+  /* Quiz Result Box */
+  .sp-quiz-result-box .d-flex.align-items-center.justify-content-between {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.65rem !important;
+    text-align: center !important;
+  }
+
+  .sp-quiz-result-box #quizResBuyBtn {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
+  .cta-avatar-item {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .cta-avatar-center {
+    width: 84px !important;
+    height: 84px !important;
+  }
+
+  .cta-avatar-item.cta-avatar-top {
+    transform: translate(-50%, -50%) translate(0, -118px) !important;
+  }
+
+  .cta-avatar-item.cta-avatar-right {
+    transform: translate(-50%, -50%) translate(118px, 0) !important;
+  }
+
+  .cta-avatar-item.cta-avatar-bottom {
+    transform: translate(-50%, -50%) translate(0, 118px) !important;
+  }
+
+  .cta-avatar-item.cta-avatar-left {
+    transform: translate(-50%, -50%) translate(-118px, 0) !important;
+  }
+}
+
+/* ==========================================================================
+   LIGHT THEME CONTRAST & MOBILE CTA CENTERING FIXES
+   ========================================================================== */
+
+/* 1. Crisp Button Colors inside Dark Cards in Light Theme */
+.premium-card-glass .btn-secondary-custom,
+.final-cta-section .btn-secondary-custom,
+.cta-community-staff .btn-secondary-custom {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #F8F5EE !important;
+  border: 1.5px solid rgba(248, 245, 238, 0.4) !important;
+}
+
+.premium-card-glass .btn-secondary-custom:hover,
+.final-cta-section .btn-secondary-custom:hover,
+.cta-community-staff .btn-secondary-custom:hover {
+  background: var(--color-gold, #D4AF37) !important;
+  color: #120E0A !important;
+  border-color: var(--color-gold, #D4AF37) !important;
+}
+
+.premium-card-glass .btn-premium-gold,
+.final-cta-section .btn-primary-custom,
+.cta-community-staff .btn-primary-custom {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%) !important;
+  color: #120E0A !important;
+  border: 1px solid #E6C665 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35) !important;
+}
+
+.premium-card-glass .btn-premium-gold:hover,
+.final-cta-section .btn-primary-custom:hover,
+.cta-community-staff .btn-primary-custom:hover {
+  background: linear-gradient(135deg, #E6C665 0%, #C59B27 100%) !important;
+  color: #0A0704 !important;
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* 2. Mobile Alignment & Centering for Final CTA Section (<= 768px) */
+@media (max-width: 768px) {
+  .cta-community-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .cta-avatar-ring {
+    margin: 0 auto 1.75rem auto !important;
+  }
+
+  .cta-staff-text {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .cta-staff-text h2 {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .cta-staff-review-card {
+    text-align: center !important;
+    margin: 0 auto 1.5rem auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .cta-staff-review-author {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .final-cta-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .final-cta-actions .btn-custom {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+
+/* 3. Mobile Clearance & Floating Back-To-Top Button Fix (<= 576px) */
+@media (max-width: 576px) {
+  .final-cta-section {
+    padding-bottom: 4.5rem !important;
+  }
+
+  .back-to-top {
+    bottom: 14px !important;
+    right: 12px !important;
+    width: 38px !important;
+    height: 38px !important;
+    z-index: 99 !important;
   }
 }
 

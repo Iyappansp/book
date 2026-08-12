@@ -52,12 +52,24 @@
 
   <section class="collections-filter-sticky">
     <div class="container-custom">
-      <div class="filter-bar" id="fiction-filters">
-        <button class="filter-chip active" data-filter="all">All</button>
-        <button class="filter-chip" data-filter="literary">Literary Fiction</button>
-        <button class="filter-chip" data-filter="classics">Classics</button>
-        <button class="filter-chip" data-filter="contemporary">Contemporary</button>
-        <button class="filter-chip" data-filter="award">Award Winners</button>
+      <div class="collections-filter-wrapper">
+        <div class="filter-header-row">
+          <span class="filter-label">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            Filter Fiction Sub-Genre:
+          </span>
+          <button type="button" class="filter-toggle-btn" id="fiction-filter-toggle-btn" aria-expanded="true" title="Hide Fiction Filters">
+            <span class="toggle-text">Hide Filters</span>
+            <svg class="toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="collections-filter-chips" id="fiction-filters">
+          <button type="button" class="filter-chip active" data-filter="all">All Fiction</button>
+          <button type="button" class="filter-chip" data-filter="literary">Literary Fiction</button>
+          <button type="button" class="filter-chip" data-filter="classics">Classics</button>
+          <button type="button" class="filter-chip" data-filter="contemporary">Contemporary</button>
+          <button type="button" class="filter-chip" data-filter="award">Award Winners</button>
+        </div>
       </div>
     </div>
   </section>
@@ -463,23 +475,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/animations.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  var bar = document.getElementById("fiction-filters");
-  var grid = document.getElementById("fiction-grid");
-  if (!bar || !grid) return;
-  bar.addEventListener("click", function (e) {
-    var btn = e.target.closest(".filter-chip");
-    if (!btn) return;
-    bar.querySelectorAll(".filter-chip").forEach(function (c) { c.classList.remove("active"); });
-    btn.classList.add("active");
-    var filter = btn.getAttribute("data-filter");
-    grid.querySelectorAll(".book-card").forEach(function (card) {
-      var match = filter === "all" || card.getAttribute("data-tag") === filter;
-      card.classList.toggle("is-hidden", !match);
-    });
-  });
-});
-</script>
 </body>
 </html>

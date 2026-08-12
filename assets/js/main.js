@@ -861,6 +861,8 @@
 
   /* ---------------- Quick Jump Filter Hide/Show Toggle + Scroll Tracking ---------------- */
 
+  /* ---------------- Quick Jump Filter Hide/Show Toggle + Scroll Tracking ---------------- */
+
   function initQuickJumpToggle() {
     const toggleBtn = document.getElementById('filter-toggle-btn');
     const filterChips = document.getElementById('collections-filter-chips');
@@ -918,19 +920,36 @@
       chip.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').slice(1);
+
+        filterChips.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+
+        const blocks = document.querySelectorAll('.category-block');
+
+        if (targetId === 'all') {
+          blocks.forEach(b => b.style.display = '');
+          const pageHeader = document.querySelector('.page-header');
+          if (pageHeader) {
+            const offset = getScrollOffset();
+            const top = pageHeader.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+          }
+          if (history.pushState) {
+            history.pushState(null, null, window.location.pathname);
+          }
+          return;
+        }
+
         const targetEl = document.getElementById(targetId);
         if (!targetEl) return;
+
+        blocks.forEach(b => b.style.display = '');
 
         const offset = getScrollOffset();
         const targetTop = targetEl.getBoundingClientRect().top + window.scrollY - offset;
 
         window.scrollTo({ top: targetTop, behavior: 'smooth' });
 
-        // Set active chip immediately
-        filterChips.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-        this.classList.add('active');
-
-        // Update URL hash without jump
         if (history.pushState) {
           history.pushState(null, null, '#' + targetId);
         }
@@ -944,7 +963,7 @@
       const stickyH = (filterSticky && !filterSticky.classList.contains('is-collapsed-bar'))
         ? filterSticky.offsetHeight
         : (filterSticky && filterSticky.classList.contains('is-collapsed-bar') ? filterSticky.offsetHeight : 0);
-      return headerH + stickyH + 16; // 16px breathing room
+      return headerH + stickyH + 16;
     }
 
     /* ---- Set dynamic scroll-padding-top on <html> ---- */
@@ -956,7 +975,7 @@
     /* ---- Intersection Observer: highlight active chip on scroll ---- */
     const sectionIds = Array.from(filterChips.querySelectorAll('.filter-chip[href^="#"]'))
       .map(chip => chip.getAttribute('href').slice(1))
-      .filter(id => document.getElementById(id));
+      .filter(id => id !== 'all' && document.getElementById(id));
 
     if ('IntersectionObserver' in window && sectionIds.length) {
       let activeSectionId = null;
@@ -986,9 +1005,77 @@
       });
     }
 
-    // Init scroll padding on load
     updateScrollPaddingTop();
     window.addEventListener('resize', updateScrollPaddingTop, { passive: true });
+  }
+
+  /* ---------------- Category / Sub-Genre Grid Filter System ---------------- */
+
+  function initCategoryGridFilter() {
+    const filterConfigs = [
+      { barId: 'fiction-filters', gridId: 'fiction-grid', toggleId: 'fiction-filter-toggle-btn' },
+      { barId: 'nonfiction-filters', gridId: 'nonfiction-grid', toggleId: 'nonfiction-filter-toggle-btn' },
+      { barId: 'children-filters', gridId: 'children-grid', toggleId: 'children-filter-toggle-btn' }
+    ];
+
+    filterConfigs.forEach(cfg => {
+      const bar = document.getElementById(cfg.barId);
+      const grid = document.getElementById(cfg.gridId);
+      const toggleBtn = document.getElementById(cfg.toggleId);
+
+      if (toggleBtn && bar) {
+        toggleBtn.addEventListener('click', function () {
+          const isHidden = bar.classList.toggle('is-hidden');
+          toggleBtn.classList.toggle('is-collapsed', isHidden);
+          toggleBtn.setAttribute('aria-expanded', String(!isHidden));
+          const toggleText = toggleBtn.querySelector('.toggle-text');
+          if (toggleText) {
+            toggleText.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
+          }
+        });
+      }
+
+      if (!bar || !grid) return;
+
+      bar.addEventListener('click', function (e) {
+        const btn = e.target.closest('.filter-chip');
+        if (!btn) return;
+
+        bar.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter') || 'all';
+        const cards = grid.querySelectorAll('.book-card');
+
+        let matchCount = 0;
+        cards.forEach(card => {
+          const tag = card.getAttribute('data-tag');
+          const isMatch = filter === 'all' || tag === filter;
+          card.classList.toggle('is-hidden', !isMatch);
+          if (isMatch) matchCount++;
+        });
+
+        let emptyMsg = grid.parentElement.querySelector('.no-category-results');
+        if (!emptyMsg) {
+          emptyMsg = document.createElement('div');
+          emptyMsg.className = 'no-category-results text-center py-5 is-hidden';
+          emptyMsg.innerHTML = `
+            <div class="p-4 rounded-3" style="background:var(--bg-surface); border:1px solid var(--border-subtle); max-width:480px; margin:0 auto;">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" class="mb-3"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+              <h4 class="h5 mb-2">No books match this category filter</h4>
+              <p class="text-muted fs-sm mb-3">Try selecting "All" or choosing a different filter option above.</p>
+              <button type="button" class="btn-custom btn-secondary-custom btn-sm-custom reset-grid-filter">Reset Filter</button>
+            </div>
+          `;
+          grid.parentElement.appendChild(emptyMsg);
+          emptyMsg.querySelector('.reset-grid-filter').addEventListener('click', function () {
+            const allBtn = bar.querySelector('.filter-chip[data-filter="all"]');
+            if (allBtn) allBtn.click();
+          });
+        }
+        emptyMsg.classList.toggle('is-hidden', matchCount > 0);
+      });
+    });
   }
 
   /* ---------------- Author Events Page Interactivity ---------------- */
@@ -1300,6 +1387,7 @@
     initUniqueBookShowcase();
     initMoodMatrix();
     initQuickJumpToggle();
+    initCategoryGridFilter();
     initAuthorEventsFilter();
     initAuthorEventsCountdown();
     initAccordionEvents();

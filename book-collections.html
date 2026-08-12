@@ -64,7 +64,7 @@
           <div class="filter-header-row">
             <span class="filter-label">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-              Quick Jump:
+              Quick Jump &amp; Filter:
             </span>
             <button type="button" class="filter-toggle-btn" id="filter-toggle-btn" aria-expanded="true" title="Hide Quick Jump Filters">
               <span class="toggle-text">Hide Filters</span>
@@ -72,16 +72,17 @@
             </button>
           </div>
           <div class="collections-filter-chips" id="collections-filter-chips">
-            <a href="#fiction" class="filter-chip">Fiction</a>
-            <a href="#mystery" class="filter-chip">Mystery &amp; Thriller</a>
-            <a href="#romance" class="filter-chip">Romance</a>
-            <a href="#fantasy" class="filter-chip">Fantasy &amp; Science Fiction</a>
-            <a href="#children" class="filter-chip">Children's</a>
-            <a href="#academic" class="filter-chip">Academic</a>
-            <a href="#business" class="filter-chip">Business</a>
-            <a href="#biography" class="filter-chip">Biography</a>
-            <a href="#poetry" class="filter-chip">Poetry</a>
-            <a href="#history" class="filter-chip">History</a>
+            <a href="#all" class="filter-chip active" data-filter="all">All Sections</a>
+            <a href="#fiction" class="filter-chip" data-filter="fiction">Fiction</a>
+            <a href="#mystery" class="filter-chip" data-filter="mystery">Mystery &amp; Thriller</a>
+            <a href="#romance" class="filter-chip" data-filter="romance">Romance</a>
+            <a href="#fantasy" class="filter-chip" data-filter="fantasy">Fantasy &amp; Sci-Fi</a>
+            <a href="#children" class="filter-chip" data-filter="children">Children's</a>
+            <a href="#academic" class="filter-chip" data-filter="academic">Academic</a>
+            <a href="#business" class="filter-chip" data-filter="business">Business</a>
+            <a href="#biography" class="filter-chip" data-filter="biography">Biography</a>
+            <a href="#poetry" class="filter-chip" data-filter="poetry">Poetry</a>
+            <a href="#history" class="filter-chip" data-filter="history">History</a>
           </div>
         </div>
       </div>
@@ -1636,7 +1637,8 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
       <!-- ============ FINAL CTA ============ -->
       <section class="final-cta-section cta-bg-collections cta-arch-collections">
         <div class="container-custom">

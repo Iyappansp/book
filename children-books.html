@@ -50,6 +50,30 @@
     </div>
   </section>
 
+  <section class="collections-filter-sticky">
+    <div class="container-custom">
+      <div class="collections-filter-wrapper">
+        <div class="filter-header-row">
+          <span class="filter-label">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            Filter Age &amp; Category:
+          </span>
+          <button type="button" class="filter-toggle-btn" id="children-filter-toggle-btn" aria-expanded="true" title="Hide Children's Book Filters">
+            <span class="toggle-text">Hide Filters</span>
+            <svg class="toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="collections-filter-chips" id="children-filters">
+          <button type="button" class="filter-chip active" data-filter="all">All Ages</button>
+          <button type="button" class="filter-chip" data-filter="picture">Ages 0–4 (Picture Books)</button>
+          <button type="button" class="filter-chip" data-filter="early">Ages 5–7 (Early Readers)</button>
+          <button type="button" class="filter-chip" data-filter="middle">Ages 8–12 (Middle Grade)</button>
+          <button type="button" class="filter-chip" data-filter="ya">Ages 13+ (Young Adult)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section>
     <div class="container-custom">
       <div class="section-heading reveal-up">
@@ -99,8 +123,8 @@
         <span class="eyebrow">This Season</span>
         <h2>Popular with young readers right now</h2>
       </div>
-      <div class="book-grid">
-        <div class="book-card reveal-up">
+      <div class="book-grid" data-filterable id="children-grid">
+        <div class="book-card reveal-up" data-tag="picture">
       <div class="book-cover-wrap">
         <span class="badge-custom badge-staff-pick badge-corner">Staff Pick</span>
         <img src="assets/chat-image/collection/button-jar.png" alt="Book cover of The Button Jar by Lucy Pemberton">
@@ -129,7 +153,7 @@
         </div>
       </div>
     </div>
-        <div class="book-card reveal-up">
+        <div class="book-card reveal-up" data-tag="early">
       <div class="book-cover-wrap">
         <img src="assets/chat-image/collection/when-foxes-learn-read.png" alt="Book cover of Where the Foxes Learn to Read by Oskar Lindqvist">
         <div class="book-card-overlay">
@@ -157,7 +181,7 @@
         </div>
       </div>
     </div>
-        <div class="book-card reveal-up">
+        <div class="book-card reveal-up" data-tag="middle">
       <div class="book-cover-wrap">
         <span class="badge-custom badge-new badge-corner">New</span>
         <img src="assets/chat-image/collection/very-small-adventures.png" alt="Book cover of A Very Small Adventure by Grace Odenigbo">
@@ -186,7 +210,7 @@
         </div>
       </div>
     </div>
-        <div class="book-card reveal-up">
+        <div class="book-card reveal-up" data-tag="ya">
       <div class="book-cover-wrap">
         <img src="assets/chat-image/collection/map-that-drew-itslef.png" alt="Book cover of The Map That Drew Itself by Ravi Chandrasekaran">
         <div class="book-card-overlay">
