@@ -376,23 +376,252 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
   margin-top: 1.25rem !important;
 }
 
-/* Left-aligned CTAs & Hero Action Rows */
-.cta-split-text .final-cta-actions,
-.cta-split-home .final-cta-actions,
-.cta-split-inner .final-cta-actions,
-.cta-contact-left .final-cta-actions,
-.hero-classic-copy .hero-cta-row,
-.hero-cta-row {
-  justify-content: flex-start !important;
+/* Desktop Left-aligned CTAs & Hero Action Rows */
+@media (min-width: 992px) {
+  .cta-split-text .final-cta-actions,
+  .cta-split-home .final-cta-actions,
+  .cta-split-inner .final-cta-actions,
+  .cta-contact-left .final-cta-actions,
+  .cta-staff-text .final-cta-actions,
+  .hero-classic-copy .hero-cta-row,
+  .hero-cta-row {
+    justify-content: flex-start !important;
+  }
+}
+
+/* Tablet & Mobile Responsive Centering */
+@media (max-width: 991px) {
+  .cta-split-text,
+  .cta-split-inner,
+  .cta-split-home {
+    text-align: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2rem !important;
+  }
+
+  .cta-split-text .final-cta-actions,
+  .cta-split-home .final-cta-actions,
+  .cta-split-inner .final-cta-actions,
+  .cta-split-text .final-cta-features {
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .cta-timeline-right {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+  }
+
+  .cta-milestone-list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* about.html Timeline CTA Pills: Stacked One-by-One Vertically & Centered */
+  .about-timeline-pills {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 1.5rem auto 0 auto !important;
+    text-align: center !important;
+    gap: 0.65rem !important;
+  }
+
+  .about-timeline-pills span {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: auto !important;
+    max-width: 90% !important;
+  }
+
+  /* Index.html Hero Trust Stats Centering */
+  .hero-trust-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1.25rem 2rem !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-trust-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* about.html Timeline Items Responsive Centering */
+  .cta-milestone-list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto 1.5rem auto !important;
+    padding: 0 !important;
+  }
+
+  .cta-milestone-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 auto 1.25rem auto !important;
+    width: 100% !important;
+  }
+
+  .cta-milestone-dot {
+    margin: 0 auto 0.5rem auto !important;
+  }
+
+  .cta-milestone-text {
+    text-align: center !important;
+  }
+
+  .cta-milestone-text strong,
+  .cta-milestone-text span {
+    display: block !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Home-2.html Background Video Hero Top Clearance */
+  .hero-video-section {
+    padding-top: calc(var(--space-2xl) + 85px) !important;
+    padding-bottom: calc(var(--space-xl) + 20px) !important;
+  }
+
+  /* Home-2.html Calendar Section Button Centering */
+  .ec-section .d-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .ec-section .section-heading {
+    text-align: center !important;
+    margin: 0 auto 0.5rem auto !important;
+  }
+
+  .ec-section .btn-custom,
+  .ec-section a.btn-custom {
+    margin: 0.5rem auto 0 auto !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+  }
 }
 
 @media (max-width: 576px) {
+  .page-header {
+    text-align: center !important;
+    padding-top: calc(var(--space-xl) + 50px) !important;
+  }
+
+  .book-card-body {
+    text-align: center !important;
+  }
+
+  .book-card-body h5 {
+    text-align: center !important;
+    font-size: clamp(0.95rem, 3.8vw, 1.12rem) !important;
+    line-height: 1.35 !important;
+    margin: 0 auto 0.35rem auto !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+
+  .book-card-body .book-author {
+    text-align: center !important;
+    margin: 0 auto 0.5rem auto !important;
+  }
+
+  /* Newsletter CTA Mobile Centering & Overflow Fix */
+  .cta-newsletter-inner,
+  .cta-newsletter-top,
+  .cta-newsletter-bottom,
+  .cta-newsletter-form-side {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .cta-newsletter-label {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .cta-newsletter-input-row {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+    margin: 0 auto !important;
+    align-items: center !important;
+  }
+
+  .cta-newsletter-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .cta-newsletter-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .cta-newsletter-note,
+  .cta-newsletter-link {
+    text-align: center !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   .final-cta-actions,
   .cta-actions,
   .hero-actions,
-  .about-hero-actions {
+  .about-hero-actions,
+  .cta-staff-text .final-cta-actions {
     flex-direction: column !important;
+    flex-wrap: wrap !important;
     width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 
   .final-cta-actions .btn-custom,
@@ -401,10 +630,26 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
   .cta-actions .btn-custom,
   .cta-actions a,
   .hero-actions .btn-custom,
-  .hero-actions a {
+  .hero-actions a,
+  .cta-staff-text .final-cta-actions .btn-custom,
+  .cta-staff-text .final-cta-actions a {
     width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
     text-align: center !important;
     justify-content: center !important;
+    padding: 0.85rem 1rem !important;
+    font-size: 0.92rem !important;
+  }
+
+  .hero-trust-item {
+    flex: 1 1 40% !important;
+  }
+
+  .hero-trust-item:last-child {
+    flex: 1 1 100% !important;
   }
 
 

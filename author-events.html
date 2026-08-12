@@ -55,12 +55,24 @@
       
       <!-- ============ EVENT CATEGORY FILTER BAR ============ -->
       <div class="events-filter-bar mb-4 reveal-up">
-        <div class="filter-chips-wrap d-flex gap-2 flex-wrap justify-content-center" role="tablist" aria-label="Filter events by type">
-          <button type="button" class="filter-chip active" data-filter="all">All Events</button>
-          <button type="button" class="filter-chip" data-filter="signing">Signings &amp; Readings</button>
-          <button type="button" class="filter-chip" data-filter="bookclub">Book Club</button>
-          <button type="button" class="filter-chip" data-filter="workshop">Workshops</button>
-          <button type="button" class="filter-chip" data-filter="children">Story Time</button>
+        <div class="filter-header-row mb-3 d-flex align-items-center justify-content-between">
+          <span class="filter-label d-inline-flex align-items-center gap-2 fw-semibold fs-sm">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            Event Category Filters:
+          </span>
+          <button type="button" class="filter-toggle-btn" id="events-filter-toggle-btn" aria-expanded="true" title="Hide Event Filters">
+            <span class="toggle-text">Hide Filters</span>
+            <svg class="toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="events-filter-content-wrapper" id="events-filter-content">
+          <div class="filter-chips-wrap d-flex gap-2 flex-wrap justify-content-center" role="tablist" aria-label="Filter events by type">
+            <button type="button" class="filter-chip active" data-filter="all">All Events</button>
+            <button type="button" class="filter-chip" data-filter="signing">Signings &amp; Readings</button>
+            <button type="button" class="filter-chip" data-filter="bookclub">Book Club</button>
+            <button type="button" class="filter-chip" data-filter="workshop">Workshops</button>
+            <button type="button" class="filter-chip" data-filter="children">Story Time</button>
+          </div>
         </div>
       </div>
 
@@ -238,7 +250,7 @@
             <div class="premium-card-img-wrap">
               <img src="assets/author/dinners.png" alt="Private Author Dinners" class="premium-card-img">
             </div>
-            <h5>Private Author Dinners</h5>
+            <h5>Private Author</h5>
             <p>Seated 3-course dinner with featured authors before public reading sessions.</p>
           </div>
           <div class="premium-item-box">
@@ -289,18 +301,20 @@
         <p style="max-width:640px;margin:0.5rem auto 0;color:var(--text-muted);">Couldn't attend a recent evening? Explore recorded Q&amp;A discussions, transcribed author keynotes, and order rare signed first-edition copies from our past event archives.</p>
       </div>
 
-      <div class="row g-4 align-items-center">
+      <div class="row g-4 align-items-stretch">
         <div class="col-12 col-lg-6 reveal-up">
-          <div class="premium-card-glass" style="padding:2.5rem;background:linear-gradient(135deg, rgba(20,16,10,0.95) 0%, rgba(10,8,5,0.98) 100%);">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <span class="premium-badge-gold m-0">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                Featured
-              </span>
-              <span class="archive-media-badge">48 Min Audio · Transcribed</span>
+          <div class="premium-card-glass h-100 d-flex flex-column justify-content-between" style="padding:2.5rem;background:linear-gradient(135deg, rgba(20,16,10,0.95) 0%, rgba(10,8,5,0.98) 100%);">
+            <div>
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="premium-badge-gold m-0">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                  Featured
+                </span>
+                <span class="archive-media-badge">48 Min Audio · Transcribed</span>
+              </div>
+              <h3 style="color:#FFF;font-size:var(--fs-xl);margin-bottom:0.75rem;">In Conversation with Mara Solenne</h3>
+              <p style="color:rgba(255,255,255,0.78);font-size:var(--fs-sm);line-height:1.6;margin-bottom:1.5rem;">"We talk about silence in novels as if it were empty space. In reality, silence on the page is where the most dangerous choices happen. Silence in literature is rarely accidental; it often carries the weight of what characters cannot say.In a novel, what remains unsaid can be just as powerful—and dangerous—as what is spoken."</p>
             </div>
-            <h3 style="color:#FFF;font-size:var(--fs-xl);margin-bottom:0.75rem;">In Conversation with Mara Solenne</h3>
-            <p style="color:rgba(255,255,255,0.78);font-size:var(--fs-sm);line-height:1.6;margin-bottom:1.5rem;">"We talk about silence in novels as if it were empty space. In reality, silence on the page is where the most dangerous choices happen."</p>
             <div class="d-flex align-items-center gap-3 flex-wrap">
               <a href="contact.html" class="btn-custom btn-premium-gold btn-sm-custom">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -346,7 +360,7 @@
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                 </div>
                 <h5>Community Q&amp;A Notes</h5>
-                <p>Audience questions and author answers archived from every session.</p>
+                <p>Audience questions and author answers archived from every.</p>
               </div>
             </div>
           </div>
@@ -479,7 +493,7 @@
             </div>
             <div class="host-body">
               <h5>Marcus Thorne</h5>
-              <p class="host-title">Published Novelist &amp; Editor</p>
+              <p class="host-title">Published Novelist</p>
               <p class="host-bio">Leads hands-on writing craft, manuscript editing, and publishing.</p>
             </div>
           </div>
@@ -603,7 +617,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 </main>
 

@@ -119,18 +119,63 @@
 
 /* ---------- Reading journey: lead text + numbered mood cards ---------- */
 
-.rj-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-lg);
+.rj-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2rem;
 }
 
-.rj-lead p { margin-top: var(--space-sm); font-size: var(--fs-md); max-width: 46ch; }
+.rj-heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem) !important;
+  line-height: 1.2;
+  margin: 0.5rem 0 1.25rem;
+}
 
-.rj-cards {
+.rj-mood-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.rj-mood-pill {
+  padding: 0.5rem 1.4rem;
+  border-radius: 50px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.rj-mood-pill:hover,
+.rj-mood-pill.active {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.rj-cards-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-sm);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+@media (max-width: 992px) {
+  .rj-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .rj-cards-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .rj-card {
@@ -332,7 +377,7 @@
 
 .bc-copy p { margin: var(--space-sm) 0 var(--space-md); font-size: var(--fs-md); max-width: 46ch; }
 
-.bc-stats { display: flex; gap: var(--space-lg); margin-bottom: var(--space-md); }
+.bc-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md) var(--space-xl); margin-bottom: var(--space-md); }
 .bc-stats strong { display: block; font-family: var(--font-display); font-size: var(--fs-2xl); color: var(--color-primary); line-height: 1; }
 .bc-stats span { display: block; font-size: var(--fs-xs); color: var(--text-muted); margin-top: 0.3rem; }
 
@@ -637,7 +682,7 @@
   height: 36px;
   border-radius: 50%;
   background: var(--color-primary);
-  color: #16100B;
+  color: #ffffff;
   border: none;
   display: flex;
   align-items: center;
@@ -980,3 +1025,179 @@
     padding: 0 0.5rem;
   }
 }
+
+/* ==========================================================================
+   Store Sanctuary Gallery (6 Bookstore Areas & Shelves)
+   ========================================================================== */
+
+.sa-section {
+  padding: calc(var(--space-2xl) + 1rem) var(--space-md);
+  background: var(--bg-surface-alt);
+}
+
+.sa-filter-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 2.5rem;
+}
+
+.sa-filter-btn {
+  padding: 0.55rem 1.35rem;
+  border-radius: 50px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sa-filter-btn:hover,
+.sa-filter-btn.active {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.sa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 992px) {
+  .sa-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .sa-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.sa-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.sa-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: var(--color-primary);
+}
+
+.sa-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #1A120B;
+}
+
+.sa-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sa-card:hover .sa-card-media img {
+  transform: scale(1.08);
+}
+
+.sa-area-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(18, 14, 11, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: #F3ECDD;
+  font-family: var(--font-heading, 'Fraunces', serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+}
+
+.sa-zoom-btn {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.sa-card:hover .sa-zoom-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sa-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.sa-card-body h4 {
+  font-family: var(--font-heading, 'Fraunces', serif);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.sa-card-body p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+
+.sa-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.sa-meta-tags span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: var(--bg-surface-alt);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+}
+

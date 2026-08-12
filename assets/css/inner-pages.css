@@ -642,6 +642,8 @@
 
 .team-card {
   text-align: center;
+  padding: 1.75rem 1.25rem;
+  border-radius: var(--radius-md);
 }
 
 .team-card img {
@@ -1195,9 +1197,16 @@
   padding: 0.6rem 0;
 }
 
+.hours-table td:first-child {
+  padding-right: 1.5rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 .hours-table td:last-child {
   text-align: right;
   color: var(--text-muted);
+  white-space: nowrap;
 }
 
 .map-placeholder {
@@ -1543,7 +1552,9 @@
   transition: all 0.3s ease;
 }
 
-.collections-filter-chips.is-hidden {
+.collections-filter-chips.is-hidden,
+.sp-filter-content-wrapper.is-hidden,
+.events-filter-content-wrapper.is-hidden {
   display: none !important;
 }
 
@@ -1966,6 +1977,26 @@
   background: rgba(212, 175, 55, 0.15);
 }
 
+@media (max-width: 576px) {
+  .etiquette-strip-card {
+    position: relative !important;
+    padding-top: 2.35rem !important;
+  }
+
+  .etiquette-tag {
+    position: absolute !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    font-size: 0.65rem !important;
+    padding: 0.2rem 0.55rem !important;
+    white-space: nowrap !important;
+  }
+
+  .etiquette-content {
+    width: 100% !important;
+  }
+}
+
 /* ==========================================================================
    Author Events — Filter, Keynote, Host Team, Venue & Accordion
    ========================================================================== */
@@ -2272,9 +2303,9 @@
   position: absolute;
   bottom: 0.75rem;
   left: 0.75rem;
-  background: rgba(16, 10, 6, 0.82);
-  color: var(--color-primary);
-  border: 1px solid rgba(212, 182, 133, 0.3);
+  background: rgba(16, 10, 6, 0.88);
+  color: var(--color-gold, #D4AF37) !important;
+  border: 1px solid rgba(212, 182, 133, 0.5);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -2474,11 +2505,37 @@
   gap: 0.5rem;
   font-size: var(--fs-xs);
   font-weight: 600;
-  color: var(--text-secondary);
+  color: #F5EFE4 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .sp-stat-item svg {
-  color: var(--color-primary);
+  color: var(--color-gold, #D4AF37) !important;
+  flex-shrink: 0;
+}
+
+.sp-price-tag {
+  color: var(--color-primary, #4A3222) !important;
+}
+
+[data-theme="dark"] .sp-price-tag {
+  color: var(--color-gold, #D4AF37) !important;
+}
+
+.eyebrow-primary {
+  color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .eyebrow-primary {
+  color: var(--color-gold) !important;
+}
+
+.sp-theme-highlight {
+  color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .sp-theme-highlight {
+  color: var(--color-gold) !important;
 }
 
 /* Pick of the Month Spotlight Banner */
@@ -2966,22 +3023,29 @@ footer {
     margin-bottom: 1rem;
   }
 
-  .sp-spotlight-card .d-flex.align-items-center.justify-content-between.flex-wrap {
-    flex-direction: column !important;
-    align-items: stretch !important;
+  .sp-spotlight-footer {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
     gap: 1rem !important;
   }
 
-  .sp-spotlight-card .d-flex.align-items-center.gap-3 {
-    flex-direction: column !important;
-    width: 100% !important;
-    gap: 0.6rem !important;
+  .sp-spotlight-reviewer-info {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    text-align: left !important;
   }
 
-  .sp-spotlight-card .btn-custom {
-    width: 100% !important;
-    text-align: center;
-    justify-content: center;
+  .sp-spotlight-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
   }
 
   .sp-filter-toolbar {
@@ -3019,24 +3083,34 @@ footer {
   }
 
   .cta-avatar-ring {
-    width: 160px !important;
-    height: 160px !important;
+    width: 280px !important;
+    height: 280px !important;
+  }
+
+  .cta-avatar-item {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .cta-avatar-center {
+    width: 84px !important;
+    height: 84px !important;
   }
 
   .cta-avatar-item.cta-avatar-top {
-    transform: translate(-50%, -50%) translate(0, -66px) !important;
+    transform: translate(-50%, -50%) translate(0, -118px) !important;
   }
 
   .cta-avatar-item.cta-avatar-right {
-    transform: translate(-50%, -50%) translate(66px, 0) !important;
+    transform: translate(-50%, -50%) translate(118px, 0) !important;
   }
 
   .cta-avatar-item.cta-avatar-bottom {
-    transform: translate(-50%, -50%) translate(0, 66px) !important;
+    transform: translate(-50%, -50%) translate(0, 118px) !important;
   }
 
   .cta-avatar-item.cta-avatar-left {
-    transform: translate(-50%, -50%) translate(-66px, 0) !important;
+    transform: translate(-50%, -50%) translate(-118px, 0) !important;
   }
 }
 
@@ -3102,5 +3176,41 @@ footer {
 
   .staff-pick-img-wrap {
     height: 280px !important;
+  }
+}
+
+/* ---------- About Page 320px Origin & Mobile Fit ---------- */
+@media (max-width: 576px) {
+  .mv-card {
+    padding: 1.25rem 1rem !important;
+    border-radius: var(--radius-md) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .mv-card-header {
+    gap: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .mv-card-header h3 {
+    font-size: 1.25rem !important;
+    word-break: break-word !important;
+  }
+
+  .mv-icon-badge {
+    width: 44px !important;
+    height: 44px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .mv-icon-badge svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .about-story-grid {
+    gap: 1.25rem !important;
   }
 }

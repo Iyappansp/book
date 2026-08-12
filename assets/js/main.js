@@ -147,7 +147,7 @@
         <div class="footer-social">
           <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
           <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="#" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
         </div>
       </div>
@@ -865,23 +865,53 @@
     const toggleBtn = document.getElementById('filter-toggle-btn');
     const filterChips = document.getElementById('collections-filter-chips');
     const filterSticky = toggleBtn ? toggleBtn.closest('.collections-filter-sticky') : null;
-    if (!toggleBtn || !filterChips) return;
+    if (toggleBtn && filterChips) {
+      toggleBtn.addEventListener('click', function () {
+        const isHidden = filterChips.classList.toggle('is-hidden');
+        toggleBtn.classList.toggle('is-collapsed', isHidden);
+        toggleBtn.setAttribute('aria-expanded', String(!isHidden));
+        if (filterSticky) {
+          filterSticky.classList.toggle('is-collapsed-bar', isHidden);
+        }
+        const toggleText = toggleBtn.querySelector('.toggle-text');
+        if (toggleText) {
+          toggleText.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
+        }
+        updateScrollPaddingTop();
+      });
+    }
 
-    /* ---- Hide/Show toggle ---- */
-    toggleBtn.addEventListener('click', function () {
-      const isHidden = filterChips.classList.toggle('is-hidden');
-      toggleBtn.classList.toggle('is-collapsed', isHidden);
-      toggleBtn.setAttribute('aria-expanded', String(!isHidden));
-      if (filterSticky) {
-        filterSticky.classList.toggle('is-collapsed-bar', isHidden);
-      }
-      const toggleText = toggleBtn.querySelector('.toggle-text');
-      if (toggleText) {
-        toggleText.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
-      }
-      // Re-sync scroll padding after toggle
-      updateScrollPaddingTop();
-    });
+    /* ---- Staff Picks Filter Toggle ---- */
+    const staffToggleBtn = document.getElementById('staff-filter-toggle-btn');
+    const staffFilterContent = document.getElementById('staff-filter-content');
+    if (staffToggleBtn && staffFilterContent) {
+      staffToggleBtn.addEventListener('click', function () {
+        const isHidden = staffFilterContent.classList.toggle('is-hidden');
+        staffToggleBtn.classList.toggle('is-collapsed', isHidden);
+        staffToggleBtn.setAttribute('aria-expanded', String(!isHidden));
+        const toggleText = staffToggleBtn.querySelector('.toggle-text');
+        if (toggleText) {
+          toggleText.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
+        }
+      });
+    }
+
+    /* ---- Author Events Filter Toggle ---- */
+    const eventsToggleBtn = document.getElementById('events-filter-toggle-btn');
+    const eventsFilterContent = document.getElementById('events-filter-content');
+    if (eventsToggleBtn && eventsFilterContent) {
+      eventsToggleBtn.addEventListener('click', function () {
+        const isHidden = eventsFilterContent.classList.toggle('is-hidden');
+        eventsToggleBtn.classList.toggle('is-collapsed', isHidden);
+        eventsToggleBtn.setAttribute('aria-expanded', String(!isHidden));
+        const toggleText = eventsToggleBtn.querySelector('.toggle-text');
+        if (toggleText) {
+          toggleText.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
+        }
+      });
+    }
+
+    if (!filterChips) return;
 
     /* ---- Smooth scroll with precise offset on chip click ---- */
     filterChips.querySelectorAll('.filter-chip[href^="#"]').forEach(chip => {
@@ -1215,6 +1245,35 @@
     }
   }
 
+  /* ---------------- Store Sanctuary Gallery Filtering ---------------- */
+
+  function initStoreSanctuaryGallery() {
+    const filterBtns = document.querySelectorAll('.sa-filter-btn');
+    const saCards = document.querySelectorAll('.sa-card');
+
+    if (filterBtns.length > 0 && saCards.length > 0) {
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          const filter = this.dataset.filter || 'all';
+
+          saCards.forEach(card => {
+            const category = card.dataset.category || '';
+            if (filter === 'all' || category === filter) {
+              card.style.display = 'flex';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+  }
+
   /* ---------------- Dynamic Header Height CSS Variable ---------------- */
 
   function updateHeaderHeightVar() {
@@ -1246,6 +1305,7 @@
     initAccordionEvents();
     initAuthorEventsRsvpModal();
     initReadingAlcoveModal();
+    initStoreSanctuaryGallery();
     // Re-measure after fonts/layout settle
     setTimeout(updateHeaderHeightVar, 50);
     // Re-fire scroll-padding update after header is fully rendered
