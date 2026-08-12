@@ -63,15 +63,17 @@
 }
 
 [data-theme="dark"] .btn-secondary-custom {
-  background: transparent;
-  color: var(--text-primary);
-  border-color: var(--border-strong);
+  background: var(--color-primary) !important;
+  color: #16100B !important;
+  border-color: var(--color-primary) !important;
+  font-weight: 600;
 }
 
 [data-theme="dark"] .btn-secondary-custom:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  background: rgba(212, 182, 133, 0.08);
+  background: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+  color: #16100B !important;
+  box-shadow: 0 6px 18px rgba(212, 182, 133, 0.35);
 }
 
 /* Header & Nav */
