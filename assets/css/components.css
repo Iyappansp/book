@@ -1550,60 +1550,103 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 320px;
-}
-
-.cta-store-card-frame {
-  position: relative;
+  height: 280px;
   width: 100%;
-  max-width: 440px;
-  height: 290px;
-  border-radius: 16px;
+}
+
+.cta-book-stack-showcase {
+  position: relative;
+  width: 250px;
+  height: 220px;
+  margin: 0 auto;
+  perspective: 900px;
+}
+
+.cta-stack-book {
+  position: absolute;
+  border-radius: 4px 10px 10px 4px;
   overflow: hidden;
+  box-shadow: -10px 14px 30px rgba(0, 0, 0, 0.75), 0 2px 8px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(212, 175, 55, 0.4);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.15);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: cta-book-float 5s ease-in-out infinite;
 }
 
-.cta-store-card-frame:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 28px 50px rgba(0, 0, 0, 0.7), 0 0 45px rgba(212, 175, 55, 0.3);
-}
-
-.cta-store-card-img {
+.cta-stack-book img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  transition: transform 0.6s ease;
+  display: block;
 }
 
-.cta-store-card-frame:hover .cta-store-card-img {
-  transform: scale(1.08);
+.cta-stack-book-1 {
+  width: 130px;
+  height: 180px;
+  top: 10px;
+  right: 20px;
+  z-index: 3;
+  transform: rotate(-4deg);
+  animation-delay: 0s;
 }
 
-.cta-store-card-badge {
+.cta-stack-book-2 {
+  width: 120px;
+  height: 165px;
+  top: 30px;
+  right: 75px;
+  z-index: 2;
+  transform: rotate(-12deg);
+  animation-delay: 0.8s;
+  opacity: 0.94;
+}
+
+.cta-stack-book-3 {
+  width: 110px;
+  height: 152px;
+  top: 50px;
+  right: 125px;
+  z-index: 1;
+  transform: rotate(-20deg);
+  animation-delay: 1.6s;
+  opacity: 0.85;
+}
+
+.cta-split-visual:hover .cta-stack-book-1 {
+  transform: rotate(0deg) scale(1.08) translateY(-6px);
+  box-shadow: -14px 20px 40px rgba(0, 0, 0, 0.9);
+}
+
+.cta-split-visual:hover .cta-stack-book-2 {
+  transform: rotate(-7deg) translateX(-10px);
+}
+
+.cta-split-visual:hover .cta-stack-book-3 {
+  transform: rotate(-14deg) translateX(-18px);
+}
+
+.cta-book-badge {
   position: absolute;
-  bottom: 14px;
-  left: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(18, 14, 11, 0.82);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 20px;
-  padding: 6px 14px;
-  font-family: var(--font-heading, 'Fraunces', serif);
-  font-size: 0.82rem;
-  color: #F3ECDD;
-  letter-spacing: 0.03em;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  top: 8px;
+  right: 8px;
+  background: rgba(18, 14, 11, 0.88);
+  backdrop-filter: blur(6px);
+  color: #D4AF37;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
-.cta-store-card-badge svg {
-  color: #D4AF37;
+@keyframes cta-book-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
 }
 
 .cta-book-stack {
@@ -1617,6 +1660,14 @@
   border-radius: 4px 12px 12px 4px;
   box-shadow: 6px 8px 24px rgba(0, 0, 0, 0.5);
   animation: cta-float 4s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.cta-book-spine img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .cta-book-spine-1 {

@@ -391,23 +391,75 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
 
 /* Tablet & Mobile Responsive Centering */
 @media (max-width: 991px) {
-  .cta-split-text,
-  .cta-split-inner,
-  .cta-split-home {
+  .cta-split-inner {
+    grid-template-columns: 1fr !important;
     text-align: center !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+    padding: 3rem 1.25rem !important;
     gap: 2rem !important;
   }
 
-  .cta-split-text .final-cta-actions,
-  .cta-split-home .final-cta-actions,
-  .cta-split-inner .final-cta-actions,
-  .cta-split-text .final-cta-features {
-    justify-content: center !important;
+  .cta-split-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .cta-split-text h2 {
+    text-align: center !important;
+  }
+
+  .cta-split-text p {
+    text-align: center !important;
+    max-width: 520px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+
+  .cta-split-text .final-cta-features,
+  .cta-split-text .final-cta-actions {
+    justify-content: center !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .cta-split-visual {
+    width: 100% !important;
+    height: 200px !important;
+    max-width: 260px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .cta-book-stack-showcase {
+    width: 200px !important;
+    height: 180px !important;
+    margin: 0 auto !important;
+  }
+
+  .cta-stack-book-1 {
+    width: 105px !important;
+    height: 148px !important;
+    top: 10px !important;
+    right: 15px !important;
+  }
+
+  .cta-stack-book-2 {
+    width: 95px !important;
+    height: 134px !important;
+    top: 25px !important;
+    right: 55px !important;
+  }
+
+  .cta-stack-book-3 {
+    width: 88px !important;
+    height: 124px !important;
+    top: 40px !important;
+    right: 95px !important;
   }
 
   .cta-timeline-right {
