@@ -108,6 +108,160 @@ section { padding: var(--space-lg) 0; }
     width: 100% !important;
     border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
   }
+  /* Vault Card Mobile Layout & Style Parity with Tab View (Image 1 & 2) */
+  .vault-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    position: relative !important;
+    background: var(--bg-surface) !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: var(--radius-md) !important;
+    padding: 1.25rem !important;
+  }
+
+  .vault-release-badge {
+    position: absolute !important;
+    top: 1.8rem !important;
+    left: 1.8rem !important;
+    z-index: 10 !important;
+    background: var(--color-burgundy, #6B2E3C) !important;
+    color: #FFFFFF !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    padding: 0.35rem 0.75rem !important;
+    border-radius: 50px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    pointer-events: none !important;
+    display: inline-block !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .vault-card .vault-price-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+    border-top: 1px dashed var(--border-subtle) !important;
+    padding-top: 0.75rem !important;
+    margin-top: auto !important;
+    text-align: center !important;
+  }
+
+  .vault-card .vault-price {
+    font-family: var(--font-display) !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    color: var(--color-gold) !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .vault-card .btn-prebook {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    padding: 0.55rem 1rem !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    border-radius: var(--radius-pill) !important;
+    background: var(--color-gold) !important;
+    color: var(--color-ink) !important;
+  }
+
+  /* New arrivals: section heading + card text at 320px–600px */
+  .new-arrivals-section > .container-custom > .d-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 0.85rem !important;
+  }
+
+  .new-arrivals-section .section-heading {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .new-arrivals-section .section-heading h2 {
+    font-size: clamp(1.45rem, 7vw, 1.85rem) !important;
+    text-align: center !important;
+  }
+
+  .new-arrivals-section .btn-sm-custom {
+    margin: 0 auto !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+  }
+
+  .arrival-item {
+    text-align: center !important;
+    padding: 0 !important;
+  }
+
+  .arrival-item img {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 0.75rem auto !important;
+    display: block !important;
+  }
+
+  .arrival-item .arrival-title,
+  p.arrival-title {
+    font-family: var(--font-display) !important;
+    font-size: clamp(1.05rem, 4.8vw, 1.28rem) !important;
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    text-align: center !important;
+    line-height: 1.35 !important;
+    margin: 0 auto 0.3rem auto !important;
+    width: 100% !important;
+    display: block !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .arrival-item .arrival-price,
+  p.arrival-price {
+    font-size: clamp(0.95rem, 4vw, 1.12rem) !important;
+    font-weight: 700 !important;
+    color: var(--color-secondary) !important;
+    text-align: center !important;
+    margin: 0 auto 0.2rem auto !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .arrival-item .btn-action-row {
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    flex-wrap: nowrap !important;
+    gap: 0.45rem !important;
+    margin-top: 0.7rem !important;
+  }
+
+  .arrival-item .btn-buy-now,
+  .arrival-item .btn-prebook {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.55rem 0.5rem !important;
+    font-size: 0.78rem !important;
+    white-space: nowrap !important;
+  }
 }
 
 .main-nav,
@@ -154,6 +308,10 @@ section { padding: var(--space-lg) 0; }
   .header-actions .icon-toggle,
   .header-actions .btn-primary-custom,
   .header-actions a[href="login.html"] { display: none !important; }
+
+  .header-actions {
+    margin-right: 0.85rem !important;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -190,7 +348,6 @@ section { padding: var(--space-lg) 0; }
   .shelves-grid,
   .category-grid,
   .catalog-grid,
-  .vault-grid,
   .why-choose-grid,
   .new-arrivals-strip,
   .sp-gallery-grid,
@@ -212,6 +369,19 @@ section { padding: var(--space-lg) 0; }
     gap: var(--space-md, 1.25rem) !important;
   }
 
+  /* .vault-grid Equal 3-Column Sizing for Tablet / iPad Pro Screens */
+  .vault-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: var(--space-md, 1.25rem) !important;
+  }
+
+  .vault-grid > * {
+    grid-column: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
   /* Single Last Odd Item Centered in Row (e.g. 3rd item in 3, 5th item in 5) */
   .book-grid > *:nth-child(2n+1):last-child,
   .books-grid > *:nth-child(2n+1):last-child,
@@ -228,7 +398,6 @@ section { padding: var(--space-lg) 0; }
   .shelves-grid > *:nth-child(2n+1):last-child,
   .category-grid > *:nth-child(2n+1):last-child,
   .catalog-grid > *:nth-child(2n+1):last-child,
-  .vault-grid > *:nth-child(2n+1):last-child,
   .why-choose-grid > *:nth-child(2n+1):last-child,
   .new-arrivals-strip > *:nth-child(2n+1):last-child,
   .sp-gallery-grid > *:nth-child(2n+1):last-child,
@@ -290,6 +459,12 @@ section { padding: var(--space-lg) 0; }
 @media (max-width: 359px) {
   h1 { font-size: 1.85rem; }
   .btn-custom { padding: 0.75rem 1.4rem; font-size: 0.85rem; }
+
+  .arrival-item .btn-buy-now,
+  .arrival-item .btn-prebook {
+    padding: 0.5rem 0.35rem !important;
+    font-size: 0.72rem !important;
+  }
 }
 
 /* Prevent any accidental overflow */
@@ -378,11 +553,16 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
   margin-top: 1.25rem !important;
 }
 
-/* Desktop Left-aligned CTAs & Hero Action Rows */
+/* CTA Actions Centered Always & Desktop Hero Alignment */
+.cta-split-text .final-cta-actions,
+.cta-split-home .final-cta-actions,
+.cta-split-inner .final-cta-actions {
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 @media (min-width: 992px) {
-  .cta-split-text .final-cta-actions,
-  .cta-split-home .final-cta-actions,
-  .cta-split-inner .final-cta-actions,
   .cta-contact-left .final-cta-actions,
   .cta-staff-text .final-cta-actions,
   .hero-classic-copy .hero-cta-row,
@@ -391,8 +571,60 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
   }
 }
 
+/* iPad Pro & Tablet Hero Safeguards */
+.hero-classic-figure {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+}
+
+.hero-book-scene {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
 /* Tablet & Mobile Responsive Centering */
 @media (max-width: 991px) {
+  /* Hero Section Centering for Mobile & Tablet (Image 4) */
+  .hero-classic-copy {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .hero-classic-copy .eyebrow,
+  .hero-classic-copy h1,
+  .hero-lede {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-classic-copy .hero-cta-row,
+  .hero-cta-row {
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-trust-row {
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-trust-item {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
   .cta-split-inner {
     grid-template-columns: 1fr !important;
     text-align: center !important;
@@ -735,7 +967,6 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
   .filter-chips-wrap,
   .events-filter-bar,
   .sp-filter-toolbar,
-  .spotlight-tabs-nav,
   .format-selector {
     display: flex !important;
     flex-direction: column !important;
@@ -743,6 +974,43 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
     gap: 0.6rem !important;
     overflow-x: visible !important;
     flex-wrap: wrap !important;
+  }
+
+  /* Spotlight Tabs Mobile Horizontal Layout (Preserve Tab Bar) */
+  .spotlight-tabs-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.35rem !important;
+    width: 100% !important;
+    border-bottom: 1px solid var(--border-subtle) !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .spotlight-tab-btn {
+    width: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.45rem 0.75rem !important;
+    font-size: var(--fs-xs, 0.78rem) !important;
+    font-weight: 600 !important;
+    color: var(--text-muted) !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+  }
+
+  .spotlight-tab-btn.active,
+  .spotlight-tab-btn:hover {
+    color: var(--color-primary) !important;
+    border-bottom-color: var(--color-gold) !important;
   }
 
   /* Quick Jump filter chips: horizontal scroll on mobile (don't stack vertically) */
@@ -773,7 +1041,6 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
   .ub-fmt-pill,
   .age-tab-btn,
   .sp-filter-chip,
-  .spotlight-tab-btn,
   .format-option {
     width: 100% !important;
     text-align: center !important;

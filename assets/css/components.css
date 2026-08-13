@@ -1542,7 +1542,9 @@
 }
 
 .cta-split-text .final-cta-actions {
-  justify-content: flex-start;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-split-visual {

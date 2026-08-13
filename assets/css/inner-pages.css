@@ -2955,7 +2955,8 @@ footer {
 
 .ink-mark svg {
   max-width: 100%;
-  height: auto;
+  height: 0.55em !important;
+  bottom: -0.38em !important;
 }
 
 @media (max-width: 576px) {

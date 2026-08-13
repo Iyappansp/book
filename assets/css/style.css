@@ -309,14 +309,15 @@ section.sp-section {
 .ink-mark {
   position: relative;
   display: inline-block;
+  padding-bottom: 0.12em;
 }
 
 .ink-mark svg {
   position: absolute;
   left: -2%;
-  bottom: -0.12em;
+  bottom: -0.38em;
   width: 104%;
-  height: 0.5em;
+  height: 0.55em;
   overflow: visible;
   pointer-events: none;
 }

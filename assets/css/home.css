@@ -10,6 +10,7 @@
   padding-top: calc(var(--space-2xl) + 40px);
   padding-bottom: var(--space-xl);
   background: linear-gradient(180deg, var(--bg-surface-alt) 0%, var(--bg-page) 78%);
+  overflow: hidden;
 }
 
 .hero-classic-grid {
@@ -82,28 +83,29 @@
   width: 170px;
   height: 240px;
   transform-style: preserve-3d;
-  animation: heroBookOpen 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: heroBookOpen 6s ease-in-out infinite;
+  will-change: transform;
 }
 
-/* Front Cover — no backface-visibility to prevent disappearing glitch */
+/* Front Cover — hinge at X=0, Z=+10px */
 .hero-book-cover-front {
   position: absolute;
   inset: 0;
-  background: linear-gradient(145deg, #5C3D2E 0%, #3E2723 40%, #2C1810 100%);
+  background: #1a0c06;
   border-radius: 0 14px 14px 0;
   transform-origin: 0 0 10px;
   transform: translateZ(10px) rotateY(0deg);
-  animation: heroFrontCoverOpen 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: heroFrontCoverOpen 6s ease-in-out infinite;
   z-index: 3;
-  box-shadow: inset 4px 0 8px rgba(0, 0, 0, 0.5), 2px 4px 18px rgba(0, 0, 0, 0.4);
   overflow: hidden;
+  box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.4);
+  will-change: transform;
 }
 
-/* Cover image wrapper — flat left edge along spine binding */
+/* Cover image wrapper — fills entire front cover face, no gaps */
 .hero-cover-img-wrap {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   border-radius: 0 14px 14px 0;
   overflow: hidden;
 }
@@ -115,6 +117,22 @@
   display: block;
   filter: brightness(0.85) contrast(1.1);
   transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Book binding shadow — dark gradient on left edge of cover image simulates real book binding */
+.hero-cover-img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(8, 3, 1, 0.92) 0%,
+    rgba(15, 6, 2, 0.7) 6px,
+    rgba(20, 8, 3, 0.35) 12px,
+    transparent 22px
+  );
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 0 14px 14px 0;
 }
 
 .hero-book-scene:hover .hero-cover-img-wrap img {
@@ -188,16 +206,17 @@
   box-shadow: -2px 6px 24px rgba(0, 0, 0, 0.5);
 }
 
-/* Spine — perfectly joined to front cover at Z=+10px and back cover at Z=-10px */
+/* Spine — correct geometry: left:-10px, width:20px, transform-origin:10px places
+   spine front face exactly at Z=+10px (front cover) and back face at Z=-10px (back cover) */
 .hero-book-spine {
   position: absolute;
-  left: 0;
+  left: -10px;
   top: 0;
   bottom: 0;
   width: 20px;
-  background: linear-gradient(90deg, #2C1810 0%, #4A3228 45%, #3E2723 55%, #2C1810 100%);
-  transform-origin: 0 0;
-  transform: rotateY(-90deg) translateZ(10px);
+  background: linear-gradient(90deg, #150b05 0%, #2C1810 15%, #4A3228 45%, #3E2723 55%, #2C1810 85%, #150b05 100%);
+  transform-origin: 10px 0;
+  transform: rotateY(-90deg);
   z-index: 2;
   border-radius: 2px 0 0 2px;
 }
@@ -236,14 +255,15 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05), 1px 0 0 rgba(0, 0, 0, 0.03);
+  will-change: transform;
 }
 
 /* Stagger pages — each opens slightly less than the one in front */
-.hero-book-page:nth-child(1) { animation: heroPage1 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; z-index: 5; }
-.hero-book-page:nth-child(2) { animation: heroPage2 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; z-index: 4; right: 2px; }
-.hero-book-page:nth-child(3) { animation: heroPage3 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; z-index: 3; right: 4px; }
-.hero-book-page:nth-child(4) { animation: heroPage4 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; z-index: 2; right: 6px; }
-.hero-book-page:nth-child(5) { animation: heroPage5 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; z-index: 1; right: 8px; }
+.hero-book-page:nth-child(1) { animation: heroPage1 6s ease-in-out infinite; z-index: 5; }
+.hero-book-page:nth-child(2) { animation: heroPage2 6s ease-in-out infinite; z-index: 4; right: 2px; }
+.hero-book-page:nth-child(3) { animation: heroPage3 6s ease-in-out infinite; z-index: 3; right: 4px; }
+.hero-book-page:nth-child(4) { animation: heroPage4 6s ease-in-out infinite; z-index: 2; right: 6px; }
+.hero-book-page:nth-child(5) { animation: heroPage5 6s ease-in-out infinite; z-index: 1; right: 8px; }
 
 /* Page text lines decoration */
 .hero-book-page::before {
@@ -262,6 +282,7 @@
   );
   opacity: 0;
   animation: heroPageTextReveal 6s ease-in-out infinite;
+  will-change: opacity;
 }
 
 /* Open Book Inner Paper Content */
@@ -374,8 +395,9 @@
   );
   pointer-events: none;
   z-index: 0;
-  animation: heroGlowPulse 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: heroGlowPulse 6s ease-in-out infinite;
   filter: blur(2px);
+  will-change: transform, opacity;
 }
 
 /* Sparkle container */
@@ -443,82 +465,139 @@
 
 /* Book body gently tilts as it opens */
 @keyframes heroBookOpen {
-  0%, 15% {
+  0%, 12% {
     transform: rotateX(8deg) rotateY(-6deg) translateY(0);
   }
-  35%, 65% {
+  30%, 62% {
     transform: rotateX(4deg) rotateY(-3deg) translateY(-10px);
   }
-  85%, 100% {
+  80% {
+    transform: rotateX(6deg) rotateY(-5deg) translateY(-3px);
+  }
+  90%, 100% {
     transform: rotateX(8deg) rotateY(-6deg) translateY(0);
   }
 }
 
 /* Front cover opens to -80° max — hinges seamlessly at Z=10px */
 @keyframes heroFrontCoverOpen {
-  0%, 15% {
+  0%, 12% {
     transform: translateZ(10px) rotateY(0deg);
-    box-shadow: inset 3px 0 8px rgba(0, 0, 0, 0.45), 2px 4px 18px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.4);
   }
-  35%, 65% {
+  30%, 62% {
     transform: translateZ(10px) rotateY(-80deg);
     box-shadow: -2px 4px 14px rgba(0, 0, 0, 0.25);
   }
-  85%, 100% {
+  80% {
+    transform: translateZ(10px) rotateY(-15deg);
+    box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.35);
+  }
+  90%, 100% {
     transform: translateZ(10px) rotateY(0deg);
-    box-shadow: inset 3px 0 8px rgba(0, 0, 0, 0.45), 2px 4px 18px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Front cover opens — tablet depth Z=11px */
+@keyframes heroFrontCoverOpen768 {
+  0%, 12% {
+    transform: translateZ(11px) rotateY(0deg);
+    box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.4);
+  }
+  30%, 62% {
+    transform: translateZ(11px) rotateY(-80deg);
+    box-shadow: -2px 4px 14px rgba(0, 0, 0, 0.25);
+  }
+  80% {
+    transform: translateZ(11px) rotateY(-15deg);
+    box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.35);
+  }
+  90%, 100% {
+    transform: translateZ(11px) rotateY(0deg);
+    box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Front cover opens — desktop depth Z=13px */
+@keyframes heroFrontCoverOpen1024 {
+  0%, 12% {
+    transform: translateZ(13px) rotateY(0deg);
+    box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.4);
+  }
+  30%, 62% {
+    transform: translateZ(13px) rotateY(-80deg);
+    box-shadow: -2px 4px 14px rgba(0, 0, 0, 0.25);
+  }
+  80% {
+    transform: translateZ(13px) rotateY(-15deg);
+    box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.35);
+  }
+  90%, 100% {
+    transform: translateZ(13px) rotateY(0deg);
+    box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.4);
   }
 }
 
 /* Pages fan open at staggered rates — each page slightly different */
 @keyframes heroPage1 {
-  0%, 15% { transform: rotateY(0deg); }
-  35%, 65% { transform: rotateY(-45deg); }
-  85%, 100% { transform: rotateY(0deg); }
+  0%, 12% { transform: rotateY(0deg); }
+  30%, 62% { transform: rotateY(-45deg); }
+  80% { transform: rotateY(-8deg); }
+  90%, 100% { transform: rotateY(0deg); }
 }
 
 @keyframes heroPage2 {
-  0%, 17% { transform: rotateY(0deg); }
-  37%, 63% { transform: rotateY(-36deg); }
-  83%, 100% { transform: rotateY(0deg); }
+  0%, 14% { transform: rotateY(0deg); }
+  32%, 60% { transform: rotateY(-36deg); }
+  80% { transform: rotateY(-6deg); }
+  90%, 100% { transform: rotateY(0deg); }
 }
 
 @keyframes heroPage3 {
-  0%, 19% { transform: rotateY(0deg); }
-  39%, 61% { transform: rotateY(-28deg); }
-  81%, 100% { transform: rotateY(0deg); }
+  0%, 16% { transform: rotateY(0deg); }
+  34%, 58% { transform: rotateY(-28deg); }
+  80% { transform: rotateY(-5deg); }
+  90%, 100% { transform: rotateY(0deg); }
 }
 
 @keyframes heroPage4 {
-  0%, 21% { transform: rotateY(0deg); }
-  41%, 59% { transform: rotateY(-20deg); }
-  79%, 100% { transform: rotateY(0deg); }
+  0%, 18% { transform: rotateY(0deg); }
+  36%, 56% { transform: rotateY(-20deg); }
+  80% { transform: rotateY(-4deg); }
+  90%, 100% { transform: rotateY(0deg); }
 }
 
 @keyframes heroPage5 {
-  0%, 23% { transform: rotateY(0deg); }
-  43%, 57% { transform: rotateY(-14deg); }
-  77%, 100% { transform: rotateY(0deg); }
+  0%, 20% { transform: rotateY(0deg); }
+  38%, 54% { transform: rotateY(-14deg); }
+  80% { transform: rotateY(-3deg); }
+  90%, 100% { transform: rotateY(0deg); }
 }
 
 /* Text lines appear when pages are visible */
 @keyframes heroPageTextReveal {
-  0%, 25% { opacity: 0; }
-  40%, 60% { opacity: 1; }
-  75%, 100% { opacity: 0; }
+  0%, 20% { opacity: 0; }
+  35%, 58% { opacity: 1; }
+  78% { opacity: 0.3; }
+  88%, 100% { opacity: 0; }
 }
 
 /* Glow pulses when book opens */
 @keyframes heroGlowPulse {
-  0%, 15% {
+  0%, 12% {
     opacity: 0.2;
     transform: translate(-50%, -50%) scale(0.8);
   }
-  35%, 65% {
+  30%, 62% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.1);
   }
-  85%, 100% {
+  80% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  90%, 100% {
     opacity: 0.2;
     transform: translate(-50%, -50%) scale(0.8);
   }
@@ -560,7 +639,11 @@
 
   .hero-book-spine {
     width: 20px;
-    transform: rotateY(-90deg) translateZ(10px);
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    transform-origin: 10px 0;
+    transform: rotateY(-90deg);
   }
 
   .hero-badge-float {
@@ -626,40 +709,72 @@
   }
 }
 
-/* Tablet */
+/* Tablet & iPad Pro (768px – 1199px) — depth: 11px (spine width 22px / 2) */
 @media (min-width: 768px) {
   .hero-book-scene {
     min-height: 380px;
+    max-width: 100%;
+    position: relative;
+    overflow: visible;
   }
   .hero-book-3d {
     width: 200px;
     height: 280px;
   }
+  /* Front cover hinge shifts to Z=+11px */
+  .hero-book-cover-front {
+    transform-origin: 0 0 11px;
+    transform: translateZ(11px) rotateY(0deg);
+    animation: heroFrontCoverOpen768 6s ease-in-out infinite;
+  }
+  /* Back cover moves to Z=-11px */
+  .hero-book-cover-back {
+    transform: translateZ(-11px);
+  }
+  /* Spine: width 22px, rotate around X=0 */
   .hero-book-spine {
     width: 22px;
-    transform: rotateY(-90deg) translateZ(11px);
+    left: -11px;
+    transform-origin: 11px 0;
+    transform: rotateY(-90deg);
   }
   .hero-book-glow {
-    width: 280px;
-    height: 340px;
+    width: 270px;
+    height: 330px;
   }
   .hero-badge-float {
-    right: 10px;
+    right: 0px;
+    top: 2%;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.72rem;
   }
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
+/* Large Desktop (1200px+) — depth: 13px (spine width 26px / 2) */
+@media (min-width: 1200px) {
   .hero-book-scene {
     min-height: 440px;
   }
   .hero-book-3d {
-    width: 240px;
-    height: 330px;
+    width: 235px;
+    height: 325px;
   }
+  /* Front cover hinge shifts to Z=+13px */
+  .hero-book-cover-front {
+    transform-origin: 0 0 13px;
+    transform: translateZ(13px) rotateY(0deg);
+    animation: heroFrontCoverOpen1024 6s ease-in-out infinite;
+  }
+  /* Back cover moves to Z=-13px */
+  .hero-book-cover-back {
+    transform: translateZ(-13px);
+  }
+  /* Spine: width 26px, rotate around X=0 */
   .hero-book-spine {
     width: 26px;
-    transform: rotateY(-90deg) translateZ(13px);
+    left: -13px;
+    transform-origin: 13px 0;
+    transform: rotateY(-90deg);
   }
   .hero-book-glow {
     width: 320px;
@@ -667,7 +782,9 @@
   }
   .hero-badge-float {
     right: 10px;
+    top: 6%;
     padding: 0.6rem 1rem;
+    font-size: var(--fs-xs);
   }
 }
 
@@ -758,6 +875,7 @@
 .arrival-item {
   scroll-snap-align: start;
   text-align: center;
+  width: 100%;
 }
 
 .arrival-item img {
@@ -767,25 +885,36 @@
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-sm);
   margin-bottom: var(--space-xs);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   transition: transform var(--transition-base);
 }
 
 .arrival-item:hover img { transform: translateY(-4px); }
 
-.arrival-title {
+.arrival-item .arrival-title,
+p.arrival-title {
   font-family: var(--font-display);
   font-size: var(--fs-sm);
+  font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 0.15rem;
+  margin: 0 0 0.2rem;
   text-align: center;
+  display: block;
+  width: 100%;
+  line-height: 1.3;
 }
 
-.arrival-price {
+.arrival-item .arrival-price,
+p.arrival-price {
   font-size: var(--fs-xs);
   color: var(--color-secondary);
   font-weight: 600;
   margin: 0;
   text-align: center;
+  display: block;
+  width: 100%;
 }
 
 .btn-action-row {
@@ -957,10 +1086,15 @@
 }
 
 @media (min-width: 1024px) {
-  .hero-classic-grid { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-xl); }
-  .hero-classic-copy h1 { font-size: var(--fs-4xl); }
+  .hero-classic-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: center; }
+  .hero-classic-copy h1 { font-size: 2.6rem; }
   .genre-grid { grid-template-columns: repeat(3, 1fr); }
   .reading-corner-grid { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+}
+
+@media (min-width: 1200px) {
+  .hero-classic-grid { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-xl); }
+  .hero-classic-copy h1 { font-size: var(--fs-4xl); }
 }
 
 /* ---------- Reserve Vault & Collector's Spotlight Section ---------- */
@@ -1014,20 +1148,24 @@
 }
 
 .vault-release-badge {
-  position: absolute;
-  top: 1.8rem;
-  left: 1.8rem;
-  z-index: 10;
-  background: var(--color-burgundy);
-  color: #FFF;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  padding: 0.35rem 0.75rem;
-  border-radius: var(--radius-pill);
-  text-transform: uppercase;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: absolute !important;
+  top: 1.5rem !important;
+  left: 1.5rem !important;
+  z-index: 10 !important;
+  background: var(--color-burgundy, #6B2E3C) !important;
+  color: #FFFFFF !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  padding: 0.35rem 0.75rem !important;
+  border-radius: 50px !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  pointer-events: none !important;
+  display: inline-block !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
 }
 
 [dir="rtl"] .vault-release-badge {
@@ -1067,19 +1205,33 @@
 }
 
 .vault-card .vault-price-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px dashed var(--border-subtle);
-  padding-top: 0.75rem;
-  margin-top: auto;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.65rem !important;
+  border-top: 1px dashed var(--border-subtle) !important;
+  padding-top: 0.75rem !important;
+  margin-top: auto !important;
+  width: 100% !important;
+  text-align: center !important;
 }
 
 .vault-card .vault-price {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--color-gold);
+  font-family: var(--font-display) !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: var(--color-gold) !important;
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.vault-card .btn-prebook {
+  width: 100% !important;
+  text-align: center !important;
+  justify-content: center !important;
+  display: flex !important;
 }
 
 /* Collector Spotlight Card */
@@ -1093,10 +1245,22 @@
   position: relative;
 }
 
-@media (max-width: 576px) {
-  .spotlight-wrapper {
-    padding: 1.5rem 1.25rem 2rem;
-  }
+.spotlight-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-walnut) 100%);
+  color: #FFF;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  padding: 0.4rem 1.2rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 10;
 }
 
 .spotlight-grid {
@@ -1104,46 +1268,6 @@
   grid-template-columns: 1fr;
   gap: var(--space-md);
   align-items: center;
-}
-
-@media (min-width: 600px) {
-  .spotlight-grid {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: var(--space-md);
-    align-items: center;
-  }
-}
-
-@media (min-width: 992px) {
-  .spotlight-grid {
-    grid-template-columns: 290px 1fr;
-    gap: 1.5rem;
-    align-items: center;
-  }
-}
-
-.spotlight-actions {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-@media (max-width: 576px) {
-  .spotlight-actions {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.75rem;
-  }
-  .spotlight-actions .btn-buy-now,
-  .spotlight-actions .btn-prebook {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    display: flex;
-    align-items: center;
-  }
 }
 
 .spotlight-figure {
@@ -1169,21 +1293,11 @@
   margin: 0 auto;
 }
 
-.spotlight-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-walnut) 100%);
-  color: #FFF;
-  font-size: var(--fs-xs);
-  font-weight: 700;
-  padding: 0.4rem 1.2rem;
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-md);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
+.spotlight-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .spotlight-meta-list {
@@ -1250,4 +1364,50 @@
 
 .spotlight-tab-pane.active {
   display: block;
+}
+
+/* Responsive Spotlight Adjustments */
+@media (max-width: 576px) {
+  .spotlight-wrapper {
+    padding: 1.5rem 1rem 1.75rem;
+  }
+  .spotlight-figure img {
+    max-width: 210px;
+    height: auto;
+  }
+  .spotlight-badge {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.85rem;
+    max-width: 88%;
+  }
+  .spotlight-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .spotlight-actions .btn-buy-now,
+  .spotlight-actions .btn-prebook {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 600px) {
+  .spotlight-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: var(--space-md);
+    align-items: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .spotlight-grid {
+    grid-template-columns: 290px 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
 }
