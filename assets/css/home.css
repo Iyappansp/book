@@ -23,7 +23,7 @@
 
 .hero-classic-copy h1 {
   margin: var(--space-xs) 0 var(--space-sm);
-  font-size: 2.4rem;
+  font-size: 2.05rem;
 }
 
 .hero-lede {
@@ -54,7 +54,7 @@
 
 .hero-trust-item strong {
   font-family: var(--font-display);
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-xl);
   color: var(--color-primary);
   line-height: 1;
 }
@@ -84,7 +84,7 @@
   perspective: 1600px;
   perspective-origin: 50% 45%;
   overflow: visible;
-  transform: translateZ(0);
+  transform-style: preserve-3d;
 }
 
 .hero-book-3d {
@@ -92,29 +92,38 @@
   width: 170px;
   height: 240px;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   animation: heroBookOpen 8s linear infinite;
   will-change: transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
-/* Front Cover — hinge at X=0, Z=+10px */
+/* Front Cover — two-sided board: artwork outside, white page inside */
 .hero-book-cover-front {
   --cover-z: 10px;
   --cover-angle: 0deg;
   position: absolute;
   inset: 0;
-  background: #1a0c06;
   border-radius: 0 14px 14px 0;
-  transform-origin: 0 0 var(--cover-z);
+  transform-origin: 0 50% var(--cover-z);
   transform: translate3d(0, 0, var(--cover-z)) rotateY(var(--cover-angle));
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   animation: heroFrontCoverOpen 8s linear infinite;
   z-index: 3;
+  will-change: transform;
+}
+
+/* Outside face — cover artwork */
+.hero-cover-outside {
+  position: absolute;
+  inset: 0;
+  border-radius: 0 14px 14px 0;
   overflow: hidden;
-  box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.4);
+  background: #1a0c06;
+  transform: translateZ(0.5px);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  will-change: transform;
+  box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.4);
 }
 
 /* Cover image wrapper — fills entire front cover face, no gaps */
@@ -195,30 +204,84 @@
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
-/* Decorative gold border frame on front cover — flush to spine edge */
-.hero-book-cover-front::before {
+/* Decorative gold-brown border on the outside cover */
+.hero-cover-outside::after {
   content: '';
   position: absolute;
-  top: 7px;
-  left: 4px;
-  right: 7px;
-  bottom: 7px;
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  border-left: none;
-  border-radius: 0 8px 8px 0;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1.5px solid rgba(212, 175, 55, 0.55);
+  border-radius: 6px;
   pointer-events: none;
   z-index: 4;
 }
 
-/* Back Cover */
+/* Inside cover — brown board with inset white page */
+.hero-cover-inside {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px 0 0 14px;
+  background: linear-gradient(145deg, #5A3D2E 0%, #3E2723 48%, #2A1810 100%);
+  transform: rotateY(180deg) translateZ(0.6px);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.22);
+  pointer-events: none;
+}
+
+/* White page sitting on the brown board (even margin on all sides) */
+.hero-board-page {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  bottom: 14px;
+  left: 14px;
+  background:
+    linear-gradient(90deg, rgba(62, 39, 35, 0.08) 0%, transparent 16px),
+    linear-gradient(180deg, #FFFdf8 0%, #F7F1E6 55%, #F0E8D8 100%);
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.65), 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.hero-board-page::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 16px;
+  right: 16px;
+  height: 58%;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent,
+    transparent 9px,
+    rgba(62, 39, 35, 0.07) 9px,
+    rgba(62, 39, 35, 0.07) 10px
+  );
+  pointer-events: none;
+}
+
+/* After the 180° flip, the spine sits on the local right of the inside face */
+.hero-cover-inside .hero-board-page {
+  background:
+    linear-gradient(90deg, transparent 0%, transparent calc(100% - 16px), rgba(62, 39, 35, 0.08) 100%),
+    linear-gradient(180deg, #FFFdf8 0%, #F7F1E6 55%, #F0E8D8 100%);
+}
+
+/* Back cover — the brown board; white page sits inset on top of it */
 .hero-book-cover-back {
   position: absolute;
   inset: 0;
-  background: linear-gradient(145deg, #4A3228 0%, #2E1F16 100%);
+  background: linear-gradient(145deg, #5A3D2E 0%, #3E2723 42%, #2A1810 100%);
   border-radius: 0 14px 14px 0;
   transform: translateZ(-10px);
   z-index: 0;
-  box-shadow: -2px 6px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: -2px 6px 24px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(212, 175, 55, 0.22);
+}
+
+.hero-book-cover-back .hero-board-page {
+  display: none;
 }
 
 /* Spine — correct geometry: left:-10px, width:20px, transform-origin:10px places
@@ -250,13 +313,13 @@
 .hero-book-spine::before { top: 25px; }
 .hero-book-spine::after { bottom: 25px; }
 
-/* Pages Bundle */
+/* White pages inset on the brown board so the border shows evenly */
 .hero-book-pages {
   position: absolute;
-  top: 6px;
-  left: 4px;
-  right: 6px;
-  bottom: 6px;
+  top: 14px;
+  left: 10px;
+  right: 14px;
+  bottom: 14px;
   transform-style: preserve-3d;
   z-index: 1;
 }
@@ -265,21 +328,19 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, #F5EFE4 0%, #FAF6EE 50%, #F0E8D8 100%);
-  border-radius: 2px 8px 8px 2px;
+  border-radius: 2px;
   transform-origin: left center;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05), 1px 0 0 rgba(0, 0, 0, 0.03);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7), 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
-/* Stagger pages — each opens slightly less than the one in front */
 .hero-book-page:nth-child(1) { animation: heroPage1 8s linear infinite; z-index: 5; }
 .hero-book-page:nth-child(2) { animation: heroPage2 8s linear infinite; z-index: 4; right: 2px; }
 .hero-book-page:nth-child(3) { animation: heroPage3 8s linear infinite; z-index: 3; right: 4px; }
 .hero-book-page:nth-child(4) { animation: heroPage4 8s linear infinite; z-index: 2; right: 6px; }
 .hero-book-page:nth-child(5) { animation: heroPage5 8s linear infinite; z-index: 1; right: 8px; }
 
-/* Page text lines decoration */
 .hero-book-page::before {
   content: '';
   position: absolute;
@@ -298,9 +359,18 @@
   animation: heroPageTextReveal 8s linear infinite;
 }
 
+.hero-book-page.page-content::before {
+  opacity: 0;
+  animation: none;
+}
+
+.hero-book-page.page-content {
+  overflow: hidden;
+}
+
 /* Open Book Inner Paper Content */
 .book-page-content {
-  padding: 1.4rem 1.15rem;
+  padding: 1.1rem 0.95rem;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -308,45 +378,47 @@
   color: #3E2723;
   position: relative;
   z-index: 10;
+  overflow: hidden;
 }
 
 .book-paper-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.4rem;
+  gap: 0.35rem;
 }
 
 .book-paper-badge {
-  font-size: 0.68rem;
+  font-size: 0.58rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--color-walnut, #4A3222);
   background: rgba(184, 147, 90, 0.18);
   border: 1px solid rgba(184, 147, 90, 0.35);
-  padding: 0.2rem 0.55rem;
+  padding: 0.14rem 0.42rem;
   border-radius: 50px;
 }
 
 .book-paper-date {
-  font-size: 0.68rem;
+  font-size: 0.58rem;
   color: #8A7C68;
   font-weight: 600;
 }
 
 .book-paper-title {
   font-family: var(--font-display) !important;
-  font-size: 1.25rem !important;
+  font-size: 1.08rem !important;
   color: #241C15 !important;
-  margin: 0.2rem 0 0.15rem !important;
-  line-height: 1.2;
+  margin: 0.1rem 0 0.1rem !important;
+  line-height: 1.15;
 }
 
 .book-paper-author {
-  font-size: 0.82rem !important;
+  font-size: 0.72rem !important;
   color: #5A4E3F !important;
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 0.3rem !important;
 }
 
 .book-paper-author strong {
@@ -357,27 +429,32 @@
 .book-paper-rule {
   height: 1px;
   background: linear-gradient(90deg, var(--color-gold, #B8935A), transparent);
-  margin: 0.4rem 0 0.6rem;
+  margin: 0.25rem 0 0.4rem;
   opacity: 0.6;
 }
 
 .book-paper-excerpt {
   font-family: var(--font-quote) !important;
   font-style: italic;
-  font-size: 0.88rem !important;
-  line-height: 1.4;
+  font-size: 0.76rem !important;
+  line-height: 1.3;
   color: #4A3222 !important;
   margin-bottom: auto !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .book-paper-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 0.6rem;
-  padding-top: 0.4rem;
+  margin-top: 0.35rem;
+  padding-top: 0.3rem;
   border-top: 1px dashed rgba(138, 124, 104, 0.25);
-  font-size: 0.72rem;
+  font-size: 0.62rem;
+  flex-shrink: 0;
 }
 
 .book-paper-curator {
@@ -463,117 +540,117 @@
 /* ============ KEYFRAMES ============ */
 
 /*
- * 8s continuous loop — dense keyframes + linear timing so motion never
- * freezes. Cover max -80° to avoid backface glitches. Depth uses --cover-z.
+ * Book opens so the brown board frames the white page on both sides.
+ * Cover swings past 90° to show the inside white page + board border.
  */
 
 @keyframes heroBookOpen {
   0%, 8% {
-    transform: rotateX(8deg) rotateY(-6deg) translate3d(0, 0, 0);
+    transform: rotateX(8deg) rotateY(-8deg) translate3d(0, 0, 0);
   }
   18% {
-    transform: rotateX(6.5deg) rotateY(-5deg) translate3d(0, -3px, 0);
+    transform: rotateX(6.5deg) rotateY(-10deg) translate3d(18px, -3px, 0);
   }
   28% {
-    transform: rotateX(5deg) rotateY(-4deg) translate3d(0, -7px, 0);
+    transform: rotateX(5deg) rotateY(-12deg) translate3d(36px, -7px, 0);
   }
   40% {
-    transform: rotateX(4deg) rotateY(-3deg) translate3d(0, -10px, 0);
+    transform: rotateX(4deg) rotateY(-14deg) translate3d(48px, -10px, 0);
   }
   52% {
-    transform: rotateX(4.2deg) rotateY(-3.2deg) translate3d(0, -9px, 0);
+    transform: rotateX(4.2deg) rotateY(-14deg) translate3d(48px, -9px, 0);
   }
   64% {
-    transform: rotateX(5deg) rotateY(-4deg) translate3d(0, -6px, 0);
+    transform: rotateX(5deg) rotateY(-12deg) translate3d(36px, -6px, 0);
   }
   78% {
-    transform: rotateX(6.5deg) rotateY(-5deg) translate3d(0, -2px, 0);
+    transform: rotateX(6.5deg) rotateY(-10deg) translate3d(18px, -2px, 0);
   }
   90%, 100% {
-    transform: rotateX(8deg) rotateY(-6deg) translate3d(0, 0, 0);
+    transform: rotateX(8deg) rotateY(-8deg) translate3d(0, 0, 0);
   }
 }
 
 @keyframes heroFrontCoverOpen {
   0%, 8% { --cover-angle: 0deg; }
-  14% { --cover-angle: -6deg; }
-  22% { --cover-angle: -28deg; }
-  32% { --cover-angle: -58deg; }
-  42% { --cover-angle: -78deg; }
-  48% { --cover-angle: -80deg; }
-  56% { --cover-angle: -78deg; }
-  66% { --cover-angle: -52deg; }
-  78% { --cover-angle: -20deg; }
-  88% { --cover-angle: -4deg; }
+  14% { --cover-angle: -16deg; }
+  22% { --cover-angle: -52deg; }
+  32% { --cover-angle: -108deg; }
+  42% { --cover-angle: -148deg; }
+  48% { --cover-angle: -158deg; }
+  56% { --cover-angle: -148deg; }
+  66% { --cover-angle: -96deg; }
+  78% { --cover-angle: -38deg; }
+  88% { --cover-angle: -8deg; }
   94%, 100% { --cover-angle: 0deg; }
 }
 
 @keyframes heroPage1 {
   0%, 8% { transform: rotateY(0deg); }
-  16% { transform: rotateY(-8deg); }
-  26% { transform: rotateY(-24deg); }
-  38% { transform: rotateY(-42deg); }
-  48% { transform: rotateY(-45deg); }
-  58% { transform: rotateY(-43deg); }
-  70% { transform: rotateY(-26deg); }
-  82% { transform: rotateY(-8deg); }
+  16% { transform: rotateY(-3deg); }
+  26% { transform: rotateY(-6deg); }
+  38% { transform: rotateY(-8deg); }
+  48% { transform: rotateY(-10deg); }
+  58% { transform: rotateY(-8deg); }
+  70% { transform: rotateY(-5deg); }
+  82% { transform: rotateY(-2deg); }
   92%, 100% { transform: rotateY(0deg); }
 }
 
 @keyframes heroPage2 {
   0%, 10% { transform: rotateY(0deg); }
-  18% { transform: rotateY(-6deg); }
-  28% { transform: rotateY(-18deg); }
-  40% { transform: rotateY(-34deg); }
-  50% { transform: rotateY(-36deg); }
-  60% { transform: rotateY(-34deg); }
-  72% { transform: rotateY(-20deg); }
-  84% { transform: rotateY(-6deg); }
+  18% { transform: rotateY(-2deg); }
+  28% { transform: rotateY(-5deg); }
+  40% { transform: rotateY(-7deg); }
+  50% { transform: rotateY(-8deg); }
+  60% { transform: rotateY(-6deg); }
+  72% { transform: rotateY(-4deg); }
+  84% { transform: rotateY(-2deg); }
   93%, 100% { transform: rotateY(0deg); }
 }
 
 @keyframes heroPage3 {
   0%, 12% { transform: rotateY(0deg); }
-  20% { transform: rotateY(-5deg); }
-  30% { transform: rotateY(-14deg); }
-  42% { transform: rotateY(-26deg); }
-  52% { transform: rotateY(-28deg); }
-  62% { transform: rotateY(-26deg); }
-  74% { transform: rotateY(-14deg); }
-  86% { transform: rotateY(-4deg); }
+  20% { transform: rotateY(-2deg); }
+  30% { transform: rotateY(-4deg); }
+  42% { transform: rotateY(-5deg); }
+  52% { transform: rotateY(-6deg); }
+  62% { transform: rotateY(-5deg); }
+  74% { transform: rotateY(-3deg); }
+  86% { transform: rotateY(-1deg); }
   94%, 100% { transform: rotateY(0deg); }
 }
 
 @keyframes heroPage4 {
   0%, 14% { transform: rotateY(0deg); }
-  22% { transform: rotateY(-4deg); }
-  32% { transform: rotateY(-10deg); }
-  44% { transform: rotateY(-18deg); }
-  54% { transform: rotateY(-20deg); }
-  64% { transform: rotateY(-18deg); }
-  76% { transform: rotateY(-10deg); }
-  88% { transform: rotateY(-3deg); }
+  22% { transform: rotateY(-1deg); }
+  32% { transform: rotateY(-3deg); }
+  44% { transform: rotateY(-4deg); }
+  54% { transform: rotateY(-4deg); }
+  64% { transform: rotateY(-3deg); }
+  76% { transform: rotateY(-2deg); }
+  88% { transform: rotateY(-1deg); }
   95%, 100% { transform: rotateY(0deg); }
 }
 
 @keyframes heroPage5 {
   0%, 16% { transform: rotateY(0deg); }
-  24% { transform: rotateY(-3deg); }
-  34% { transform: rotateY(-8deg); }
-  46% { transform: rotateY(-13deg); }
-  56% { transform: rotateY(-14deg); }
-  66% { transform: rotateY(-12deg); }
-  78% { transform: rotateY(-6deg); }
-  90% { transform: rotateY(-2deg); }
+  24% { transform: rotateY(-1deg); }
+  34% { transform: rotateY(-2deg); }
+  46% { transform: rotateY(-3deg); }
+  56% { transform: rotateY(-3deg); }
+  66% { transform: rotateY(-2deg); }
+  78% { transform: rotateY(-1deg); }
+  90% { transform: rotateY(0deg); }
   96%, 100% { transform: rotateY(0deg); }
 }
 
 @keyframes heroPageTextReveal {
   0%, 16% { opacity: 0; }
-  28% { opacity: 0.45; }
-  40%, 58% { opacity: 1; }
-  72% { opacity: 0.55; }
-  84% { opacity: 0.12; }
+  28% { opacity: 0.4; }
+  40%, 58% { opacity: 0.85; }
+  72% { opacity: 0.45; }
+  84% { opacity: 0.1; }
   92%, 100% { opacity: 0; }
 }
 
@@ -635,19 +712,19 @@
   }
 
   .hero-book-3d {
-    transform: rotateX(6deg) rotateY(-4deg);
+    transform: rotateX(5deg) rotateY(-12deg) translate3d(40px, -6px, 0);
   }
 
   .hero-book-cover-front {
-    transform: translate3d(0, 0, var(--cover-z, 10px)) rotateY(-62deg);
-    --cover-angle: -62deg;
+    transform: translate3d(0, 0, var(--cover-z, 10px)) rotateY(-158deg);
+    --cover-angle: -158deg;
   }
 
-  .hero-book-page:nth-child(1) { transform: rotateY(-32deg); }
-  .hero-book-page:nth-child(2) { transform: rotateY(-24deg); }
-  .hero-book-page:nth-child(3) { transform: rotateY(-16deg); }
-  .hero-book-page:nth-child(4) { transform: rotateY(-10deg); }
-  .hero-book-page:nth-child(5) { transform: rotateY(-6deg); }
+  .hero-book-page:nth-child(1) { transform: rotateY(-8deg); }
+  .hero-book-page:nth-child(2) { transform: rotateY(-6deg); }
+  .hero-book-page:nth-child(3) { transform: rotateY(-4deg); }
+  .hero-book-page:nth-child(4) { transform: rotateY(-3deg); }
+  .hero-book-page:nth-child(5) { transform: rotateY(-2deg); }
 
   .hero-book-glow {
     opacity: 0.7;
@@ -659,72 +736,86 @@
 /* Mobile (up to 767px) */
 @media (max-width: 767px) {
   .hero-book-scene {
-    min-height: 340px;
-    margin-top: 1.5rem;
+    min-height: 280px;
+    margin-top: 1rem;
   }
 
   .hero-book-3d {
-    width: 205px;
-    height: 295px;
+    width: 148px;
+    height: 210px;
+  }
+
+  .hero-book-glow {
+    width: 200px;
+    height: 250px;
   }
 
   .hero-book-spine {
-    width: 20px;
-    left: -10px;
+    width: 16px;
+    left: -8px;
     top: 0;
     bottom: 0;
-    transform-origin: 10px 0;
+    transform-origin: 8px 0;
     transform: rotateY(-90deg);
   }
 
+  .hero-book-cover-front {
+    --cover-z: 8px;
+    transform-origin: 0 50% var(--cover-z);
+  }
+
+  .hero-book-cover-back {
+    transform: translateZ(-8px);
+  }
+
   .hero-badge-float {
-    top: -14px;
-    right: 8px;
-    padding: 0.35rem 0.75rem;
-    font-size: 0.72rem;
+    top: -10px;
+    right: 4px;
+    padding: 0.28rem 0.6rem;
+    font-size: 0.64rem;
   }
 
   .book-page-content {
-    padding: 0.75rem 0.65rem !important;
+    padding: 0.55rem 0.48rem !important;
   }
 
   .book-paper-header {
-    margin-bottom: 0.35rem !important;
+    margin-bottom: 0.22rem !important;
   }
 
   .book-paper-badge {
-    font-size: 0.58rem !important;
-    padding: 0.12rem 0.4rem !important;
+    font-size: 0.48rem !important;
+    padding: 0.1rem 0.32rem !important;
   }
 
   .book-paper-date {
-    font-size: 0.58rem !important;
+    font-size: 0.48rem !important;
   }
 
   .book-paper-title {
-    font-size: 1.05rem !important;
-    margin: 0.1rem 0 !important;
+    font-size: 0.82rem !important;
+    margin: 0.06rem 0 !important;
   }
 
   .book-paper-author {
-    font-size: 0.75rem !important;
-    margin-bottom: 0.25rem !important;
+    font-size: 0.58rem !important;
+    margin-bottom: 0.15rem !important;
   }
 
   .book-paper-rule {
-    margin: 0.25rem 0 0.35rem !important;
+    margin: 0.15rem 0 0.2rem !important;
   }
 
   .book-paper-excerpt {
-    font-size: 0.76rem !important;
-    line-height: 1.35 !important;
-    margin-bottom: auto !important;
+    font-size: 0.58rem !important;
+    line-height: 1.25 !important;
+    -webkit-line-clamp: 2;
   }
 
   .book-paper-footer {
-    font-size: 0.65rem !important;
-    margin-top: 0.25rem !important;
-    padding-top: 0.2rem !important;
+    font-size: 0.5rem !important;
+    margin-top: 0.12rem !important;
+    padding-top: 0.12rem !important;
   }
 
   .hero-cover-overlay {
@@ -736,7 +827,109 @@
   }
 
   .hero-cover-author {
-    font-size: 0.75rem !important;
+    font-size: 0.68rem !important;
+  }
+}
+
+/* Extra-small phones (320px – 399px) */
+@media (max-width: 399px) {
+  .hero-book-scene {
+    min-height: 250px;
+    margin-top: 0.75rem;
+  }
+
+  .hero-book-3d {
+    width: 128px;
+    height: 182px;
+  }
+
+  .hero-book-glow {
+    width: 170px;
+    height: 210px;
+  }
+
+  .hero-book-spine {
+    width: 14px;
+    left: -7px;
+    transform-origin: 7px 0;
+  }
+
+  .hero-book-cover-front {
+    --cover-z: 7px;
+    transform-origin: 0 50% var(--cover-z);
+  }
+
+  .hero-book-cover-back {
+    transform: translateZ(-7px);
+  }
+
+  .hero-badge-float {
+    top: -8px;
+    right: 0;
+    padding: 0.22rem 0.5rem;
+    font-size: 0.58rem;
+  }
+
+  .hero-cover-title {
+    font-size: 0.92rem !important;
+  }
+
+  .hero-cover-overlay {
+    padding: 0.7rem 0.6rem !important;
+  }
+
+  .hero-board-page {
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .hero-book-pages {
+    top: 10px;
+    left: 8px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .book-page-content {
+    padding: 0.45rem 0.4rem !important;
+  }
+
+  .book-paper-header {
+    margin-bottom: 0.15rem !important;
+  }
+
+  .book-paper-badge,
+  .book-paper-date {
+    font-size: 0.42rem !important;
+    padding: 0.08rem 0.28rem !important;
+  }
+
+  .book-paper-title {
+    font-size: 0.72rem !important;
+    margin: 0.05rem 0 !important;
+  }
+
+  .book-paper-author {
+    font-size: 0.52rem !important;
+    margin-bottom: 0.1rem !important;
+  }
+
+  .book-paper-rule {
+    margin: 0.12rem 0 0.15rem !important;
+  }
+
+  .book-paper-excerpt {
+    font-size: 0.52rem !important;
+    line-height: 1.22 !important;
+    -webkit-line-clamp: 2;
+  }
+
+  .book-paper-footer {
+    font-size: 0.45rem !important;
+    margin-top: 0.1rem !important;
+    padding-top: 0.1rem !important;
   }
 }
 
@@ -755,7 +948,7 @@
   /* Front cover hinge shifts to Z=+11px */
   .hero-book-cover-front {
     --cover-z: 11px;
-    transform-origin: 0 0 var(--cover-z);
+    transform-origin: 0 50% var(--cover-z);
   }
   /* Back cover moves to Z=-11px */
   .hero-book-cover-back {
@@ -778,6 +971,44 @@
     padding: 0.45rem 0.8rem;
     font-size: 0.72rem;
   }
+
+  .book-page-content {
+    padding: 0.85rem 0.7rem !important;
+  }
+
+  .book-paper-header {
+    margin-bottom: 0.28rem !important;
+  }
+
+  .book-paper-badge,
+  .book-paper-date {
+    font-size: 0.52rem !important;
+  }
+
+  .book-paper-title {
+    font-size: 0.98rem !important;
+  }
+
+  .book-paper-author {
+    font-size: 0.68rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  .book-paper-excerpt {
+    font-size: 0.68rem !important;
+    line-height: 1.28 !important;
+    -webkit-line-clamp: 3;
+  }
+
+  .book-paper-footer {
+    font-size: 0.58rem !important;
+    margin-top: 0.2rem !important;
+    padding-top: 0.18rem !important;
+  }
+
+  .hero-trust-item strong {
+    font-size: 1.55rem;
+  }
 }
 
 /* Large Desktop (1200px+) — depth: 13px (spine width 26px / 2) */
@@ -792,7 +1023,7 @@
   /* Front cover hinge shifts to Z=+13px */
   .hero-book-cover-front {
     --cover-z: 13px;
-    transform-origin: 0 0 var(--cover-z);
+    transform-origin: 0 50% var(--cover-z);
   }
   /* Back cover moves to Z=-13px */
   .hero-book-cover-back {
@@ -1135,14 +1366,139 @@ p.arrival-price {
 
 @media (min-width: 1024px) {
   .hero-classic-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: center; }
-  .hero-classic-copy h1 { font-size: 2.6rem; }
+  .hero-classic-copy h1 { font-size: 2.35rem; }
+  .hero-trust-item strong { font-size: 1.75rem; }
   .genre-grid { grid-template-columns: repeat(3, 1fr); }
   .reading-corner-grid { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
 }
 
+/* Tab / iPad Pro: nudge the open book slightly right */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .hero-classic-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 0.75rem;
+  }
+
+  .hero-classic-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-classic-copy .eyebrow,
+  .hero-classic-copy h1,
+  .hero-lede {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-classic-copy .hero-cta-row,
+  .hero-cta-row {
+    justify-content: center !important;
+    align-items: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-trust-row {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-trust-item {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-classic-figure {
+    justify-self: center;
+    width: auto !important;
+    padding-left: 0;
+  }
+
+  .hero-book-scene {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 0;
+    min-height: 300px;
+  }
+
+  .hero-book-3d {
+    width: 168px;
+    height: 236px;
+  }
+
+  .hero-book-glow {
+    width: 220px;
+    height: 270px;
+  }
+
+  .hero-book-spine {
+    width: 18px;
+    left: -9px;
+    transform-origin: 9px 0;
+  }
+
+  .hero-book-cover-front {
+    --cover-z: 9px;
+    transform-origin: 0 50% var(--cover-z);
+  }
+
+  .hero-book-cover-back {
+    transform: translateZ(-9px);
+  }
+
+  .hero-badge-float {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.66rem;
+  }
+
+  [dir="rtl"] .hero-classic-copy,
+  [dir="rtl"] .hero-classic-copy .eyebrow,
+  [dir="rtl"] .hero-classic-copy h1,
+  [dir="rtl"] .hero-lede,
+  [dir="rtl"] .hero-trust-item {
+    text-align: center;
+  }
+
+  [dir="rtl"] .hero-classic-figure {
+    padding-left: 0;
+    padding-right: 0;
+    justify-self: center;
+  }
+
+  [dir="rtl"] .hero-book-scene {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 @media (min-width: 1200px) {
   .hero-classic-grid { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-xl); }
-  .hero-classic-copy h1 { font-size: var(--fs-4xl); }
+  .hero-classic-copy h1 { font-size: 2.85rem; }
+  .hero-trust-item strong { font-size: var(--fs-2xl); }
+
+  .book-page-content {
+    padding: 1.15rem 1rem;
+  }
+
+  .book-paper-title {
+    font-size: 1.12rem !important;
+  }
+
+  .book-paper-excerpt {
+    font-size: 0.78rem !important;
+  }
 }
 
 /* ---------- Reserve Vault & Collector's Spotlight Section ---------- */
