@@ -110,6 +110,12 @@
   left: 1.5rem !important;
 }
 
+@media (max-width: 767px) {
+  [dir="rtl"] .page-top-toggles {
+    left: 1rem !important;
+  }
+}
+
 /* Author Events RTL Enhancements */
 [dir="rtl"] .event-search-wrapper .search-icon {
   right: 1rem;

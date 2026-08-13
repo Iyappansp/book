@@ -975,6 +975,25 @@ p.arrival-price {
 
 .rc-copy p { margin: var(--space-sm) 0 var(--space-md); font-size: var(--fs-md); max-width: 46ch; }
 
+@media (max-width: 767px) {
+  .rc-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .rc-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rc-copy .btn-custom {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* ---------- Why visit ---------- */
 
 .why-card { text-align: left; height: 100%; }

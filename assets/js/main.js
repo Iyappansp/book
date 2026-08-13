@@ -195,8 +195,8 @@
 
   function injectHeaderFooter() {
     const rawPath = window.location.pathname.split('/').pop() || '';
-    if (rawPath === 'login.html') {
-      // Hide header and footer on login page as requested
+    if (rawPath === 'login.html' || rawPath === 'signup.html') {
+      // Hide header and footer on auth pages as requested
       const headerEl = document.getElementById('main-header');
       const footerEl = document.getElementById('main-footer');
       if (headerEl) headerEl.style.display = 'none';
