@@ -859,7 +859,51 @@
     });
   }
 
-  /* ---------------- Quick Jump Filter Hide/Show Toggle + Scroll Tracking ---------------- */
+  function isCompactFilterView() {
+    return window.matchMedia('(max-width: 1024px)').matches;
+  }
+
+  function bindFilterToggle(toggleBtn, panel, options) {
+    if (!toggleBtn || !panel) return;
+
+    const opts = options || {};
+
+    function applyCollapsed(collapsed) {
+      panel.classList.toggle('is-hidden', collapsed);
+      panel.classList.toggle('filters-shown', !collapsed);
+      toggleBtn.classList.toggle('is-collapsed', collapsed);
+      toggleBtn.setAttribute('aria-expanded', String(!collapsed));
+      toggleBtn.setAttribute('title', collapsed ? 'Show Filters' : 'Hide Filters');
+      const toggleText = toggleBtn.querySelector('.toggle-text');
+      if (toggleText) {
+        toggleText.textContent = collapsed ? 'Show Filters' : 'Hide Filters';
+      }
+      if (opts.sticky) {
+        opts.sticky.classList.toggle('is-collapsed-bar', collapsed);
+      }
+      if (typeof opts.onChange === 'function') opts.onChange();
+    }
+
+    function isCurrentlyShown() {
+      if (isCompactFilterView()) {
+        return panel.classList.contains('filters-shown');
+      }
+      return !panel.classList.contains('is-hidden');
+    }
+
+    toggleBtn.addEventListener('click', function () {
+      applyCollapsed(isCurrentlyShown());
+    });
+
+    applyCollapsed(isCompactFilterView());
+
+    const mq = window.matchMedia('(max-width: 1024px)');
+    if (mq.addEventListener) {
+      mq.addEventListener('change', function (e) {
+        applyCollapsed(e.matches);
+      });
+    }
+  }
 
   /* ---------------- Quick Jump Filter Hide/Show Toggle + Scroll Tracking ---------------- */
 
@@ -867,51 +911,22 @@
     const toggleBtn = document.getElementById('filter-toggle-btn');
     const filterChips = document.getElementById('collections-filter-chips');
     const filterSticky = toggleBtn ? toggleBtn.closest('.collections-filter-sticky') : null;
-    if (toggleBtn && filterChips) {
-      toggleBtn.addEventListener('click', function () {
-        const isHidden = filterChips.classList.toggle('is-hidden');
-        toggleBtn.classList.toggle('is-collapsed', isHidden);
-        toggleBtn.setAttribute('aria-expanded', String(!isHidden));
-        if (filterSticky) {
-          filterSticky.classList.toggle('is-collapsed-bar', isHidden);
-        }
-        const toggleText = toggleBtn.querySelector('.toggle-text');
-        if (toggleText) {
-          toggleText.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
-        }
-        updateScrollPaddingTop();
-      });
-    }
+    bindFilterToggle(toggleBtn, filterChips, {
+      sticky: filterSticky,
+      onChange: function () {
+        if (typeof updateScrollPaddingTop === 'function') updateScrollPaddingTop();
+      }
+    });
 
-    /* ---- Staff Picks Filter Toggle ---- */
-    const staffToggleBtn = document.getElementById('staff-filter-toggle-btn');
-    const staffFilterContent = document.getElementById('staff-filter-content');
-    if (staffToggleBtn && staffFilterContent) {
-      staffToggleBtn.addEventListener('click', function () {
-        const isHidden = staffFilterContent.classList.toggle('is-hidden');
-        staffToggleBtn.classList.toggle('is-collapsed', isHidden);
-        staffToggleBtn.setAttribute('aria-expanded', String(!isHidden));
-        const toggleText = staffToggleBtn.querySelector('.toggle-text');
-        if (toggleText) {
-          toggleText.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
-        }
-      });
-    }
+    bindFilterToggle(
+      document.getElementById('staff-filter-toggle-btn'),
+      document.getElementById('staff-filter-content')
+    );
 
-    /* ---- Author Events Filter Toggle ---- */
-    const eventsToggleBtn = document.getElementById('events-filter-toggle-btn');
-    const eventsFilterContent = document.getElementById('events-filter-content');
-    if (eventsToggleBtn && eventsFilterContent) {
-      eventsToggleBtn.addEventListener('click', function () {
-        const isHidden = eventsFilterContent.classList.toggle('is-hidden');
-        eventsToggleBtn.classList.toggle('is-collapsed', isHidden);
-        eventsToggleBtn.setAttribute('aria-expanded', String(!isHidden));
-        const toggleText = eventsToggleBtn.querySelector('.toggle-text');
-        if (toggleText) {
-          toggleText.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
-        }
-      });
-    }
+    bindFilterToggle(
+      document.getElementById('events-filter-toggle-btn'),
+      document.getElementById('events-filter-content')
+    );
 
     if (!filterChips) return;
 
@@ -1023,17 +1038,9 @@
       const grid = document.getElementById(cfg.gridId);
       const toggleBtn = document.getElementById(cfg.toggleId);
 
-      if (toggleBtn && bar) {
-        toggleBtn.addEventListener('click', function () {
-          const isHidden = bar.classList.toggle('is-hidden');
-          toggleBtn.classList.toggle('is-collapsed', isHidden);
-          toggleBtn.setAttribute('aria-expanded', String(!isHidden));
-          const toggleText = toggleBtn.querySelector('.toggle-text');
-          if (toggleText) {
-            toggleText.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
-          }
-        });
-      }
+      bindFilterToggle(toggleBtn, bar, {
+        sticky: toggleBtn ? toggleBtn.closest('.collections-filter-sticky') : null
+      });
 
       if (!bar || !grid) return;
 

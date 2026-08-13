@@ -1032,27 +1032,40 @@ table { display: block; overflow-x: auto; white-space: nowrap; }
     border-bottom-color: var(--color-gold) !important;
   }
 
-  /* Quick Jump filter chips: horizontal scroll on mobile (don't stack vertically) */
-  .collections-filter-chips {
+  /* Quick Jump / genre filters: one-by-one vertical list on mobile */
+  .collections-filter-chips,
+  .collections-filter-chips.filters-shown,
+  .filter-chips-wrap,
+  .sp-filter-content-wrapper [role="tablist"],
+  .sp-filter-content-wrapper .d-flex.flex-wrap {
     display: flex !important;
-    flex-direction: row !important;
+    flex-direction: column !important;
     flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    gap: 0.4rem !important;
-    padding-bottom: 2px !important;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 0.5rem !important;
+    padding-bottom: 0 !important;
   }
-  .collections-filter-chips::-webkit-scrollbar {
-    display: none !important;
-  }
-  .collections-filter-chips .filter-chip {
+
+  .collections-filter-chips .filter-chip,
+  .filter-chips-wrap .filter-chip,
+  .sp-filter-content-wrapper .sp-filter-chip {
     flex-shrink: 0 !important;
-    white-space: nowrap !important;
-    width: auto !important;
-    padding: 0.25rem 0.7rem !important;
-    font-size: 0.73rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
+    padding: 0.65rem 1rem !important;
+    font-size: 0.82rem !important;
+    margin: 0 !important;
   }
 
   .ub-tab-btn,

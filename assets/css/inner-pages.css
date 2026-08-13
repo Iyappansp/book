@@ -1568,6 +1568,23 @@
   display: none !important;
 }
 
+@media (max-width: 1024px) {
+  .collections-filter-chips:not(.filters-shown),
+  .sp-filter-content-wrapper:not(.filters-shown),
+  .events-filter-content-wrapper:not(.filters-shown) {
+    display: none !important;
+  }
+
+  .collections-filter-chips.filters-shown {
+    display: flex !important;
+  }
+
+  .sp-filter-content-wrapper.filters-shown,
+  .events-filter-content-wrapper.filters-shown {
+    display: block !important;
+  }
+}
+
 .collections-filter-chips .filter-chip,
 .filter-chip {
   display: inline-block;
