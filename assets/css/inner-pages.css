@@ -3373,27 +3373,28 @@ footer {
 .premium-card-glass .btn-secondary-custom:hover,
 .final-cta-section .btn-secondary-custom:hover,
 .cta-community-staff .btn-secondary-custom:hover {
-  background: var(--color-gold, #D4AF37) !important;
-  color: #120E0A !important;
-  border-color: var(--color-gold, #D4AF37) !important;
+  background: #C8A55F !important;
+  color: #FFFFFF !important;
+  border-color: #C8A55F !important;
 }
 
 .premium-card-glass .btn-premium-gold,
 .final-cta-section .btn-primary-custom,
 .cta-community-staff .btn-primary-custom {
-  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%) !important;
-  color: #120E0A !important;
-  border: 1px solid #E6C665 !important;
+  background: var(--color-walnut, #4A3222) !important;
+  color: var(--color-parchment, #F5EBE6) !important;
+  border: 1.5px solid var(--color-walnut, #4A3222) !important;
   font-weight: 700 !important;
-  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 4px 18px rgba(74, 50, 34, 0.25) !important;
 }
 
 .premium-card-glass .btn-premium-gold:hover,
 .final-cta-section .btn-primary-custom:hover,
 .cta-community-staff .btn-primary-custom:hover {
-  background: linear-gradient(135deg, #E6C665 0%, #C59B27 100%) !important;
-  color: #0A0704 !important;
-  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.5) !important;
+  background: var(--color-walnut-light, #6B4A32) !important;
+  border-color: var(--color-walnut-light, #6B4A32) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 24px rgba(74, 50, 34, 0.35) !important;
 }
 
 /* 2. Mobile Alignment & Centering for Final CTA Section (<= 768px) */

@@ -50,6 +50,7 @@
 
 /* Buttons */
 [data-theme="dark"] .btn-primary-custom,
+[data-theme="dark"] .btn-premium-gold,
 [data-theme="dark"] .btn-buy-now {
   background: var(--color-walnut) !important;
   color: var(--color-parchment) !important;
@@ -59,6 +60,7 @@
 }
 
 [data-theme="dark"] .btn-primary-custom:hover,
+[data-theme="dark"] .btn-premium-gold:hover,
 [data-theme="dark"] .btn-buy-now:hover {
   background: var(--color-walnut-light) !important;
   color: #FFFFFF !important;

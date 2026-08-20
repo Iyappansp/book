@@ -1304,7 +1304,7 @@
     let alcoveTier = 'Standard Reading Seat';
 
     document.addEventListener('click', function (e) {
-      const openBtn = e.target.closest('.btn-premium-gold, [data-open-modal="alcoveModal"]');
+      const openBtn = e.target.closest('[data-open-modal="alcoveModal"], .btn-premium-gold');
       if (openBtn && document.getElementById('alcoveModal') && window.location.pathname.includes('reading-corner')) {
         e.preventDefault();
         const modal = document.getElementById('alcoveModal');
