@@ -69,6 +69,12 @@
         </div>
 
         <div class="auth-body">
+          <div class="auth-heading">
+            <!-- <span class="eyebrow">Sign In</span> -->
+            <h1 class="auth-title">Welcome Back</h1>
+            <!-- <p class="auth-subtitle">Please enter your details to access your saved books and orders.</p> -->
+          </div>
+
           <form id="signin-form" novalidate>
             <div class="mb-3">
               <label for="signin-email" class="form-label">Email Address *</label>
@@ -161,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
     signinForm.addEventListener("submit", function (e) {
       e.preventDefault();
       signinForm.style.display = "none";
-      document.querySelectorAll(".social-divider, .auth-social-list, .auth-alt-block").forEach(function (el) {
+      document.querySelectorAll(".social-divider, .auth-social-list, .auth-alt-block, .auth-heading").forEach(function (el) {
         el.style.display = "none";
       });
       var successEl = document.getElementById("auth-success");
