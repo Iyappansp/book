@@ -194,8 +194,9 @@ section { padding: var(--space-lg) 0; }
     font-size: 0.82rem !important;
     font-weight: 600 !important;
     border-radius: var(--radius-pill) !important;
-    background: var(--color-gold) !important;
-    color: var(--color-ink) !important;
+    background: transparent !important;
+    border: 1.5px solid #C8A55F !important;
+    color: #C8A55F !important;
   }
 
   /* New arrivals: section heading + card text at 320px–600px */

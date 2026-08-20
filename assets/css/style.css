@@ -28,8 +28,8 @@
 
   --color-primary: var(--color-walnut);
   --color-primary-hover: var(--color-walnut-light);
-  --color-secondary: var(--color-gold);
-  --color-secondary-hover: var(--color-gold-light);
+  --color-secondary: #C8A55F;
+  --color-secondary-hover: #B5934E;
   --color-accent: var(--color-burgundy);
 
   --shadow-sm: 0 1px 3px rgba(36, 28, 21, 0.08);
@@ -416,30 +416,32 @@ section.section-bordered .container-custom {
 }
 
 .btn-primary-custom {
-  background: var(--color-primary);
-  color: var(--text-inverse);
+  background: var(--color-walnut);
+  border: 1.5px solid var(--color-walnut);
+  color: var(--color-parchment);
   box-shadow: var(--shadow-sm);
 }
 
 .btn-primary-custom:hover {
-  background: var(--color-primary-hover);
+  background: var(--color-walnut-light);
+  border-color: var(--color-walnut-light);
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
-  color: var(--text-inverse);
+  color: #FFFFFF;
 }
 
 .btn-secondary-custom {
   background: transparent;
-  color: var(--color-primary);
-  border: 1.5px solid var(--color-primary);
+  color: #C8A55F;
+  border: 1.5px solid #C8A55F;
   font-weight: 600;
   box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary-custom:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: var(--text-inverse);
+  background: #C8A55F;
+  border-color: #C8A55F;
+  color: #FFFFFF;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
